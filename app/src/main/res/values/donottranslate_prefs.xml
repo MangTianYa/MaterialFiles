@@ -7,10 +7,14 @@
 
 <resources>
 
-    <string name="pref_default_value_empty" />
-
     <string name="pref_key_storages">key_storages</string>
     <string name="pref_key_file_list_default_directory">key_file_list_default_directory</string>
+    <string name="pref_key_file_list_last_directory">key_file_list_last_directory</string>
+    <string name="pref_key_file_list_left_pane_directory">key_file_list_left_pane_directory</string>
+    <string name="pref_key_file_list_right_pane_directory">key_file_list_right_pane_directory</string>
+    <string name="pref_key_dual_pane_active_index">key_dual_pane_active_index</string>
+    <integer name="pref_default_value_dual_pane_active_index">0</integer>
+    <string name="pref_key_recent_access_entries">key_recent_access_entries</string>
     <string name="pref_key_file_list_persistent_drawer_open">key_file_list_persistent_drawer_open</string>
     <bool name="pref_default_value_file_list_persistent_drawer_open">true</bool>
     <string name="pref_key_file_list_show_hidden_files">key_file_list_show_hidden_files</string>
@@ -19,27 +23,17 @@
     <string name="pref_default_value_file_list_view_type">0</string>
     <string name="pref_key_file_list_sort_options">key_file_list_sort_options</string>
     <string name="pref_key_create_archive_type">key_create_archive_type</string>
+    <string name="pref_key_text_editor_show_line_numbers">key_text_editor_show_line_numbers</string>
+    <bool name="pref_default_value_text_editor_show_line_numbers">true</bool>
 
-    <string name="pref_key_ftp_server_state">key_ftp_server_state</string>
-    <bool name="pref_visible_ftp_server_add_tile">false</bool>
-    <string name="pref_key_ftp_server_anonymous_login">key_ftp_server_anonymous_login</string>
-    <bool name="pref_default_value_ftp_server_anonymous_login">true</bool>
-    <string name="pref_key_ftp_server_username">key_ftp_server_username</string>
-    <string name="pref_default_value_ftp_server_username">admin</string>
-    <string name="pref_key_ftp_server_password">key_ftp_server_password</string>
-    <string name="pref_key_ftp_server_port">key_ftp_server_port</string>
-    <integer name="pref_default_value_ftp_server_port">2121</integer>
+    <!-- Retained for AppUpgraders legacy preference migration. -->
     <string name="pref_key_ftp_server_home_directory">key_ftp_server_home_directory</string>
-    <string name="pref_key_ftp_server_writable">key_ftp_server_writable</string>
-    <bool name="pref_default_value_ftp_server_writable">true</bool>
 
     <string name="pref_key_locale">key_locale</string>
-    <string name="pref_key_theme_color">key_theme_color</string>
-    <string name="pref_default_value_theme_color">0</string>
-    <string name="pref_key_material_design_3">key_material_design_3</string>
-    <bool name="pref_default_value_material_design_3">false</bool>
+    <string name="pref_key_dynamic_color">key_dynamic_color</string>
+    <bool name="pref_default_value_dynamic_color">true</bool>
     <string name="pref_key_night_mode">key_night_mode</string>
-    <string name="pref_default_value_night_mode">0</string>
+    <string name="pref_default_value_night_mode">2</string>
     <string-array name="pref_entry_values_night_mode">
         <item>0</item>
         <item>1</item>
@@ -80,6 +74,4 @@
     <string name="pref_key_show_pdf_thumbnail_pre_28">key_show_pdf_thumbnail_pre_28</string>
     <bool name="pref_default_value_show_pdf_thumbnail_pre_28">false</bool>
     <bool name="pref_visible_show_pdf_thumbnail_pre_28">true</bool>
-    <string name="pref_key_read_remote_files_for_thumbnail">key_read_remote_files_for_thumbnail</string>
-    <bool name="pref_default_value_read_remote_files_for_thumbnail">true</bool>
 </resources>

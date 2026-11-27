@@ -14,11 +14,10 @@ import java8.nio.file.Path
 import me.zhanghai.android.files.provider.common.newByteChannel
 import me.zhanghai.android.files.provider.document.isDocumentPath
 import me.zhanghai.android.files.provider.document.resolver.DocumentResolver
-import me.zhanghai.android.files.provider.ftp.isFtpPath
 import me.zhanghai.android.files.provider.linux.isLinuxPath
 
 val Path.isMediaMetadataRetrieverCompatible: Boolean
-    get() = !isFtpPath
+    get() = true
 
 fun MediaMetadataRetriever.setDataSource(path: Path) {
     when {
@@ -32,7 +31,12 @@ fun MediaMetadataRetriever.setDataSource(path: Path) {
             } catch (e: IOException) {
                 throw IllegalArgumentException(e)
             }
-            setDataSource(PathMediaDataSource(channel))
+            try {
+                setDataSource(PathMediaDataSource(channel))
+            } catch (e: RuntimeException) {
+                runCatching { channel.close() }
+                throw e
+            }
         }
     }
 }

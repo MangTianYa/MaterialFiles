@@ -38,7 +38,7 @@ class FileListViewModel : ViewModel() {
 
     val currentPathLiveData = trailLiveData.map { it.currentPath }
     val currentPath: Path
-        get() = currentPathLiveData.valueCompat
+        get() = currentPathLiveData.value ?: trailLiveData.valueCompat.currentPath
 
     private val _searchStateLiveData = MutableLiveData(SearchState(false, ""))
     val searchStateLiveData: LiveData<SearchState> = _searchStateLiveData
@@ -98,7 +98,7 @@ class FileListViewModel : ViewModel() {
 
     val breadcrumbLiveData: LiveData<BreadcrumbData> = BreadcrumbLiveData(trailLiveData)
     val canNavigateUpBreadcrumb: Boolean
-        get() = breadcrumbLiveData.valueCompat.selectedIndex > 0
+        get() = (breadcrumbLiveData.value?.selectedIndex ?: 0) > 0
 
     private val _viewTypeLiveData = FileViewTypeLiveData(currentPathLiveData)
     val viewTypeLiveData: LiveData<FileViewType> = _viewTypeLiveData

@@ -1,15 +1,97 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<!--
-  ~ Copyright (c) 2018 Hai Zhang <dreaming.in.code.zh@gmail.com>
-  ~ All Rights Reserved.
-  -->
-
-<me.zhanghai.android.files.navigation.NavigationRecyclerView
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/recyclerView"
-    android:layout_width="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawerRootLayout"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:clipToPadding="false"
-    android:scrollbarStyle="outsideOverlay"
-    android:scrollbars="vertical" />
+    android:orientation="vertical">
+
+    <!-- Pixel Material 3 Drawer Header -->
+    <LinearLayout
+        android:id="@+id/drawerHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="16dp"
+        android:paddingEnd="14dp"
+        android:paddingTop="14dp"
+        android:paddingBottom="10dp">
+
+        <FrameLayout
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:background="@drawable/navigation_header_icon_bg">
+
+            <ImageView
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_gravity="center"
+                android:contentDescription="@null"
+                android:src="@drawable/directory_icon_white_24dp"
+                app:tint="?colorOnPrimary" />
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:text="@string/app_name"
+                android:textColor="?colorOnSurface"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:text="@string/navigation_drawer_subtitle"
+                android:textColor="?colorOnSurfaceVariant"
+                android:textSize="11.5sp" />
+        </LinearLayout>
+
+        <me.zhanghai.android.foregroundcompat.ForegroundImageButton
+            android:id="@+id/themeToggleButton"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:background="@drawable/navigation_circle_button_bg"
+            android:contentDescription="@string/navigation_toggle_theme"
+            android:foreground="@drawable/selectable_item_background_oval"
+            android:padding="8dp"
+            android:src="@drawable/sun_moon_icon_24dp" />
+
+        <me.zhanghai.android.foregroundcompat.ForegroundImageButton
+            android:id="@+id/settingsButton"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginStart="6dp"
+            android:background="@drawable/navigation_circle_button_bg"
+            android:contentDescription="@string/settings_title"
+            android:foreground="@drawable/selectable_item_background_oval"
+            android:padding="8dp"
+            android:src="@drawable/settings_icon_white_24dp"
+            app:tint="?colorPrimary" />
+    </LinearLayout>
+
+    <me.zhanghai.android.files.navigation.NavigationRecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:clipToPadding="false"
+        android:paddingTop="4dp"
+        android:paddingBottom="12dp"
+        android:scrollbarStyle="outsideOverlay"
+        android:scrollbars="vertical" />
+</LinearLayout>

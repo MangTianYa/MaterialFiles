@@ -16,6 +16,7 @@ import me.zhanghai.android.files.app.application
 fun initializeCoil() {
     Coil.setImageLoader(
         ImageLoader.Builder(application)
+            .callFactory { throw UnsupportedOperationException("Network access is disabled") }
             .components {
                 add(AppIconApplicationInfoKeyer())
                 add(AppIconApplicationInfoFetcherFactory(application))

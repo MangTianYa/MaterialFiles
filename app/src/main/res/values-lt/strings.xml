@@ -14,7 +14,6 @@
     <string name="close">Uždaryti</string>
     <string name="copy">Kopijuoti</string>
     <string name="cut">Kirpti</string>
-    <string name="default_">Numatytasis</string>
     <string name="delete">Ištrinti</string>
     <string name="discard">Atmesti</string>
     <string name="edit">Redaguoti</string>
@@ -44,7 +43,6 @@
     <string name="share">Bendrinti</string>
     <string name="show">Rodyti</string>
     <string name="skip">Praleisti</string>
-    <string name="stop">Stabdyti</string>
     <string name="system_default">Sistemos numatytasis</string>
     <string name="unknown">Nežinomas</string>
     <string name="view">Peržiūrėti</string>
@@ -69,8 +67,6 @@
     <string name="notification_channel_background_activity_start_description">Daryti veiksmus kai programėlė veikia fone</string>
     <string name="notification_channel_file_job_name">Failo operacijos</string>
     <string name="notification_channel_file_job_description">Rodyti ir valdyti failų operacijas</string>
-    <string name="notification_channel_ftp_server_name">FTP serveris</string>
-    <string name="notification_channel_ftp_server_description">Rodyti ir valdyti FTP serverį</string>
 
     <plurals name="file_job_archive_scan_notification_title_format">
         <item quantity="one">Ruošiamasi suspausti %1$,d failą (%2$s)</item>
@@ -252,7 +248,6 @@
     <string name="file_job_restore_selinux_context_error_message_format">Įvyko klaida atkuriant SELinux kontekstą „%1$s“.\n%2$s</string>
     <string name="file_job_write_error_title">Klaida rašant</string>
     <string name="file_job_write_error_message_format">Įvyko klaida rašant “%1$s”.\n%2$s</string>
-    <string name="file_job_get_information_error_message_format">Įvyko klaida gaunant informaciją apie “%1$s”.</string>
     <string name="file_job_remount_format">Permontuoti „%1$s“ kaip skaitymo ir rašymo</string>
     <string name="file_job_remount_loading_format">Permontavimas „%1$s“ kaip skaitymo ir rašymo…</string>
     <string name="file_job_remount_success_format">„%1$s“ buvo permontuotas kaip skaitymo ir rašymo</string>
@@ -303,19 +298,6 @@
     <string name="file_create_directory_title">Naujas aplankas</string>
 
     <string name="file_list_title">Failai</string>
-    <plurals name="file_list_subtitle_directory_count_format">
-        <item quantity="one">%1$,d aplankas</item>
-        <item quantity="few">%1$,d aplankai</item>
-        <item quantity="many">%1$,d aplankų</item>
-        <item quantity="other">%1$,d aplankai</item>
-    </plurals>
-    <plurals name="file_list_subtitle_file_count_format">
-        <item quantity="one">%1$,d failas</item>
-        <item quantity="few">%1$,d failai</item>
-        <item quantity="many">%1$,d failų</item>
-        <item quantity="other">%1$,d failai</item>
-    </plurals>
-    <string name="file_list_subtitle_separator">,\u0020</string>
     <string name="file_list_path_error_empty">Kelias negali būti tuščias</string>
     <string name="file_list_path_error_invalid">Netinkamas kelias</string>
     <string name="file_list_action_view_sort">Peržiūra ir rūšiavimas</string>
@@ -372,14 +354,12 @@
     <string name="file_properties_basic_parent_directory">Pirminis aplankas</string>
     <string name="file_properties_basic_archive_file">Archyvo failas</string>
     <string name="file_properties_basic_archive_entry">Archyvo įrašas</string>
-    <string name="file_properties_basic_free_space">Laisvos vietos</string>
     <string name="file_properties_image">Nuotrauka</string>
     <string name="file_properties_media_dimensions">Matmenys</string>
     <string name="file_properties_media_dimensions_format">%1$d \u00d7 %2$d</string>
     <string name="file_properties_media_date_time">Padaryta</string>
     <string name="file_properties_media_coordinates">Koordinatės</string>
     <string name="file_properties_media_coordinates_format">%1$.3f, %2$.3f</string>
-    <string name="file_properties_media_address">Vietovė</string>
     <string name="file_properties_image_gps_altitude">Aukštis</string>
     <string name="file_properties_image_gps_altitude_format">%1$,.3f m</string>
     <string name="file_properties_image_equipment">Kamera</string>
@@ -434,9 +414,6 @@
     <string name="storage_list_empty">Nėra saugyklos</string>
     <string name="storage_add_storage_title">Pridėti saugyklą</string>
     <string name="storage_add_storage_document_tree">Išorinė saugykla</string>
-    <string name="storage_add_storage_ftp_server">FTP serveris</string>
-    <string name="storage_add_storage_sftp_server">SFTP serveris</string>
-    <string name="storage_add_storage_smb_server">SMB serveris</string>
     <string name="storage_edit_device_storage_title">Redaguoti įrenginio saugylką</string>
     <string name="storage_edit_device_storage_name">Pavadinimas</string>
     <string name="storage_edit_device_storage_path">Kelias</string>
@@ -445,88 +422,6 @@
     <string name="storage_edit_document_tree_name">Pavadinimas</string>
     <string name="storage_edit_document_tree_uri">URI</string>
     <string name="storage_edit_document_tree_path">Kelias</string>
-    <string name="storage_edit_ftp_server_title_edit">Redaguoti FTP serverį</string>
-    <string name="storage_edit_ftp_server_title_add">Pridėti FTP serverį</string>
-    <string name="storage_edit_ftp_server_host">Serverio vardas</string>
-    <string name="storage_edit_ftp_server_host_error_empty">Įveskite serverio vardą</string>
-    <string name="storage_edit_ftp_server_host_error_invalid">Netinkamas serverio vardas</string>
-    <string name="storage_edit_ftp_server_port">Prievadas</string>
-    <string name="storage_edit_ftp_server_port_error_invalid">Netinkamas prievadas</string>
-    <string name="storage_edit_ftp_server_path">Kelias</string>
-    <string name="storage_edit_ftp_server_path_placeholder">Gali būti paliktas tuščias</string>
-    <string name="storage_edit_ftp_server_name">Pavadinimas</string>
-    <string name="storage_edit_ftp_server_name_placeholder">Naudoti serverio vardą</string>
-    <string name="storage_edit_ftp_server_protocol">Protokolas</string>
-    <string name="storage_edit_ftp_server_authentication_type">Autentifikacija</string>
-    <string-array name="storage_edit_ftp_server_authentication_type_entries">
-        <item>Slaptažodis</item>
-        <item>Anonimas</item>
-    </string-array>
-    <string name="storage_edit_ftp_server_username">Naudotojo vardas</string>
-    <string name="storage_edit_ftp_server_username_error_empty">Įvesti naudotojo vardą</string>
-    <string name="storage_edit_ftp_server_password">Slaotažodis</string>
-    <string name="storage_edit_ftp_server_mode">Režimas</string>
-    <string-array name="storage_edit_ftp_server_mode_entries">
-        <item>Aktyvus</item>
-        <item>Pasyvus</item>
-    </string-array>
-    <string name="storage_edit_ftp_server_encoding">Kodavimas</string>
-    <string name="storage_edit_ftp_server_connect_and_add">Prisijungti ir pridėti</string>
-    <string name="storage_edit_ftp_server_add">Pridėti</string>
-    <string name="storage_edit_sftp_server_title_edit">Redaguoti SFTP serverį</string>
-    <string name="storage_edit_sftp_server_title_add">Pridėti SFTP serverį</string>
-    <string name="storage_edit_sftp_server_host">Serverio vardas</string>
-    <string name="storage_edit_sftp_server_host_error_empty">Įveskite serverio vardą</string>
-    <string name="storage_edit_sftp_server_host_error_invalid">Netinkamas serverio vardas</string>
-    <string name="storage_edit_sftp_server_port">Prievadas</string>
-    <string name="storage_edit_sftp_server_port_error_invalid">Netinkamas prievadas</string>
-    <string name="storage_edit_sftp_server_path">Kelias</string>
-    <string name="storage_edit_sftp_server_path_placeholder">Gali būti paliktas tuščias</string>
-    <string name="storage_edit_sftp_server_name">Pavadinimas</string>
-    <string name="storage_edit_sftp_server_name_placeholder">Naudoti serverio vardą</string>
-    <string name="storage_edit_sftp_server_authentication_type">Autentifikacija</string>
-    <string-array name="storage_edit_sftp_server_authentication_type_entries">
-        <item>Slaptažodis</item>
-        <item>Viešas raktas</item>
-    </string-array>
-    <string name="storage_edit_sftp_server_username">Naudotojo vardas</string>
-    <string name="storage_edit_sftp_server_username_error_empty">Įvesti naudotojo vardą</string>
-    <string name="storage_edit_sftp_server_password">Slaptažodis</string>
-    <string name="storage_edit_sftp_server_private_key">Privatus raktas</string>
-    <string name="storage_edit_sftp_server_private_key_open_file">Atidaryti failą</string>
-    <string name="storage_edit_sftp_server_private_key_error_empty">Įvesti privatų raktą</string>
-    <string name="storage_edit_sftp_server_private_key_error_invalid">Netinkamas privatus raktas</string>
-    <string name="storage_edit_sftp_server_private_key_password">Privataus rakto slaptažodis</string>
-    <string name="storage_edit_sftp_server_private_key_password_placeholder">Gali būti paliktas tuščias</string>
-    <string name="storage_edit_sftp_server_private_key_password_error_invalid">Netinkamas privataus rakto slaptažodis</string>
-    <string name="storage_edit_sftp_server_connect_and_add">Prisijungti ir pridėti</string>
-    <string name="storage_edit_sftp_server_add">Pridėti</string>
-    <string name="storage_add_lan_smb_server_loading">Ieškoma SMB serverių…</string>
-    <string name="storage_add_lan_smb_server_add">Pridėti rankiniu būdu</string>
-    <string name="storage_edit_smb_server_title_edit">Redaguoti SMB serverį</string>
-    <string name="storage_edit_smb_server_title_add">Pridėti SMB serverį</string>
-    <string name="storage_edit_smb_server_host">Serverio vardas</string>
-    <string name="storage_edit_smb_server_host_error_empty">Įveskite serverio vardą</string>
-    <string name="storage_edit_smb_server_host_error_invalid">Netinkamas serverio vardas</string>
-    <string name="storage_edit_smb_server_port">Prievadas</string>
-    <string name="storage_edit_smb_server_port_error_invalid">Netinkamas prievadas</string>
-    <string name="storage_edit_smb_server_path">Kelias</string>
-    <string name="storage_edit_smb_server_path_placeholder">Gali būti paliktas tuščias</string>
-    <string name="storage_edit_smb_server_name">Pavadinimas</string>
-    <string name="storage_edit_smb_server_name_placeholder">Naudoti serverio vardą</string>
-    <string name="storage_edit_smb_server_authentication_type">Autentifikacija</string>
-    <string-array name="storage_edit_smb_server_authentication_type_entries">
-        <item>Slaptažodis</item>
-        <item>Svečias</item>
-        <item>Anonimas</item>
-    </string-array>
-    <string name="storage_edit_smb_server_username">Naudotojo vardas</string>
-    <string name="storage_edit_smb_server_username_error_empty">Įvesti naudotojo vardą</string>
-    <string name="storage_edit_smb_server_password">Slaptažodis</string>
-    <string name="storage_edit_smb_server_domain">Domenas</string>
-    <string name="storage_edit_smb_server_connect_and_add">Prisijungti ir pridėti</string>
-    <string name="storage_edit_smb_server_add">Pridėti</string>
-    <string name="navigation_storage_subtitle_format">%1$s laisva iš %2$s</string>
     <string name="navigation_add_storage">Pridėti saugyklą…</string>
     <string name="navigation_standard_directory_alarms">Aliarmai</string>
     <string name="navigation_standard_directory_dcim">DCIM</string>
@@ -555,30 +450,9 @@
     <string name="text_editor_encoding">Kodavimas</string>
     <string name="text_editor_close_message">Ar tikrai norite atmesti neišsaugotus šio dokumento pakeitimus?</string>
 
-    <string name="ftp_server_title">FTP serveris</string>
-    <string name="ftp_server_state_title">Būsena</string>
-    <string name="ftp_server_state_summary_starting">Startuojamas…</string>
-    <string name="ftp_server_state_summary_running">Veikia</string>
-    <string name="ftp_server_state_summary_stopping">Sustabdomas…</string>
-    <string name="ftp_server_state_summary_stopped">Išjungtas</string>
-    <string name="ftp_server_url_title">URL</string>
-    <string name="ftp_server_url_summary_no_local_inet_address">Vietinis IP adresas nežinomas</string>
-    <string name="ftp_server_url_menu_copy_url">Kopijuoti URL</string>
-    <string name="ftp_server_url_menu_copy_password">Kopijuoti slaptažodį</string>
-    <string name="ftp_server_add_tile_title">Pridėti prie greitųjų nustatymų</string>
-    <string name="ftp_server_configuration_title">Konfigūracija</string>
-    <string name="ftp_server_anonymous_login_title">Anonimiškas prisijungimas</string>
-    <string name="ftp_server_username_title">Naudotojo vardas</string>
-    <string name="ftp_server_password_title">Slaptažodis</string>
-    <string name="ftp_server_port_title">Prievadas</string>
-    <string name="ftp_server_home_directory_title">Root aplankas</string>
-    <string name="ftp_server_writable_title">Leisti rašyti</string>
     <string name="settings_title">Nustatymai</string>
     <string name="settings_interface_title">Sąsaja</string>
     <string name="settings_locale_title">Kalba</string>
-    <string name="settings_theme_color_title">Temos spalva</string>
-    <string name="settings_theme_color_summary">Dažniausiai programėlėje pasitaikanti spalva</string>
-    <string name="settings_material_design_3_title">Material Design 3</string>
     <string name="settings_night_mode_title">Nakties režimas</string>
     <string-array name="settings_night_mode_entries">
         <item>Sekti sistemą</item>
@@ -623,7 +497,6 @@
         <item>Klausti ką daryti</item>
     </string-array>
     <string name="settings_show_pdf_thumbnail_pre_28_summary">Gali padaryti programėlę nestabilią senesnėse Android versijose</string>
-    <string name="settings_read_remote_files_for_thumbnail_title">Rodyti nuotolinių failų miniatiūras</string>
 
     <string name="about_title">Apie</string>
     <string name="about_version_title">Versija</string>

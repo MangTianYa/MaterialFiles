@@ -85,6 +85,11 @@ internal object ForeignCopyMove {
             }
             sourceAttributes.isSymbolicLink -> {
                 val sourceTarget = source.readSymbolicLink()
+                if (source.fileSystem is me.zhanghai.android.files.provider.archive.ArchiveFileSystem &&
+                    isEscapingArchiveSymlink(source, sourceTarget.toString())
+                ) {
+                    throw IOException("Blocked unsafe archive symlink target: $sourceTarget")
+                }
                 try {
                     // Might throw UnsupportedOperationException, so we cannot delete beforehand.
                     target.createSymbolicLink(sourceTarget)
@@ -160,9 +165,30 @@ internal object ForeignCopyMove {
             } catch (e2: IOException) {
                 e.addSuppressed(e2)
             } catch (e2: UnsupportedOperationException) {
+                e2.printStackTrace()
                 e.addSuppressed(e2)
             }
             throw e
         }
+    }
+
+    private fun isEscapingArchiveSymlink(source: Path, linkTarget: String): Boolean {
+        if (linkTarget.isEmpty() || '\u0000' in linkTarget || linkTarget.startsWith('/')) {
+            return true
+        }
+        var depth = source.parent?.nameCount ?: 0
+        for (segment in linkTarget.split('/')) {
+            when (segment) {
+                "", "." -> {}
+                ".." -> {
+                    depth--
+                    if (depth < 0) {
+                        return true
+                    }
+                }
+                else -> depth++
+            }
+        }
+        return false
     }
 }

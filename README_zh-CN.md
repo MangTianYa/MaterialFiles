@@ -1,70 +1,57 @@
-# Material Files
+# Material Files（双栏离线修改版）
 
-[![Android CI 状态](https://github.com/zhanghai/MaterialFiles/workflows/Android%20CI/badge.svg)](https://github.com/zhanghai/MaterialFiles/actions) [![GitHub 发行版](https://img.shields.io/github/v/release/zhanghai/MaterialFiles)](https://github.com/zhanghai/MaterialFiles/releases) [![许可证](https://img.shields.io/github/license/zhanghai/MaterialFiles?color=blue)](LICENSE)
+[English](README.md)
 
-一个开源的 Material Design 文件管理器，适用于 Android 5.0+。
+[![Android CI & Release](https://github.com/MangTianYa/MaterialFiles/actions/workflows/android.yml/badge.svg)](https://github.com/MangTianYa/MaterialFiles/actions/workflows/android.yml) [![GitHub 发行版](https://img.shields.io/github/v/release/MangTianYa/MaterialFiles)](https://github.com/MangTianYa/MaterialFiles/releases) [![许可证](https://img.shields.io/github/license/MangTianYa/MaterialFiles?color=blue)](LICENSE)
 
-[<img alt="下载应用，请到 Google Play" src="https://play.google.com/intl/en_us/badges/static/images/badges/zh-cn_badge_web_generic.png" width="240">](https://play.google.com/store/apps/details?id=me.zhanghai.android.files) [<img alt="下载应用，请到 F-Droid" src="https://fdroid.gitlab.io/artwork/badge/get-it-on-zh-cn.png" width="240">](https://f-droid.org/packages/me.zhanghai.android.files) [<img alt="下载应用，请到 GitHub" src="https://raw.githubusercontent.com/Kunzisoft/Github-badge/main/get-it-on-github.png" width="240">](https://github.com/zhanghai/MaterialFiles/releases/latest/download/app-release-universal.apk)
+> **GPL-3.0 开源协议修改声明（第 5 条）**：
+> 本仓库为基于 [Hai Zhang](https://github.com/zhanghai) 原版开源项目 [Material Files](https://github.com/zhanghai/MaterialFiles) 的非官方修改分支（Fork，2026 年 11 月修订），专注于 **100% 纯本地离线双栏文件管理**、手势高效多选、批量文件工具与增强型代码文本编辑器。
+> 本分支严格遵守原项目 [GNU General Public License v3.0](LICENSE) 开源协议，所有修改部分继续以 **GPL-3.0** 协议开源分发。
 
-[在 Transifex 上帮助翻译](https://www.transifex.com/zhanghai/MaterialFiles/)（[搜索 Android 和 GNOME 的翻译](https://translations.zhanghai.me/)、[微软语言资源](https://learn.microsoft.com/en-us/globalization/reference/microsoft-language-resources)、[MIME 类型翻译](https://gitlab.freedesktop.org/xdg/shared-mime-info/-/tree/master/po)）
+[<img alt="从 GitHub Releases 下载" src="https://raw.githubusercontent.com/Kunzisoft/Github-badge/main/get-it-on-github.png" width="240">](https://github.com/MangTianYa/MaterialFiles/releases)
 
-## 预览
+## 本分支新增与修改特性
 
-<p><img src="fastlane/metadata/android/en-US/images/phoneScreenshots/1.png" width="32%" /> <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/2.png" width="32%" /> <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/3.png" width="32%" />
-<img src="fastlane/metadata/android/en-US/images/phoneScreenshots/4.png" width="32%" /> <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/5.png" width="32%" /> <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/6.png" width="32%" /></p>
+相较于原版上游仓库 [zhanghai/MaterialFiles](https://github.com/zhanghai/MaterialFiles)，本分支主要进行了以下调整与增强：
 
-## 特性
+- **纯离线零联网隐私强化**：
+  - 移除 Firebase Analytics / Crashlytics 与 Google Play 服务相关依赖。
+  - 在清单中移除 `INTERNET`、`ACCESS_NETWORK_STATE`、`ACCESS_WIFI_STATE` 权限，并精简移除 FTP 服务及 SMB / SFTP / WebDAV 网络客户端模块，仅专注本地存储、压缩包与 Root 文件管理。
+- **双栏并排高效文件管理**：
+  - 左右双窗口同步浏览，支持拖动分隔条调整比例（双击恢复 50/50）与当前激活栏指示条。
+  - 统一顶部搜索/选区胶囊栏，支持冷启动自动恢复左右栏路径及当前激活窗口状态。
+  - 双栏互传带明确方向提示：激活左栏时显示 `复制 →` / `移动 →` / `链接 →`，激活右栏时自动变为 `← 复制` / `← 移动` / `← 链接`；当双栏处于同一目录或对侧只读时自动回退为剪贴板复制/移动，确保按钮随时可用。
+- **手势交互与批量功能增强**：
+  - **列表项左滑触发多选**：左滑文件或文件夹伴随弹性回弹与震动反馈进入多选模式，不遮挡列表可继续连续勾选。
+  - **多选后长按触发菜单**：处于多选状态时，长按任一已选中项目（或点击底部选区胶囊条）即可打开居中双列操作面板。
+  - **底部上滑最近访问**：从底部边缘上滑（或点击底部“最近访问”胶囊条）弹出最近访问记录面板，支持 `全部 / 文件 / 文件夹` 筛选，点击文件夹直接跳转目录，点击可编辑文件直接进入内置编辑器。
+  - **批量重命名与多选属性**：内置三种批量改名模式（统一编号模板 `{name}`/`{num}`、查找替换、添加前后缀），支持扩展名保留、实时预览及重名冲突校验；多选点击“属性”支持异步递归统计所选文件夹、文件数量及总字节大小。
+- **内置代码与文本编辑器增强**：
+  - 支持主流格式语法高亮（JSON、YAML、XML/HTML、Kotlin/Java、Python、JS/TS、C/C++、Go、Rust、Shell、SQL、INI/TOML 等）。
+  - 新增一键格式化 JSON / YAML 功能，支持等宽行号联动并修复文本编辑器相关崩溃。
+- **Root 适配与 Material You 视觉优化**：
+  - 修复 `libsu` / KernelSU（`ksud`）在“自动”和“仅 Root 访问”模式下打开 `/` 与内部存储时的管道异常。
+  - 支持 Android 12+ 莫奈动态取色图标与动态主题切换，并内置轻量本地音频播放器。
 
-- 开源：轻量、简洁并且安全。
-- Material Design：遵循 Material Design 规范，并且注重细节。
-- 面包屑导航栏：点击导航栏所显示路径中的任一文件夹即可快速访问。
-- Root 支持：使用 root 权限查看和管理文件。
-- 压缩文件支持：查看、提取和创建常见的压缩文件。
-- NAS 支持：查看和管理 FTP、SFTP、SMB 和 WebDAV 服务器上的文件。
-- 主题：可定制的界面颜色，以及可选纯黑的夜间模式。
-- Linux 友好：类似 [Nautilus](https://wiki.gnome.org/action/show/Apps/Files)，支持符号链接、文件权限和 SELinux 上下文。
-- 健壮性：使用 Linux 系统调用实现，而不是另一个 [`ls` 解析器](https://news.ycombinator.com/item?id=7994720)。
-- 实现良好：使用正确的方式打造，包括 [Java NIO2 文件 API](https://docs.oracle.com/javase/8/docs/api/java/nio/file/package-summary.html) 和 [LiveData](https://developer.android.com/topic/libraries/architecture/livedata)。
+## 上游核心基础
 
-## 为什么要有 Material Files?
+本修改版完整保留了原作者 Hai Zhang 在上游项目中的底层设计：
 
-因为喜爱 Material Design，并且是整洁、精致的 Material Design。
+- 基于 [Java NIO2 文件 API](https://docs.oracle.com/javase/8/docs/api/java/nio/file/package-summary.html) 与 Linux 系统调用实现，原生支持符号链接、POSIX 权限、SELinux 上下文与非 UTF-8 文件名。
+- 支持压缩包查看/解压/创建、面包屑导航、Root 及 Shizuku 授权，以及 `ViewModel` / `LiveData` 现代生命周期架构。
 
-市面上已经有了许多强大的文件管理器，但它们中的大多数并非 Material Design。而即使在算是 Material Design 的应用之中，它们（或多或少）有着各种设计瑕疵（布局、对齐、留白、图标、字体等等）存在于应用的各个角落，让人难受；然而却又不是特别大的问题，以至于可能没人愿意特意改善。所以还是需要自己编写。
+> 原版上游项目：https://github.com/zhanghai/MaterialFiles  
+> 本分支与 GitHub Actions 构建发布页：https://github.com/MangTianYa/MaterialFiles/releases
 
-因为想要一个开源的文件管理器。
+## 使用说明
 
-大多数流行并且可靠的文件管理器都是闭源的，并且我有时会使用它们来查看或修改需要 root 权限的文件，但我心里对于授予 root 权限给闭源应用还是有些不安。毕竟 root 权限意味着对设备的完全访问权限，而这台设备每天跟随着我并且存储着我的个人信息；这样的话，闭源应用实际上做了哪些事情就完全仅仅取决于它们的良心了。
-
-因为想要一个正确实现的文件管理器。
-
-- 这个应用实现了 [Java NIO2 文件 API](https://docs.oracle.com/javase/8/docs/api/java/nio/file/package-summary.html) 作为后端，而不是发明一个自定义的机制来获取文件信息和进行文件操作。后者经常变得与前端逻辑耦合起来，最终成长为一个包含各种东西的混合物（[示例](https://github.com/TeamAmaze/AmazeFileManager/blob/master/app/src/main/java/com/amaze/filemanager/filesystem/HybridFile.java)）。相反地，一个解耦的后端可以使得代码更加干净（更少问题），并且可以更轻松地加入新文件系统的支持。
-
-- 这个应用没有使用 `java.io.File` 或者解析 `ls` 的输出，而是构建了 Linux 系统调用的绑定来正确地访问文件系统。`java.io.File` 是一个陈旧并且缺少许多功能的 API，并且无法正确处理符号链接，因此许多人宁愿解析 `ls` 的输出。然而解析 `ls` 的输出不仅缓慢，而且[不可靠](https://news.ycombinator.com/item?id=7994720)，同时也正是 [Cabinet](https://github.com/aminb/cabinet/blob/master/app/src/main/java/com/afollestad/cabinet/file/root/LsParser.java) 在新版本 Android 上无法正确运行的原因。而通过使用 Linux 系统调用，这个应用可以做到快速流畅，并且能够处理例如 Linux 权限、符号链接以至于 SELinux 上下文等等高级特性。应用也可以正确地处理含有无效 UTF-8 编码的文件名，因为应用中的路径没有简单地使用 Java 的 `String` 存储，而大多数其他文件管理器却并非如此，因此无法正确地进行文件操作。
-
-- 这个应用的前端是基于现代的 `ViewModel` 和 `LiveData` 实现的，使得代码结构更加清晰并且支持转屏。应用也可以正确地处理文件操作中的错误、文件冲突和前台/后台状态。
-
-总而言之，这个应用尽力遵守 Android 上的最佳实践并且做正确的事，同时保持源代码干净和可维护。
-
-因为事情可以被人做好。
-
-[Nautilus](https://wiki.gnome.org/Apps/Files) 是一个设计美观并且用户友好的 Linux 桌面上的文件管理器，并且同时做到了 Linux 友好。[Phonograph](https://github.com/kabouzeid/Phonograph) 是一个开源的 Material Design 音乐播放其应用（我自己已经使用多年），而它也有着绝佳的 Material Design 设计和实现。
-
-所以，是时候再编写一个 Android 文件管理器了。
-
-## 在定制 ROM 中集成
-
-如果您决定在您的定制 ROM 中集成这个应用，十分感谢！但是鉴于我曾收到过多起由不适当的集成导致的用户反馈，请允许我为了更好的用户体验提供一些关于正确集成这个应用的建议：
-
-- 请不要使用这个应用替换 AOSP 的 [DocumentsUI](https://android.googlesource.com/platform/packages/apps/DocumentsUI/) 应用。这个应用没有被设计成 DocumentsUI 的替代品并且缺少许多 DocumentsUI 中的功能——实际上，这个应用需要 DocumentsUI 来授予外置 SD 卡的访问权限。
-
-- 请确保这个应用可以被卸载或至少禁用。某些用户可能出于各种原因不想要这个应用，并且会在发现无法移除这个应用时十分恼火。
-
-- 请避免和这个应用的 Play/F-Droid 版本冲突。应用商店无法更新使用了不同证书进行签名的应用，所以您可以预置一个由我（或 F-Droid）签名的 APK 以使用户能够在 Play 或 F-Droid 上更新这个应用；或者如果您需要使用其他的证书进行签名（并进行其他更改），请复刻本项目并重命名它的软件包名。
+- 请勿使用本应用替换系统 AOSP DocumentsUI（外置存储授权依赖系统 DocumentsUI）。
+- 本分支使用独立签名密钥构建，与原版 Play / F-Droid 安装包签名不同，不能覆盖原版直接升级，需卸载原版后安装。
 
 ## 许可证
 
     Copyright (C) 2018 Hai Zhang
+    Modifications Copyright (C) 2026 MangTianYa
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by

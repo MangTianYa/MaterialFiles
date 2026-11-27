@@ -65,6 +65,7 @@ import me.zhanghai.android.files.provider.common.copyTo
 import me.zhanghai.android.files.provider.common.createDirectories
 import me.zhanghai.android.files.provider.common.createDirectory
 import me.zhanghai.android.files.provider.common.createFile
+import me.zhanghai.android.files.provider.common.createSymbolicLink
 import me.zhanghai.android.files.provider.common.delete
 import me.zhanghai.android.files.provider.common.deleteIfExists
 import me.zhanghai.android.files.provider.common.exists
@@ -89,7 +90,7 @@ import me.zhanghai.android.files.provider.linux.isLinuxPath
 import me.zhanghai.android.files.util.asFileName
 import me.zhanghai.android.files.util.createInstallPackageIntent
 import me.zhanghai.android.files.util.createIntent
-import me.zhanghai.android.files.util.createViewIntent
+import me.zhanghai.android.files.util.createDirectViewIntent
 import me.zhanghai.android.files.util.extraPath
 import me.zhanghai.android.files.util.getQuantityString
 import me.zhanghai.android.files.util.putArgs
@@ -894,6 +895,112 @@ class CreateFileJob(private val path: Path, private val createDirectory: Boolean
     }
 }
 
+class CreateSymbolicLinkJob(
+    private val sources: List<Path>,
+    private val targetDirectory: Path
+) : FileJob() {
+    @Throws(IOException::class)
+    override fun run() {
+        val actionAllInfo = ActionAllInfo()
+        for (source in sources) {
+            throwIfInterrupted()
+            val fileName = getFileName(source)
+            if (fileName == "/" || !source.isLinuxPath || !targetDirectory.isLinuxPath) {
+                throw IOException("Unsupported symbolic link path: $source -> $targetDirectory")
+            }
+            val linkPath = targetDirectory.resolve(fileName)
+            createSymbolicLinkRetryable(linkPath, source, actionAllInfo)
+        }
+    }
+}
+
+@Throws(IOException::class)
+private fun FileJob.createSymbolicLinkRetryable(
+    initialLinkPath: Path,
+    target: Path,
+    actionAllInfo: ActionAllInfo
+) {
+    var linkPath = initialLinkPath
+    var replaceExisting = false
+    var retry: Boolean
+    do {
+        retry = false
+        try {
+            if (replaceExisting) {
+                linkPath.deleteIfExists()
+                replaceExisting = false
+            }
+            linkPath.createSymbolicLink(target)
+        } catch (e: FileAlreadyExistsException) {
+            val targetFile = linkPath.loadFileItem()
+            if (targetFile.attributesNoFollowLinks.isDirectory) {
+                throw e
+            }
+            val sourceFile = target.loadFileItem()
+            when {
+                actionAllInfo.replace -> {
+                    replaceExisting = true
+                    retry = true
+                }
+                actionAllInfo.skipReplace -> return
+                else -> {
+                    val result = showConflictDialog(sourceFile, targetFile, CopyMoveType.COPY)
+                    when (result.action) {
+                        FileJobConflictAction.MERGE_OR_REPLACE -> {
+                            if (result.isAll) {
+                                actionAllInfo.replace = true
+                            }
+                            replaceExisting = true
+                            retry = true
+                        }
+                        FileJobConflictAction.RENAME -> {
+                            val newName = result.name
+                            if (newName.isNullOrEmpty() || '/' in newName || '\u0000' in newName ||
+                                newName == "." || newName == ".."
+                            ) {
+                                throw InvalidFileNameException(linkPath.toString(), null, null)
+                            }
+                            linkPath = linkPath.resolveSibling(newName)
+                            retry = true
+                        }
+                        FileJobConflictAction.SKIP -> {
+                            if (result.isAll) {
+                                actionAllInfo.skipReplace = true
+                            }
+                            return
+                        }
+                        FileJobConflictAction.CANCELED -> return
+                        FileJobConflictAction.CANCEL -> throw InterruptedIOException()
+                    }
+                }
+            }
+        } catch (e: InterruptedIOException) {
+            throw e
+        } catch (e: IOException) {
+            e.printStackTrace()
+            val result = showErrorDialog(
+                getString(R.string.file_job_create_error_title),
+                getString(
+                    R.string.file_job_create_error_message_format,
+                    getFileName(linkPath),
+                    e.toString()
+                ),
+                getReadOnlyFileStore(linkPath, e),
+                false,
+                getString(R.string.retry),
+                getString(android.R.string.cancel),
+                null
+            )
+            when (result.action) {
+                FileJobErrorAction.POSITIVE -> retry = true
+                FileJobErrorAction.NEGATIVE, FileJobErrorAction.CANCELED ->
+                    throw InterruptedIOException()
+                else -> throw AssertionError(result.action)
+            }
+        }
+    } while (retry)
+}
+
 @Throws(IOException::class)
 private fun FileJob.create(path: Path, createDirectory: Boolean) {
     var retry: Boolean
@@ -1367,11 +1474,6 @@ private fun FileJob.copyOrMove(
                 FileJobConflictAction.CANCEL -> throw InterruptedIOException()
             }
         } catch (e: InvalidFileNameException) {
-            // TODO: Prompt invalid name.
-            if (false) {
-                retry = true
-                continue
-            }
             throw e
         } catch (e: InterruptedIOException) {
             throw e
@@ -1480,9 +1582,10 @@ class OpenFileJob(
             file, R.string.file_open_from_background_title_format,
             R.string.file_open_from_background_text
         ) { file ->
-            file.fileProviderUri.createViewIntent(mimeType)
-                .addFlags(Intent.FLAG_GRANT_WRITE_URI_PERMISSION)
-                .apply { extraPath = file }
+            file.createDirectViewIntent(
+                mimeType,
+                allowInternalTextEditor = !withChooser
+            )
                 .let {
                     if (withChooser) {
                         it.withChooser(
@@ -1539,6 +1642,50 @@ class RenameFileJob(private val path: Path, private val newName: String) : FileJ
     override fun run() {
         val newPath = path.resolveSibling(newName)
         rename(path, newPath)
+    }
+}
+
+class BatchRenameFileJob(private val renames: List<Pair<Path, String>>) : FileJob() {
+    @Throws(IOException::class)
+    override fun run() {
+        if (renames.isEmpty()) {
+            return
+        }
+        val activePaths = renames.associateTo(LinkedHashMap()) { (path, newName) ->
+            path to path.resolveSibling(newName)
+        }
+        val currentLocation = LinkedHashMap<Path, Path>(renames.size)
+        for ((originalPath, _) in renames) {
+            currentLocation[originalPath] = originalPath
+        }
+        val occupiedBySource = currentLocation.values.toMutableSet()
+
+        var tempSeq = 0
+        for ((originalPath, finalTarget) in activePaths) {
+            if (originalPath == finalTarget) continue
+            if (finalTarget in occupiedBySource) {
+                val cur = currentLocation.getValue(originalPath)
+                var tempPath: Path
+                do {
+                    tempPath = cur.resolveSibling(
+                        ".batch_rename_tmp_${System.nanoTime()}_${tempSeq++}"
+                    )
+                } while (tempPath in occupiedBySource || Files.exists(tempPath))
+                rename(cur, tempPath)
+                occupiedBySource.remove(cur)
+                occupiedBySource.add(tempPath)
+                currentLocation[originalPath] = tempPath
+            }
+        }
+        for ((originalPath, finalTarget) in activePaths) {
+            val cur = currentLocation.getValue(originalPath)
+            if (cur != finalTarget) {
+                rename(cur, finalTarget)
+                occupiedBySource.remove(cur)
+                occupiedBySource.add(finalTarget)
+                currentLocation[originalPath] = finalTarget
+            }
+        }
     }
 }
 
@@ -2256,8 +2403,12 @@ class WriteFileJob(
 ) : FileJob() {
     @Throws(IOException::class)
     override fun run() {
-        val successful = write(file, content)
-        listener?.let { mainExecutor.execute { it(successful) } }
+        var successful = false
+        try {
+            successful = write(file, content)
+        } finally {
+            listener?.let { mainExecutor.execute { it(successful) } }
+        }
     }
 }
 

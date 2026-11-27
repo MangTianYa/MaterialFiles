@@ -53,6 +53,7 @@ JNIEXPORT jint JNI_OnLoad(JavaVM *vm, void *reserved) {
     if (!signaturePrefixes) {
         (*env)->DeleteLocalRef(env, vmRuntime);
         (*env)->DeleteLocalRef(env, vmRuntimeClass);
+        return JNI_ERR;
     }
     (*env)->CallVoidMethod(env, vmRuntime, vmRuntimeSetHiddenApiExemptionsMethod,
                            signaturePrefixes);

@@ -9,6 +9,7 @@ import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
 import android.content.ServiceConnection
+import android.os.Build
 import android.os.IBinder
 import com.topjohnwu.superuser.NoShellException
 import com.topjohnwu.superuser.Shell
@@ -41,15 +42,47 @@ object LibSuFileServiceLauncher {
         )
     }
 
-    fun isSuAvailable(): Boolean =
+    fun isSuAvailable(): Boolean {
         // @see com.topjohnwu.superuser.Shell.rootAccess
-        try {
-            Runtime.getRuntime().exec("su --version")
-            true
+        var process: Process? = null
+        return try {
+            process = Runtime.getRuntime().exec("su --version")
+            runCatching { process.outputStream.close() }
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                process.waitFor(2, TimeUnit.SECONDS) && process.exitValue() == 0
+            } else {
+                waitForProcessExitZero(process, 2000L)
+            }
         } catch (e: IOException) {
             // java.io.IOException: Cannot run program "su": error=2, No such file or directory
             false
+        } catch (e: InterruptedException) {
+            Thread.currentThread().interrupt()
+            false
+        } finally {
+            process?.let {
+                runCatching { it.inputStream.close() }
+                runCatching { it.errorStream.close() }
+                it.destroy()
+            }
         }
+    }
+
+    @Throws(InterruptedException::class)
+    private fun waitForProcessExitZero(process: Process, timeoutMillis: Long): Boolean {
+        val deadlineNanos = System.nanoTime() + TimeUnit.MILLISECONDS.toNanos(timeoutMillis)
+        while (true) {
+            try {
+                return process.exitValue() == 0
+            } catch (_: IllegalThreadStateException) {
+                val remainingMillis = TimeUnit.NANOSECONDS.toMillis(deadlineNanos - System.nanoTime())
+                if (remainingMillis <= 0L) {
+                    return false
+                }
+                Thread.sleep(remainingMillis.coerceAtMost(50L))
+            }
+        }
+    }
 
     @Throws(RemoteFileSystemException::class)
     fun launchService(): IRemoteFileService {

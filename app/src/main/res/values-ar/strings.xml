@@ -12,7 +12,6 @@
     <string name="close">أغلِق</string>
     <string name="copy">انسخ</string>
     <string name="cut">قص</string>
-    <string name="default_">الافتراضي</string>
     <string name="delete">احذف</string>
     <string name="discard">أهمِل</string>
     <string name="edit">حرّر</string>
@@ -42,7 +41,6 @@
     <string name="share">شارك</string>
     <string name="show">أظهر</string>
     <string name="skip">تخطى</string>
-    <string name="stop">أوقِف</string>
     <string name="system_default">النظام الافتراضي</string>
     <string name="unknown">مجهول</string>
     <string name="view">اعرض</string>
@@ -73,8 +71,6 @@
     <string name="notification_channel_background_activity_start_description">اتخذ إجراءات أثناء عمل التطبيق في الخلفية</string>
     <string name="notification_channel_file_job_name">عمليات الملف</string>
     <string name="notification_channel_file_job_description">عرض والتحكم في عمليات الملف</string>
-    <string name="notification_channel_ftp_server_name">خادم FTP </string>
-    <string name="notification_channel_ftp_server_description">عرض والتحكم في خادم FTP</string>
 
     <string name="file_action_archive_password_title">كلمة السر مطلوبة</string>
     <string name="file_action_archive_password_message_format">”%1$s“ محمي بكلمة سر</string>
@@ -300,7 +296,6 @@
     <string name="file_job_restore_selinux_context_error_message_format">حدث خطأ أثناء استعادة سياق SELinux إلى ”%1$s“.\n%2$s</string>
     <string name="file_job_write_error_title">خطأ أثناء الكتابة</string>
     <string name="file_job_write_error_message_format">حدث خطأ في كتابة ”%1$s“.\n%2$s</string>
-    <string name="file_job_get_information_error_message_format">حدث خطأ أثناء الحصول على معلومات حول ”%1$s“.</string>
     <string name="file_job_remount_format">أعد تحميل ”%1$s“ في وضع قراءة-كتابة</string>
     <string name="file_job_remount_loading_format">جاري إعادة تحميل ”%1$s“ في وضع قراءة-كتابة…</string>
     <string name="file_job_remount_success_format">تمت إعادة تحميل ”%1$s“ في وضع قراءة-كتابة</string>
@@ -376,23 +371,6 @@
         <item quantity="many">حدّد مجلدات</item>
         <item quantity="other">حدّد مجلدات</item>
     </plurals>
-    <plurals name="file_list_subtitle_directory_count_format">
-        <item quantity="zero">%1$,d مجلد</item>
-        <item quantity="one">%1$,d مجلد</item>
-        <item quantity="two">%1$,d مجلدان</item>
-        <item quantity="few">%1$,d مجلدات</item>
-        <item quantity="many">%1$,d مجلد</item>
-        <item quantity="other">%1$,d مجلد</item>
-    </plurals>
-    <plurals name="file_list_subtitle_file_count_format">
-        <item quantity="zero">%1$,d ملف</item>
-        <item quantity="one">%1$,d ملف</item>
-        <item quantity="two">%1$,d ملفان</item>
-        <item quantity="few">%1$,d ملفات</item>
-        <item quantity="many">%1$,d ملف</item>
-        <item quantity="other">%1$,d ملف</item>
-    </plurals>
-    <string name="file_list_subtitle_separator">,\u0020</string>
     <string name="file_list_path_error_empty">لا يمكن أن يكون المسار فارغًا</string>
     <string name="file_list_path_error_invalid">مسار غير صالح</string>
     <string name="file_list_action_view_sort">عرض وترتيب</string>
@@ -453,7 +431,6 @@
     <string name="file_properties_basic_parent_directory">المجلد الأصلي</string>
     <string name="file_properties_basic_archive_file">ملف الأرشيف</string>
     <string name="file_properties_basic_archive_entry">مدخل الأرشيف</string>
-    <string name="file_properties_basic_free_space">مساحة فارغة</string>
     <string name="file_properties_permission">الأذونات</string>
     <string name="file_properties_permission_owner">المالك</string>
     <string name="file_properties_permission_group">المجموعة</string>
@@ -493,7 +470,6 @@
     <string name="file_properties_media_date_time">اتخذ</string>
     <string name="file_properties_media_coordinates">تنسيق</string>
     <string name="file_properties_media_coordinates_format">%1$.3f، %2$.3f</string>
-    <string name="file_properties_media_address">المكان</string>
     <string name="file_properties_image_gps_altitude">الارتفاع</string>
     <string name="file_properties_image_gps_altitude_format">%1$,.3f m</string>
     <string name="file_properties_image_equipment">كاميرا</string>
@@ -556,10 +532,6 @@
     <string name="storage_list_empty">لا توجد وحدة تخزين</string>
     <string name="storage_add_storage_title">أضف وحدة تخزين</string>
     <string name="storage_add_storage_document_tree">وحدة التخزين الخارجية</string>
-    <string name="storage_add_storage_ftp_server">خادم FTP </string>
-    <string name="storage_add_storage_sftp_server">خادم SFTP </string>
-    <string name="storage_add_storage_smb_server">خادم SMB</string>
-    <string name="storage_add_storage_webdav_server">خادم WebDAV</string>
     <string name="storage_edit_device_storage_title">حرّر وحدة تخزين الجهاز</string>
     <string name="storage_edit_device_storage_name">الاسم</string>
     <string name="storage_edit_device_storage_path">المسار</string>
@@ -573,114 +545,7 @@
     <string name="storage_edit_document_tree_name">الاسم</string>
     <string name="storage_edit_document_tree_uri">URI</string>
     <string name="storage_edit_document_tree_path">المسار</string>
-    <string name="storage_edit_ftp_server_title_edit">حرّر خادم FTP</string>
-    <string name="storage_edit_ftp_server_title_add">أضف خادم FTP</string>
-    <string name="storage_edit_ftp_server_host">اسم المضيف</string>
-    <string name="storage_edit_ftp_server_host_error_empty">أدخل اسم مضيف</string>
-    <string name="storage_edit_ftp_server_host_error_invalid">اسم مضيف غير صالح</string>
-    <string name="storage_edit_ftp_server_port">المنفذ</string>
-    <string name="storage_edit_ftp_server_port_error_invalid">منفذ غير صالح</string>
-    <string name="storage_edit_ftp_server_path">المسار</string>
-    <string name="storage_edit_ftp_server_path_placeholder">يمكن تركه فارغًا</string>
-    <string name="storage_edit_ftp_server_name">الاسم</string>
-    <string name="storage_edit_ftp_server_name_placeholder">استخدم اسم المضيف</string>
-    <string name="storage_edit_ftp_server_protocol">بروتوكول</string>
-    <string name="storage_edit_ftp_server_authentication_type">الاستيثاق</string>
-    <string-array name="storage_edit_ftp_server_authentication_type_entries">
-        <item>كلمة السر</item>
-        <item>مجهول</item>
-    </string-array>
-    <string name="storage_edit_ftp_server_username">اسم المستخدم</string>
-    <string name="storage_edit_ftp_server_username_error_empty">أدخل اسم مستخدم</string>
-    <string name="storage_edit_ftp_server_password">كلمة السر</string>
-    <string name="storage_edit_ftp_server_mode">الوضع</string>
-    <string-array name="storage_edit_ftp_server_mode_entries">
-        <item>نشط</item>
-        <item>غير نشط</item>
-    </string-array>
-    <string name="storage_edit_ftp_server_encoding">ترميز</string>
-    <string name="storage_edit_ftp_server_connect_and_add">اتصل وأضف</string>
-    <string name="storage_edit_ftp_server_add">أضف</string>
-    <string name="storage_edit_sftp_server_title_edit">حرّر خادم SFTP </string>
-    <string name="storage_edit_sftp_server_title_add">أضف خادم SFTP </string>
-    <string name="storage_edit_sftp_server_host">اسم المضيف</string>
-    <string name="storage_edit_sftp_server_host_error_empty">أدخل اسم مضيف</string>
-    <string name="storage_edit_sftp_server_host_error_invalid">اسم مضيف غير صالح</string>
-    <string name="storage_edit_sftp_server_port">المنفذ</string>
-    <string name="storage_edit_sftp_server_port_error_invalid">منفذ غير صالح</string>
-    <string name="storage_edit_sftp_server_path">المسار</string>
-    <string name="storage_edit_sftp_server_path_placeholder">يمكن تركه فارغًا</string>
-    <string name="storage_edit_sftp_server_name">الاسم</string>
-    <string name="storage_edit_sftp_server_name_placeholder">استخدم اسم المضيف</string>
-    <string name="storage_edit_sftp_server_authentication_type">الاستيثاق</string>
-    <string-array name="storage_edit_sftp_server_authentication_type_entries">
-        <item>كلمة السر</item>
-        <item>مفتاح عام</item>
-    </string-array>
-    <string name="storage_edit_sftp_server_username">اسم المستخدم</string>
-    <string name="storage_edit_sftp_server_username_error_empty">أدخل اسم مستخدم</string>
-    <string name="storage_edit_sftp_server_password">كلمة السر</string>
-    <string name="storage_edit_sftp_server_private_key">مفتاح خاص</string>
-    <string name="storage_edit_sftp_server_private_key_open_file">افتح ملف</string>
-    <string name="storage_edit_sftp_server_private_key_error_empty">أدخل مفتاح خاص</string>
-    <string name="storage_edit_sftp_server_private_key_error_invalid">المفتاح الخاص غير صحيح</string>
-    <string name="storage_edit_sftp_server_private_key_password">كلمة سر المفتاح الخاص</string>
-    <string name="storage_edit_sftp_server_private_key_password_placeholder">يمكن تركه فارغًا</string>
-    <string name="storage_edit_sftp_server_private_key_password_error_invalid">كلمة سر المفتاح الخاص غير صالحة</string>
-    <string name="storage_edit_sftp_server_connect_and_add">اتصل وأضف</string>
-    <string name="storage_edit_sftp_server_add">أضف</string>
-    <string name="storage_add_lan_smb_server_loading">يبحث عن خوادم SMB…</string>
-    <string name="storage_add_lan_smb_server_add">أضف يدويًا</string>
-    <string name="storage_edit_smb_server_title_edit">حرّر خادم SMB</string>
-    <string name="storage_edit_smb_server_title_add">أضف خادم SMB</string>
-    <string name="storage_edit_smb_server_host">اسم المضيف</string>
-    <string name="storage_edit_smb_server_host_error_empty">أدخل اسم مضيف</string>
-    <string name="storage_edit_smb_server_host_error_invalid">اسم مضيف غير صالح</string>
-    <string name="storage_edit_smb_server_port">منفذ</string>
-    <string name="storage_edit_smb_server_port_error_invalid">منفذ غير صالح</string>
-    <string name="storage_edit_smb_server_path">مسار</string>
-    <string name="storage_edit_smb_server_path_placeholder">يمكن تركه فارغًا</string>
-    <string name="storage_edit_smb_server_name">الاسم</string>
-    <string name="storage_edit_smb_server_name_placeholder">استخدم اسم المضيف</string>
-    <string name="storage_edit_smb_server_authentication_type">الاستيثاق</string>
-    <string-array name="storage_edit_smb_server_authentication_type_entries">
-        <item>كلمة السر</item>
-        <item>ضيف</item>
-        <item>مجهول</item>
-    </string-array>
-    <string name="storage_edit_smb_server_username">اسم المستخدم</string>
-    <string name="storage_edit_smb_server_username_error_empty">أدخل اسم مستخدم</string>
-    <string name="storage_edit_smb_server_password">كلمة السر</string>
-    <string name="storage_edit_smb_server_domain">النطاق</string>
-    <string name="storage_edit_smb_server_connect_and_add">اتصل وأضف</string>
-    <string name="storage_edit_smb_server_add">أضف</string>
-    <string name="storage_edit_webdav_server_title_edit">حرّر خادم WebDAV</string>
-    <string name="storage_edit_webdav_server_title_add">أضف خادم WebDAV</string>
-    <string name="storage_edit_webdav_server_host">اسم المضيف</string>
-    <string name="storage_edit_webdav_server_host_error_empty">أدخل اسم المضيف</string>
-    <string name="storage_edit_webdav_server_host_error_invalid">اسم مضيف غير صالح</string>
-    <string name="storage_edit_webdav_server_port">منفذ</string>
-    <string name="storage_edit_webdav_server_port_error_invalid">منفذ غير صالح</string>
-    <string name="storage_edit_webdav_server_path">المسار</string>
-    <string name="storage_edit_webdav_server_path_placeholder">يمكن تركه فارغًا</string>
-    <string name="storage_edit_webdav_server_name">الاسم</string>
-    <string name="storage_edit_webdav_server_name_placeholder">استخدم اسم المضيف</string>
-    <string name="storage_edit_webdav_server_protocol">بروتوكول</string>
-    <string name="storage_edit_webdav_server_authentication_type">الاستيثاق</string>
-    <string-array name="storage_edit_webdav_server_authentication_type_entries">
-        <item>كلمة السر</item>
-        <item>رمز الوصول</item>
-        <item>لا شيء</item>
-    </string-array>
-    <string name="storage_edit_webdav_server_username">اسم المستخدم</string>
-    <string name="storage_edit_webdav_server_username_error_empty">أدخل اسم المستخدم</string>
-    <string name="storage_edit_webdav_server_password">كلمة السر</string>
-    <string name="storage_edit_webdav_server_access_token">رمز الوصول</string>
-    <string name="storage_edit_webdav_server_access_token_error_empty">أدخل رمز الوصول</string>
-    <string name="storage_edit_webdav_server_connect_and_add">اتصل وأضف</string>
-    <string name="storage_edit_webdav_server_add">أضف</string>
 
-    <string name="navigation_storage_subtitle_format">%1$s خالي من %2$s</string>
     <string name="navigation_add_storage">أضف وحدة تخزين…</string>
     <string name="navigation_standard_directory_alarms">المنبه</string>
     <string name="navigation_standard_directory_dcim">الكاميرا</string>
@@ -712,33 +577,9 @@
     <string name="text_editor_encoding">ترميز</string>
     <string name="text_editor_close_message">أمتأكد أنك تريد تجاهل التغييرات غير المحفوظة في هذا المستند؟</string>
 
-    <string name="ftp_server_title">خادم FTP </string>
-    <string name="ftp_server_state_title">الحالة</string>
-    <string name="ftp_server_state_summary_starting">يبدء…</string>
-    <string name="ftp_server_state_summary_running">قيد التشغيل</string>
-    <string name="ftp_server_state_summary_stopping">جارِ الإيقاف…</string>
-    <string name="ftp_server_state_summary_stopped">لم يبدأ</string>
-    <string name="ftp_server_url_title">الرابط</string>
-    <string name="ftp_server_url_summary_no_local_inet_address">عنوان IP المحلي غير معروف</string>
-    <string name="ftp_server_url_menu_copy_url">انسخ الرابط</string>
-    <string name="ftp_server_url_menu_copy_password">انسخ كلمة السر</string>
-    <string name="ftp_server_add_tile_title">أضف إلى الإعدادات السريعة</string>
-    <string name="ftp_server_add_tile_result_added">أُضيف ”خادم FTP“ للإعدادات السريعة</string>
-    <string name="ftp_server_add_tile_result_already_added">أُضيف \"خادم FTP\" بالفعل إلى الإعدادات السريعة</string>
-    <string name="ftp_server_add_tile_result_error">حدث خطأ أثناء إضافة \"خادم FTP\" إلى الإعدادات السريعة</string>
-    <string name="ftp_server_configuration_title">التهيئة</string>
-    <string name="ftp_server_anonymous_login_title">تسجيل دخول مجهول</string>
-    <string name="ftp_server_username_title">اسم المستخدم</string>
-    <string name="ftp_server_password_title">كلمة السر</string>
-    <string name="ftp_server_port_title">منفذ</string>
-    <string name="ftp_server_home_directory_title">المجلد الرئيسي</string>
-    <string name="ftp_server_writable_title">اسمح بالكتابة</string>
     <string name="settings_title">الإعدادات</string>
     <string name="settings_interface_title">واجهة المستخدم</string>
     <string name="settings_locale_title">لغة</string>
-    <string name="settings_theme_color_title">لون السمة</string>
-    <string name="settings_theme_color_summary">اللون الذي يظهر بشكل متكرر في التطبيق</string>
-    <string name="settings_material_design_3_title">تصميم ماتيريال 3</string>
     <string name="settings_night_mode_title">الوضع الليلي</string>
     <string-array name="settings_night_mode_entries">
         <item>اتبع النظام</item>
@@ -786,7 +627,6 @@
     </string-array>
     <string name="settings_show_pdf_thumbnail_pre_28_title">أظهر الصور المصغرة لمستندات PDF</string>
     <string name="settings_show_pdf_thumbnail_pre_28_summary">قد يجعل التطبيق غير مستقر على الإصدارات الأقدم من Android</string>
-    <string name="settings_read_remote_files_for_thumbnail_title">قراءة الملفات البعيدة للصور المصغرة</string>
 
     <string name="about_title">حول</string>
     <string name="about_version_title">الإصدار</string>

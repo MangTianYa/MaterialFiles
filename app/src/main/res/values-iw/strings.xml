@@ -14,7 +14,6 @@
     <string name="close">סגירה</string>
     <string name="copy">העתקה</string>
     <string name="cut">גזירה</string>
-    <string name="default_">ברירת מחדל</string>
     <string name="delete">מחיקה</string>
     <string name="discard">השלכה</string>
     <string name="edit">עריכה</string>
@@ -44,7 +43,6 @@
     <string name="share">שיתוף</string>
     <string name="show">הצגה</string>
     <string name="skip">דילוג</string>
-    <string name="stop">עצירה</string>
     <string name="system_default">ברירת המחדל של המערכת</string>
     <string name="unknown">לא ידוע</string>
     <string name="view">הצגה</string>
@@ -72,8 +70,6 @@
     <string name="notification_channel_background_activity_start_description">ביצוע פעולות כשהיישום פועל ברקע</string>
     <string name="notification_channel_file_job_name">פעולות קובץ</string>
     <string name="notification_channel_file_job_description">הצגה ושליטה בפעולות הקבצים</string>
-    <string name="notification_channel_ftp_server_name">שרת FTP</string>
-    <string name="notification_channel_ftp_server_description">הצגה ושליטה בשרת FTP</string>
 
     <string name="file_action_archive_password_title">צריך סיסמה</string>
     <string name="file_action_archive_password_message_format">„%1$s” מוגן בסיסמה</string>
@@ -239,7 +235,6 @@
     <string name="file_job_restore_selinux_context_error_message_format">שגיאה בעת שיחזור הקשר SELinux עבור “%1$s”.\n%2$s</string>
     <string name="file_job_write_error_title">שגיאה במהלך הכתיבה</string>
     <string name="file_job_write_error_message_format">שגיאה בעת כתיבת “%1$s”.\n%2$s</string>
-    <string name="file_job_get_information_error_message_format">אירעה שגיאה בקבלת מידע אודות “%1$s”.</string>
     <string name="file_job_remount_format">הצבה מחדש של “%1$s” כקריאה-כתיבה</string>
     <string name="file_job_remount_loading_format">מציב מחדשאת “%1$s” כקריאה-כתיבה…</string>
     <string name="file_job_remount_success_format">“%1$s” הוצב מחדש כקריאה-כתיבה</string>
@@ -300,17 +295,6 @@
         <item quantity="two">בחירת תיקיות</item>
         <item quantity="other">בחירת תיקיות</item>
     </plurals>
-    <plurals name="file_list_subtitle_directory_count_format">
-        <item quantity="one">תיקיה %1$,d</item>
-        <item quantity="two">%1$,d תיקיות</item>
-        <item quantity="other">%1$,d תיקיות</item>
-    </plurals>
-    <plurals name="file_list_subtitle_file_count_format">
-        <item quantity="one">קובץ %1$,d</item>
-        <item quantity="two">%1$,d קבצים</item>
-        <item quantity="other">%1$,d קבצים</item>
-    </plurals>
-    <string name="file_list_subtitle_separator">,\u0020</string>
     <string name="file_list_path_error_empty">נתיב אינו יכול להיות ריק</string>
     <string name="file_list_path_error_invalid">נתיב לא חוקי</string>
     <string name="file_list_action_view_sort">הצגה ומיון</string>
@@ -368,7 +352,6 @@
     <string name="file_properties_basic_parent_directory">תיקיית אב</string>
     <string name="file_properties_basic_archive_file">קובץ ארכיון</string>
     <string name="file_properties_basic_archive_entry">ארכיון ריק</string>
-    <string name="file_properties_basic_free_space">שטח פנוי</string>
     <string name="file_properties_permission">הרשאות</string>
     <string name="file_properties_permission_owner">בעלים</string>
     <string name="file_properties_permission_group">קבוצה</string>
@@ -408,7 +391,6 @@
     <string name="file_properties_media_date_time">נלקח על עצמו</string>
     <string name="file_properties_media_coordinates">קואורדינטות</string>
     <string name="file_properties_media_coordinates_format">%1$.3f, %2$.3f</string>
-    <string name="file_properties_media_address">מיקום</string>
     <string name="file_properties_image_gps_altitude">גובה</string>
     <string name="file_properties_image_gps_altitude_format">%1$,.3f m</string>
     <string name="file_properties_image_equipment">מצלמה</string>
@@ -468,10 +450,6 @@
     <string name="storage_list_empty">ללא אחסון</string>
     <string name="storage_add_storage_title">הוספת אחסון</string>
     <string name="storage_add_storage_document_tree">אחסון חיצוני</string>
-    <string name="storage_add_storage_ftp_server">שרת FTP</string>
-    <string name="storage_add_storage_sftp_server">שרת SFTP</string>
-    <string name="storage_add_storage_smb_server">שרת SMB</string>
-    <string name="storage_add_storage_webdav_server">שרת WebDAV</string>
     <string name="storage_edit_device_storage_title">עריכת אחסון ההתקן</string>
     <string name="storage_edit_device_storage_name">שם</string>
     <string name="storage_edit_device_storage_path">נתיב</string>
@@ -485,114 +463,7 @@
     <string name="storage_edit_document_tree_name">שם</string>
     <string name="storage_edit_document_tree_uri">כתובת</string>
     <string name="storage_edit_document_tree_path">נתיב</string>
-    <string name="storage_edit_ftp_server_title_edit">עריכת שרת FTP</string>
-    <string name="storage_edit_ftp_server_title_add">הוספת שרת FTP</string>
-    <string name="storage_edit_ftp_server_host">שם מארח</string>
-    <string name="storage_edit_ftp_server_host_error_empty">הזנת שם מארח</string>
-    <string name="storage_edit_ftp_server_host_error_invalid">שם מארח לא תקין</string>
-    <string name="storage_edit_ftp_server_port">פתחה</string>
-    <string name="storage_edit_ftp_server_port_error_invalid">פתחה אינה תקפה</string>
-    <string name="storage_edit_ftp_server_path">נתיב</string>
-    <string name="storage_edit_ftp_server_path_placeholder">ניתן להשאיר ריק</string>
-    <string name="storage_edit_ftp_server_name">שם</string>
-    <string name="storage_edit_ftp_server_name_placeholder">השתמש בשם מארח</string>
-    <string name="storage_edit_ftp_server_protocol">פרוטוקול</string>
-    <string name="storage_edit_ftp_server_authentication_type">אימות</string>
-    <string-array name="storage_edit_ftp_server_authentication_type_entries">
-        <item>סיסמה</item>
-        <item>אנונימי</item>
-    </string-array>
-    <string name="storage_edit_ftp_server_username">שם משתמש</string>
-    <string name="storage_edit_ftp_server_username_error_empty">הזנת שם משתמש</string>
-    <string name="storage_edit_ftp_server_password">סיסמה</string>
-    <string name="storage_edit_ftp_server_mode">מצב</string>
-    <string-array name="storage_edit_ftp_server_mode_entries">
-        <item>פעיל</item>
-        <item>פסיבי</item>
-    </string-array>
-    <string name="storage_edit_ftp_server_encoding">הצפנה</string>
-    <string name="storage_edit_ftp_server_connect_and_add">התחברות והוספה</string>
-    <string name="storage_edit_ftp_server_add">הוספה</string>
-    <string name="storage_edit_sftp_server_title_edit">עריכת שרת SFTP</string>
-    <string name="storage_edit_sftp_server_title_add">הוספת שרת SFTP</string>
-    <string name="storage_edit_sftp_server_host">שם מארח</string>
-    <string name="storage_edit_sftp_server_host_error_empty">הזנת שם מארח</string>
-    <string name="storage_edit_sftp_server_host_error_invalid">שם מארח לא תקין</string>
-    <string name="storage_edit_sftp_server_port">פתחה</string>
-    <string name="storage_edit_sftp_server_port_error_invalid">פתחה אינה תקפה</string>
-    <string name="storage_edit_sftp_server_path">נתיב</string>
-    <string name="storage_edit_sftp_server_path_placeholder">ניתן להשאיר ריק</string>
-    <string name="storage_edit_sftp_server_name">שם</string>
-    <string name="storage_edit_sftp_server_name_placeholder">השתמש בשם מארח</string>
-    <string name="storage_edit_sftp_server_authentication_type">אימות</string>
-    <string-array name="storage_edit_sftp_server_authentication_type_entries">
-        <item>סיסמה</item>
-        <item>מפתח ציבורי</item>
-    </string-array>
-    <string name="storage_edit_sftp_server_username">שם משתמש</string>
-    <string name="storage_edit_sftp_server_username_error_empty">הזנת שם משתמש</string>
-    <string name="storage_edit_sftp_server_password">סיסמה</string>
-    <string name="storage_edit_sftp_server_private_key">מפתח פרטי</string>
-    <string name="storage_edit_sftp_server_private_key_open_file">פתיחת קובץ</string>
-    <string name="storage_edit_sftp_server_private_key_error_empty">הזנת מפתח פרטי</string>
-    <string name="storage_edit_sftp_server_private_key_error_invalid">מפתח פרטי אינו תקף</string>
-    <string name="storage_edit_sftp_server_private_key_password">סיסמת מפתח פרטי</string>
-    <string name="storage_edit_sftp_server_private_key_password_placeholder">ניתן להשאיר ריק</string>
-    <string name="storage_edit_sftp_server_private_key_password_error_invalid">סיסמת מפתח פרטי לא חוקית</string>
-    <string name="storage_edit_sftp_server_connect_and_add">התחברות והוספה</string>
-    <string name="storage_edit_sftp_server_add">הוספה</string>
-    <string name="storage_add_lan_smb_server_loading">מחפש שרת SMB…</string>
-    <string name="storage_add_lan_smb_server_add">הוספה ידנית</string>
-    <string name="storage_edit_smb_server_title_edit">עריכת שרת SMB</string>
-    <string name="storage_edit_smb_server_title_add">הוספת שרת SMB</string>
-    <string name="storage_edit_smb_server_host">שם מארח</string>
-    <string name="storage_edit_smb_server_host_error_empty">הזנת שם מארח</string>
-    <string name="storage_edit_smb_server_host_error_invalid">שם מארח לא תקין</string>
-    <string name="storage_edit_smb_server_port">פתחה</string>
-    <string name="storage_edit_smb_server_port_error_invalid">פתחה אינה תקפה</string>
-    <string name="storage_edit_smb_server_path">נתיב</string>
-    <string name="storage_edit_smb_server_path_placeholder">ניתן להשאיר ריק</string>
-    <string name="storage_edit_smb_server_name">שם</string>
-    <string name="storage_edit_smb_server_name_placeholder">השתמש בשם מארח</string>
-    <string name="storage_edit_smb_server_authentication_type">אימות</string>
-    <string-array name="storage_edit_smb_server_authentication_type_entries">
-        <item>סיסמה</item>
-        <item>אורח</item>
-        <item>בעילום שם</item>
-    </string-array>
-    <string name="storage_edit_smb_server_username">שם משתמש</string>
-    <string name="storage_edit_smb_server_username_error_empty">הזנת שם משתמש</string>
-    <string name="storage_edit_smb_server_password">סיסמה</string>
-    <string name="storage_edit_smb_server_domain">שם תחום</string>
-    <string name="storage_edit_smb_server_connect_and_add">התחברות והוספה</string>
-    <string name="storage_edit_smb_server_add">הוספה</string>
-    <string name="storage_edit_webdav_server_title_edit">עריכת שרת WebDAV</string>
-    <string name="storage_edit_webdav_server_title_add">הוספת שרת WebDAV</string>
-    <string name="storage_edit_webdav_server_host">שם מארח</string>
-    <string name="storage_edit_webdav_server_host_error_empty">נא למלא שם מארח</string>
-    <string name="storage_edit_webdav_server_host_error_invalid">שם מארח שגוי</string>
-    <string name="storage_edit_webdav_server_port">פתחה</string>
-    <string name="storage_edit_webdav_server_port_error_invalid">פתחה שגויה</string>
-    <string name="storage_edit_webdav_server_path">נתיב</string>
-    <string name="storage_edit_webdav_server_path_placeholder">אפשר להשאיר ריק</string>
-    <string name="storage_edit_webdav_server_name">שם</string>
-    <string name="storage_edit_webdav_server_name_placeholder">להשתמש בשם המארח</string>
-    <string name="storage_edit_webdav_server_protocol">פרוטוקול</string>
-    <string name="storage_edit_webdav_server_authentication_type">אימות</string>
-    <string-array name="storage_edit_webdav_server_authentication_type_entries">
-        <item>סיסמה</item>
-        <item>אסימון גישה</item>
-        <item>אין</item>
-    </string-array>
-    <string name="storage_edit_webdav_server_username">שם משתמש</string>
-    <string name="storage_edit_webdav_server_username_error_empty">נא למלא שם משתמש</string>
-    <string name="storage_edit_webdav_server_password">סיסמה</string>
-    <string name="storage_edit_webdav_server_access_token">אסימון גישה</string>
-    <string name="storage_edit_webdav_server_access_token_error_empty">נא לספק אסימון גישה</string>
-    <string name="storage_edit_webdav_server_connect_and_add">התחברות והוספה</string>
-    <string name="storage_edit_webdav_server_add">הוספה</string>
 
-    <string name="navigation_storage_subtitle_format">%1$s פנוי מתוך %2$s</string>
     <string name="navigation_add_storage">הוספת אחסון…</string>
     <string name="navigation_standard_directory_alarms">אזעקה</string>
     <string name="navigation_standard_directory_dcim">DCIM</string>
@@ -624,33 +495,9 @@
     <string name="text_editor_encoding">הצפנה</string>
     <string name="text_editor_close_message">האם בוודאות ברצונך למחוק שינויים שלא נשמרו במסמך זה?</string>
 
-    <string name="ftp_server_title">שרת FTP</string>
-    <string name="ftp_server_state_title">סטטוס</string>
-    <string name="ftp_server_state_summary_starting">מתחיל…</string>
-    <string name="ftp_server_state_summary_running">פועל</string>
-    <string name="ftp_server_state_summary_stopping">עוצר…</string>
-    <string name="ftp_server_state_summary_stopped">לא התחיל</string>
-    <string name="ftp_server_url_title">כתובת</string>
-    <string name="ftp_server_url_summary_no_local_inet_address">כתובת ה־IP המקומית הזאת לא מוכרת</string>
-    <string name="ftp_server_url_menu_copy_url">העתקת כתובת</string>
-    <string name="ftp_server_url_menu_copy_password">העתקת סיסמה</string>
-    <string name="ftp_server_add_tile_title">הוספה להגדרות המהירות</string>
-    <string name="ftp_server_add_tile_result_added">\"שרת FTP\" נוסף להגדרות המהירות</string>
-    <string name="ftp_server_add_tile_result_already_added">\"שרת FTP\" כבר נוסף להגדרות המהירות</string>
-    <string name="ftp_server_add_tile_result_error">שגיאה בעת הוספת \"שרת FTP\" להגדרות המהירות</string>
-    <string name="ftp_server_configuration_title">תצורה</string>
-    <string name="ftp_server_anonymous_login_title">כניסה בעילום שם</string>
-    <string name="ftp_server_username_title">שם משתמש</string>
-    <string name="ftp_server_password_title">סיסמה</string>
-    <string name="ftp_server_port_title">פתחה</string>
-    <string name="ftp_server_home_directory_title">תיקיית שורש</string>
-    <string name="ftp_server_writable_title">איפשור כתיבה</string>
     <string name="settings_title">הגדרות</string>
     <string name="settings_interface_title">ממשק</string>
     <string name="settings_locale_title">שפה</string>
-    <string name="settings_theme_color_title">צבע ערכת נושא</string>
-    <string name="settings_theme_color_summary">צבע המופיע בתדירות הגבוהה ביותר ביישום</string>
-    <string name="settings_material_design_3_title">Material Design 3</string>
     <string name="settings_night_mode_title">מצב לילה</string>
     <string-array name="settings_night_mode_entries">
         <item>כמו במערכת</item>
@@ -695,7 +542,6 @@
     </string-array>
     <string name="settings_show_pdf_thumbnail_pre_28_title">הצגת תמונה ממוזערת למסמכי PDF</string>
     <string name="settings_show_pdf_thumbnail_pre_28_summary">עלול להפוך את היישום לבלתי יציב בגרסאות ישנות יותר של אנדרואיד</string>
-    <string name="settings_read_remote_files_for_thumbnail_title">קרא קבצים מרוחקים עבור תמונה ממוזערת</string>
 
     <string name="about_title">אודות</string>
     <string name="about_version_title">גירסה</string>

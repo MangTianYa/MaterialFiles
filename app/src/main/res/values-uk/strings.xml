@@ -14,7 +14,6 @@
     <string name="close">Закрити</string>
     <string name="copy">Копіювати</string>
     <string name="cut">Вирізати</string>
-    <string name="default_">За замовченням</string>
     <string name="delete">Видалити</string>
     <string name="discard">Відхилити</string>
     <string name="edit">Змінити</string>
@@ -44,7 +43,6 @@
     <string name="share">Поширити</string>
     <string name="show">Показати</string>
     <string name="skip">Пропустити</string>
-    <string name="stop">Зупинити</string>
     <string name="system_default">Системна за замовчуванням</string>
     <string name="unknown">Невідомий</string>
     <string name="view">Вигляд</string>
@@ -73,8 +71,6 @@
     <string name="notification_channel_background_activity_start_description">Робити дії, коли програма у фоновому режимі</string>
     <string name="notification_channel_file_job_name">Операції з файлами</string>
     <string name="notification_channel_file_job_description">Відображати та контролювати файлові операції</string>
-    <string name="notification_channel_ftp_server_name">FTP-сервер</string>
-    <string name="notification_channel_ftp_server_description">Відображати та контролювати FTP сервер</string>
 
     <string name="file_action_archive_password_title">Потрібен пароль</string>
     <string name="file_action_archive_password_message_format">“%1$s” захищений паролем.</string>
@@ -260,7 +256,6 @@
     <string name="file_job_restore_selinux_context_error_message_format">Сталася помилка під час відновлення контексту SELinux для “%1$s”.\n%2$s</string>
     <string name="file_job_write_error_title">Помилка під час запису</string>
     <string name="file_job_write_error_message_format">Сталася помилка під час запису «%1$s».\n%2$s</string>
-    <string name="file_job_get_information_error_message_format">Сталася помилка під час отримання інформації про «%1$s».</string>
     <string name="file_job_remount_format">Перемонтувати “%1$s” для читання/запису</string>
     <string name="file_job_remount_loading_format">“%1$s” перемонтовується для читання/запису…</string>
     <string name="file_job_remount_success_format">“%1$s” перемонтовано для читання/запису</string>
@@ -326,19 +321,6 @@
         <item quantity="many">Вибрати теки</item>
         <item quantity="other">Вибрати теки</item>
     </plurals>
-    <plurals name="file_list_subtitle_directory_count_format">
-        <item quantity="one">%1$,d тека</item>
-        <item quantity="few">%1$,d теки</item>
-        <item quantity="many">%1$,d тек</item>
-        <item quantity="other">%1$,d тек</item>
-    </plurals>
-    <plurals name="file_list_subtitle_file_count_format">
-        <item quantity="one">%1$,d файл</item>
-        <item quantity="few">%1$,d файли</item>
-        <item quantity="many">%1$,d файлів</item>
-        <item quantity="other">%1$,d файлів</item>
-    </plurals>
-    <string name="file_list_subtitle_separator">,\u0020</string>
     <string name="file_list_path_error_empty">Шлях не може бути порожнім</string>
     <string name="file_list_path_error_invalid">Недійсний шлях</string>
     <string name="file_list_action_view_sort">Вигляд та сортування</string>
@@ -397,7 +379,6 @@
     <string name="file_properties_basic_parent_directory">Батьківська тека</string>
     <string name="file_properties_basic_archive_file">Файл архіву</string>
     <string name="file_properties_basic_archive_entry">Точка входу в архіві</string>
-    <string name="file_properties_basic_free_space">Вільний простір</string>
     <string name="file_properties_permission">Дозволи</string>
     <string name="file_properties_permission_owner">Власник</string>
     <string name="file_properties_permission_group">Група</string>
@@ -437,7 +418,6 @@
     <string name="file_properties_media_date_time">Знято</string>
     <string name="file_properties_media_coordinates">Координати</string>
     <string name="file_properties_media_coordinates_format">%1$.3f, %2$.3f</string>
-    <string name="file_properties_media_address">Розташування</string>
     <string name="file_properties_image_gps_altitude">Висота</string>
     <string name="file_properties_image_gps_altitude_format">%1$,.3f м</string>
     <string name="file_properties_image_equipment">Камера</string>
@@ -498,10 +478,6 @@
     <string name="storage_list_empty">Нема сховища</string>
     <string name="storage_add_storage_title">Додати сховище</string>
     <string name="storage_add_storage_document_tree">Зовнішнє сховище</string>
-    <string name="storage_add_storage_ftp_server">FTP-сервер</string>
-    <string name="storage_add_storage_sftp_server">SFTP-сервер</string>
-    <string name="storage_add_storage_smb_server">SMB-сервер</string>
-    <string name="storage_add_storage_webdav_server">WebDAV сервер</string>
     <string name="storage_edit_device_storage_title">Змінити сховище пристрою</string>
     <string name="storage_edit_device_storage_name">Назва</string>
     <string name="storage_edit_device_storage_path">Шлях</string>
@@ -515,114 +491,7 @@
     <string name="storage_edit_document_tree_name">Назва</string>
     <string name="storage_edit_document_tree_uri">URI</string>
     <string name="storage_edit_document_tree_path">Шлях</string>
-    <string name="storage_edit_ftp_server_title_edit">Змінити FTP-сервер</string>
-    <string name="storage_edit_ftp_server_title_add">Додати FTP-сервер</string>
-    <string name="storage_edit_ftp_server_host">Назва хоста</string>
-    <string name="storage_edit_ftp_server_host_error_empty">Уведіть назву хоста</string>
-    <string name="storage_edit_ftp_server_host_error_invalid">Недійсна назва хоста</string>
-    <string name="storage_edit_ftp_server_port">Порт</string>
-    <string name="storage_edit_ftp_server_port_error_invalid">Недійсний порт</string>
-    <string name="storage_edit_ftp_server_path">Шлях</string>
-    <string name="storage_edit_ftp_server_path_placeholder">Може бути порожнім</string>
-    <string name="storage_edit_ftp_server_name">Назва</string>
-    <string name="storage_edit_ftp_server_name_placeholder">Використовувати назву хоста</string>
-    <string name="storage_edit_ftp_server_protocol">Протокол</string>
-    <string name="storage_edit_ftp_server_authentication_type">Автентифікація</string>
-    <string-array name="storage_edit_ftp_server_authentication_type_entries">
-        <item>Пароль</item>
-        <item>Анонім</item>
-    </string-array>
-    <string name="storage_edit_ftp_server_username">Імʼя користувача</string>
-    <string name="storage_edit_ftp_server_username_error_empty">Уведіть імʼя користувача</string>
-    <string name="storage_edit_ftp_server_password">Пароль</string>
-    <string name="storage_edit_ftp_server_mode">Режим</string>
-    <string-array name="storage_edit_ftp_server_mode_entries">
-        <item>Активний</item>
-        <item>Пасивний</item>
-    </string-array>
-    <string name="storage_edit_ftp_server_encoding">Кодування</string>
-    <string name="storage_edit_ftp_server_connect_and_add">З\'єднатися та додати</string>
-    <string name="storage_edit_ftp_server_add">Додати</string>
-    <string name="storage_edit_sftp_server_title_edit">Змінити SFTP-сервер</string>
-    <string name="storage_edit_sftp_server_title_add">Додати SFTP-сервер</string>
-    <string name="storage_edit_sftp_server_host">Назва хоста</string>
-    <string name="storage_edit_sftp_server_host_error_empty">Уведіть назву хоста</string>
-    <string name="storage_edit_sftp_server_host_error_invalid">Недійсна назва хоста</string>
-    <string name="storage_edit_sftp_server_port">Порт</string>
-    <string name="storage_edit_sftp_server_port_error_invalid">Недійсний порт</string>
-    <string name="storage_edit_sftp_server_path">Шлях</string>
-    <string name="storage_edit_sftp_server_path_placeholder">Може бути порожнім</string>
-    <string name="storage_edit_sftp_server_name">Назва</string>
-    <string name="storage_edit_sftp_server_name_placeholder">Використовувати назву хоста</string>
-    <string name="storage_edit_sftp_server_authentication_type">Автентифікація</string>
-    <string-array name="storage_edit_sftp_server_authentication_type_entries">
-        <item>Пароль</item>
-        <item>Відкритий ключ</item>
-    </string-array>
-    <string name="storage_edit_sftp_server_username">Імʼя користувача</string>
-    <string name="storage_edit_sftp_server_username_error_empty">Уведіть імʼя користувача</string>
-    <string name="storage_edit_sftp_server_password">Пароль</string>
-    <string name="storage_edit_sftp_server_private_key">Закритий ключ</string>
-    <string name="storage_edit_sftp_server_private_key_open_file">Відкрити файл</string>
-    <string name="storage_edit_sftp_server_private_key_error_empty">Уведіть закритий ключ</string>
-    <string name="storage_edit_sftp_server_private_key_error_invalid">Недійсний закритий ключ</string>
-    <string name="storage_edit_sftp_server_private_key_password">Пароль закритого ключа</string>
-    <string name="storage_edit_sftp_server_private_key_password_placeholder">Може бути порожнім</string>
-    <string name="storage_edit_sftp_server_private_key_password_error_invalid">Недійсний пароль закритого ключа</string>
-    <string name="storage_edit_sftp_server_connect_and_add">З\'єднатися та додати</string>
-    <string name="storage_edit_sftp_server_add">Додати</string>
-    <string name="storage_add_lan_smb_server_loading">Пошук SMB-серверів…</string>
-    <string name="storage_add_lan_smb_server_add">Додати вручну</string>
-    <string name="storage_edit_smb_server_title_edit">Змінити SMB-сервер</string>
-    <string name="storage_edit_smb_server_title_add">Додати SMB-сервер</string>
-    <string name="storage_edit_smb_server_host">Назва хоста</string>
-    <string name="storage_edit_smb_server_host_error_empty">Уведіть назву хоста</string>
-    <string name="storage_edit_smb_server_host_error_invalid">Недійсна назва хоста</string>
-    <string name="storage_edit_smb_server_port">Порт</string>
-    <string name="storage_edit_smb_server_port_error_invalid">Недійсний порт</string>
-    <string name="storage_edit_smb_server_path">Шлях</string>
-    <string name="storage_edit_smb_server_path_placeholder">Може бути порожнім</string>
-    <string name="storage_edit_smb_server_name">Назва</string>
-    <string name="storage_edit_smb_server_name_placeholder">Використовувати назву хоста</string>
-    <string name="storage_edit_smb_server_authentication_type">Автентифікація</string>
-    <string-array name="storage_edit_smb_server_authentication_type_entries">
-        <item>Пароль</item>
-        <item>Гість</item>
-        <item>Анонім</item>
-    </string-array>
-    <string name="storage_edit_smb_server_username">Імʼя користувача</string>
-    <string name="storage_edit_smb_server_username_error_empty">Введіть ім\'я користувача</string>
-    <string name="storage_edit_smb_server_password">Пароль</string>
-    <string name="storage_edit_smb_server_domain">Домен</string>
-    <string name="storage_edit_smb_server_connect_and_add">З\'єднатися та додати</string>
-    <string name="storage_edit_smb_server_add">Додати</string>
-    <string name="storage_edit_webdav_server_title_edit">Змінити WebDAV сервер</string>
-    <string name="storage_edit_webdav_server_title_add">Додати WebDAV сервер</string>
-    <string name="storage_edit_webdav_server_host">Назва хоста</string>
-    <string name="storage_edit_webdav_server_host_error_empty">Уведіть назву хоста</string>
-    <string name="storage_edit_webdav_server_host_error_invalid">Недійсна назва хоста</string>
-    <string name="storage_edit_webdav_server_port">Порт</string>
-    <string name="storage_edit_webdav_server_port_error_invalid">Недійсний порт</string>
-    <string name="storage_edit_webdav_server_path">Шлях</string>
-    <string name="storage_edit_webdav_server_path_placeholder">Може бути порожнім</string>
-    <string name="storage_edit_webdav_server_name">Назва</string>
-    <string name="storage_edit_webdav_server_name_placeholder">Використовувати назву хоста</string>
-    <string name="storage_edit_webdav_server_protocol">Протокол</string>
-    <string name="storage_edit_webdav_server_authentication_type">Автентифікація</string>
-    <string-array name="storage_edit_webdav_server_authentication_type_entries">
-        <item>Пароль</item>
-        <item>Токен доступу</item>
-        <item>Жодного</item>
-    </string-array>
-    <string name="storage_edit_webdav_server_username">Імʼя користувача</string>
-    <string name="storage_edit_webdav_server_username_error_empty">Введіть ім\'я користувача</string>
-    <string name="storage_edit_webdav_server_password">Пароль</string>
-    <string name="storage_edit_webdav_server_access_token">Токен доступу</string>
-    <string name="storage_edit_webdav_server_access_token_error_empty">Введіть токен доступу</string>
-    <string name="storage_edit_webdav_server_connect_and_add">З\'єднатися та додати</string>
-    <string name="storage_edit_webdav_server_add">Додати</string>
 
-    <string name="navigation_storage_subtitle_format">%1$s вільно з %2$s</string>
     <string name="navigation_add_storage">Додати сховище…</string>
     <string name="navigation_standard_directory_alarms">Нагадування</string>
     <string name="navigation_standard_directory_dcim">DCIM</string>
@@ -654,33 +523,9 @@
     <string name="text_editor_encoding">Кодування</string>
     <string name="text_editor_close_message">Ви впевнені, що бажаєте скасувати незбережені зміни в цьому документі?</string>
 
-    <string name="ftp_server_title">FTP-сервер</string>
-    <string name="ftp_server_state_title">Стан</string>
-    <string name="ftp_server_state_summary_starting">Запуск…</string>
-    <string name="ftp_server_state_summary_running">Працює</string>
-    <string name="ftp_server_state_summary_stopping">Зупинка…</string>
-    <string name="ftp_server_state_summary_stopped">Не запущено</string>
-    <string name="ftp_server_url_title">URL</string>
-    <string name="ftp_server_url_summary_no_local_inet_address">Локальна IP-адреса невідома</string>
-    <string name="ftp_server_url_menu_copy_url">Копіювати URL</string>
-    <string name="ftp_server_url_menu_copy_password">Копіювати пароль</string>
-    <string name="ftp_server_add_tile_title">Додати до швидких налаштувань</string>
-    <string name="ftp_server_add_tile_result_added">“FTP сервер” доданий до швидких налаштувань</string>
-    <string name="ftp_server_add_tile_result_already_added">“FTP сервер” вже доданий до швидких налаштувань</string>
-    <string name="ftp_server_add_tile_result_error">Помилка під час додавання “FTP серверу” до швидких налаштувань</string>
-    <string name="ftp_server_configuration_title">Конфігурація</string>
-    <string name="ftp_server_anonymous_login_title">Анонімний вхід</string>
-    <string name="ftp_server_username_title">Імʼя користувача</string>
-    <string name="ftp_server_password_title">Пароль</string>
-    <string name="ftp_server_port_title">Порт</string>
-    <string name="ftp_server_home_directory_title">Тека Root</string>
-    <string name="ftp_server_writable_title">Дозволити запис</string>
     <string name="settings_title">Налаштування</string>
     <string name="settings_interface_title">Інтерфейс</string>
     <string name="settings_locale_title">Мова</string>
-    <string name="settings_theme_color_title">Колір теми</string>
-    <string name="settings_theme_color_summary">Колір, який найчастіше з’являється у застосунку</string>
-    <string name="settings_material_design_3_title">Material Design 3</string>
     <string name="settings_night_mode_title">Нічний режим</string>
     <string-array name="settings_night_mode_entries">
         <item>Дотримуватись системи</item>
@@ -726,7 +571,6 @@
     </string-array>
     <string name="settings_show_pdf_thumbnail_pre_28_title">Показувати прев\'ю для PDF-документів</string>
     <string name="settings_show_pdf_thumbnail_pre_28_summary">Може зробити застосунок нестабільним на старих версіях Android</string>
-    <string name="settings_read_remote_files_for_thumbnail_title">Зчитувати віддалені файли для ескізів</string>
 
     <string name="about_title">Про застосунок</string>
     <string name="about_version_title">Версія</string>

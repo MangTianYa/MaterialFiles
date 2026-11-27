@@ -12,7 +12,6 @@
     <string name="close">Închide</string>
     <string name="copy">Copiază</string>
     <string name="cut">Decupează</string>
-    <string name="default_">Implicit</string>
     <string name="delete">Șterge</string>
     <string name="discard">Aruncă</string>
     <string name="edit">Editează</string>
@@ -42,7 +41,6 @@
     <string name="share">Partajează</string>
     <string name="show">Arată</string>
     <string name="skip">Omite</string>
-    <string name="stop">Oprire</string>
     <string name="system_default">Prestabilit de sistem</string>
     <string name="unknown">Necunoscut</string>
     <string name="view">Vizualizează</string>
@@ -70,8 +68,6 @@
     <string name="notification_channel_background_activity_start_description">Efectuează acțiuni în timp ce aplicația este în fundal</string>
     <string name="notification_channel_file_job_name">Operațiuni asupra fișierelor</string>
     <string name="notification_channel_file_job_description">Afișează și controlează operațiunile fișierelor</string>
-    <string name="notification_channel_ftp_server_name">Server FTP</string>
-    <string name="notification_channel_ftp_server_description">Arată și controlează serverul FTP</string>
 
     <string name="file_action_archive_password_title">Parola este necesară</string>
     <string name="file_action_archive_password_message_format">\"%1$s\" este protejat de o parolă.</string>
@@ -237,7 +233,6 @@
     <string name="file_job_restore_selinux_context_error_message_format">A apărut o eroare în timpul schimbării contextului SELinux la \"%1$s”.\n%2$s</string>
     <string name="file_job_write_error_title">Eroare în timpul scrierii</string>
     <string name="file_job_write_error_message_format">A apărut o eroare în timpul scrierii “%1$s”.\n%2$s</string>
-    <string name="file_job_get_information_error_message_format">A apărut o eroare în timpul obținerii informațiilor despre \"%1$s\".</string>
     <string name="file_job_remount_format">Remontează \"%1$s\" cu permisiuni de citire și scriere</string>
     <string name="file_job_remount_loading_format">Se remontează  \"%1$s\" cu permisiuni de citire și scriere…</string>
     <string name="file_job_remount_success_format">\"%1$s\" a fost remontat cu permisiuni de citire și scriere</string>
@@ -286,17 +281,6 @@
     <string name="file_create_directory_title">Dosar nou</string>
 
     <string name="file_list_title">Fișiere</string>
-    <plurals name="file_list_subtitle_directory_count_format">
-        <item quantity="one">%1$,d dosar</item>
-        <item quantity="few">%1$,d dosare</item>
-        <item quantity="other">%1$,d de dosare</item>
-    </plurals>
-    <plurals name="file_list_subtitle_file_count_format">
-        <item quantity="one">%1$,d fișier</item>
-        <item quantity="few">%1$,d fișiere</item>
-        <item quantity="other">%1$,d de fișiere</item>
-    </plurals>
-    <string name="file_list_subtitle_separator">,\u0020</string>
     <string name="file_list_path_error_empty">Calea nu poate fi liberă</string>
     <string name="file_list_path_error_invalid">Cale invalidă</string>
     <string name="file_list_action_view_sort">Vizualizare și sortare</string>
@@ -352,14 +336,12 @@
     <string name="file_properties_basic_parent_directory">Dosar părinte</string>
     <string name="file_properties_basic_archive_file">Arhivează fișierul</string>
     <string name="file_properties_basic_archive_entry">Articol din arhivă</string>
-    <string name="file_properties_basic_free_space">Spațiu liber</string>
     <string name="file_properties_image">Imagine</string>
     <string name="file_properties_media_dimensions">Dimensiuni</string>
     <string name="file_properties_media_dimensions_format">%1$d \u00d7 %2$d</string>
     <string name="file_properties_media_date_time">Fotografiat pe</string>
     <string name="file_properties_media_coordinates">Coordonate</string>
     <string name="file_properties_media_coordinates_format">%1$.3f, %2$.3f</string>
-    <string name="file_properties_media_address">Locație</string>
     <string name="file_properties_image_gps_altitude">Altitudine</string>
     <string name="file_properties_image_gps_altitude_format">%1$,.3f m</string>
     <string name="file_properties_image_equipment">Camera</string>
@@ -413,9 +395,6 @@
     <string name="storage_list_empty">Nu există stocare</string>
     <string name="storage_add_storage_title">Adaugă stocare</string>
     <string name="storage_add_storage_document_tree">Stocare externă</string>
-    <string name="storage_add_storage_ftp_server">Server FTP</string>
-    <string name="storage_add_storage_sftp_server">Server SFTP</string>
-    <string name="storage_add_storage_smb_server">Server SMB</string>
     <string name="storage_edit_device_storage_title">Editează stocarea dispozitivului</string>
     <string name="storage_edit_device_storage_name">Nume</string>
     <string name="storage_edit_device_storage_path">Cale</string>
@@ -424,88 +403,6 @@
     <string name="storage_edit_document_tree_name">Nume</string>
     <string name="storage_edit_document_tree_uri">URI</string>
     <string name="storage_edit_document_tree_path">Cale</string>
-    <string name="storage_edit_ftp_server_title_edit">Editează serverul FTP</string>
-    <string name="storage_edit_ftp_server_title_add">Adaugă serverul FTP</string>
-    <string name="storage_edit_ftp_server_host">Hostname</string>
-    <string name="storage_edit_ftp_server_host_error_empty">Editează hostname</string>
-    <string name="storage_edit_ftp_server_host_error_invalid">Hostname invalid</string>
-    <string name="storage_edit_ftp_server_port">Port</string>
-    <string name="storage_edit_ftp_server_port_error_invalid">Port invalid</string>
-    <string name="storage_edit_ftp_server_path">Cale</string>
-    <string name="storage_edit_ftp_server_path_placeholder">Poate fi lăsat liber</string>
-    <string name="storage_edit_ftp_server_name">Nume</string>
-    <string name="storage_edit_ftp_server_name_placeholder">Folosește hostname</string>
-    <string name="storage_edit_ftp_server_protocol">Protocol</string>
-    <string name="storage_edit_ftp_server_authentication_type">Autentificare</string>
-    <string-array name="storage_edit_ftp_server_authentication_type_entries">
-        <item>Parolă</item>
-        <item>Anonim</item>
-    </string-array>
-    <string name="storage_edit_ftp_server_username">Nume de utilizator</string>
-    <string name="storage_edit_ftp_server_username_error_empty">Introdu un nume de utilizator</string>
-    <string name="storage_edit_ftp_server_password">Parolă</string>
-    <string name="storage_edit_ftp_server_mode">Mod</string>
-    <string-array name="storage_edit_ftp_server_mode_entries">
-        <item>Activ</item>
-        <item>Pasiv</item>
-    </string-array>
-    <string name="storage_edit_ftp_server_encoding">Encodare</string>
-    <string name="storage_edit_ftp_server_connect_and_add">Conectează și adaugă</string>
-    <string name="storage_edit_ftp_server_add">Adaugă</string>
-    <string name="storage_edit_sftp_server_title_edit">Editează serverul SFTP</string>
-    <string name="storage_edit_sftp_server_title_add">Adaugă server SFTP</string>
-    <string name="storage_edit_sftp_server_host">Nume de gazdă</string>
-    <string name="storage_edit_sftp_server_host_error_empty">Introdu un nume de gazdă</string>
-    <string name="storage_edit_sftp_server_host_error_invalid">Hostname invalid</string>
-    <string name="storage_edit_sftp_server_port">Port</string>
-    <string name="storage_edit_sftp_server_port_error_invalid">Port greșit</string>
-    <string name="storage_edit_sftp_server_path">Cale</string>
-    <string name="storage_edit_sftp_server_path_placeholder">Poate fi lăsat gol</string>
-    <string name="storage_edit_sftp_server_name">Nume</string>
-    <string name="storage_edit_sftp_server_name_placeholder">Folosește nume de gazdă</string>
-    <string name="storage_edit_sftp_server_authentication_type">Autentificare</string>
-    <string-array name="storage_edit_sftp_server_authentication_type_entries">
-        <item>Parolă</item>
-        <item>Cheie publică</item>
-    </string-array>
-    <string name="storage_edit_sftp_server_username">Nume de utilizator</string>
-    <string name="storage_edit_sftp_server_username_error_empty">Introdu un nume de utilizator</string>
-    <string name="storage_edit_sftp_server_password">Parolă</string>
-    <string name="storage_edit_sftp_server_private_key">Cheie privată</string>
-    <string name="storage_edit_sftp_server_private_key_open_file">Deschide fișier</string>
-    <string name="storage_edit_sftp_server_private_key_error_empty">Introdu o cheie privată</string>
-    <string name="storage_edit_sftp_server_private_key_error_invalid">Cheie privată greșită</string>
-    <string name="storage_edit_sftp_server_private_key_password">Parola cheii private</string>
-    <string name="storage_edit_sftp_server_private_key_password_placeholder">Poate fi lăsat liber</string>
-    <string name="storage_edit_sftp_server_private_key_password_error_invalid">Parola cheii private este invalidă</string>
-    <string name="storage_edit_sftp_server_connect_and_add">Conectează și adaugă</string>
-    <string name="storage_edit_sftp_server_add">Adaugă</string>
-    <string name="storage_add_lan_smb_server_loading">Se caută servere SMB…</string>
-    <string name="storage_add_lan_smb_server_add">Adaugă manual</string>
-    <string name="storage_edit_smb_server_title_edit">Editează serverul SMB</string>
-    <string name="storage_edit_smb_server_title_add">Adaugă server SMB</string>
-    <string name="storage_edit_smb_server_host">Nume de gazdă</string>
-    <string name="storage_edit_smb_server_host_error_empty">Introdu un nume de gazdă</string>
-    <string name="storage_edit_smb_server_host_error_invalid">Hostname invalid</string>
-    <string name="storage_edit_smb_server_port">Port</string>
-    <string name="storage_edit_smb_server_port_error_invalid">Port greșit</string>
-    <string name="storage_edit_smb_server_path">Cale</string>
-    <string name="storage_edit_smb_server_path_placeholder">Poate fi lăsat gol</string>
-    <string name="storage_edit_smb_server_name">Nume</string>
-    <string name="storage_edit_smb_server_name_placeholder">Folosește nume de gazdă</string>
-    <string name="storage_edit_smb_server_authentication_type">Autentificare</string>
-    <string-array name="storage_edit_smb_server_authentication_type_entries">
-        <item>Parolă</item>
-        <item>Vizitator</item>
-        <item>Anonim</item>
-    </string-array>
-    <string name="storage_edit_smb_server_username">Nume utilizator</string>
-    <string name="storage_edit_smb_server_username_error_empty">Introdu un nume de utilizator</string>
-    <string name="storage_edit_smb_server_password">Parolă</string>
-    <string name="storage_edit_smb_server_domain">Domeniu</string>
-    <string name="storage_edit_smb_server_connect_and_add">Conectează și adaugă</string>
-    <string name="storage_edit_smb_server_add">Adaugă</string>
-    <string name="navigation_storage_subtitle_format">%1$s liber din %2$s</string>
     <string name="navigation_add_storage">Adăugare stocare…</string>
     <string name="navigation_standard_directory_alarms">Alarme</string>
     <string name="navigation_standard_directory_dcim">DCIM</string>
@@ -534,30 +431,9 @@
     <string name="text_editor_encoding">Codificare</string>
     <string name="text_editor_close_message">Ești sigur că dorești să renunți schimbările nesalvate la cest document?</string>
 
-    <string name="ftp_server_title">Server FTP</string>
-    <string name="ftp_server_state_title">Stare</string>
-    <string name="ftp_server_state_summary_starting">Pornește…</string>
-    <string name="ftp_server_state_summary_running">Funcționează</string>
-    <string name="ftp_server_state_summary_stopping">Se oprește…</string>
-    <string name="ftp_server_state_summary_stopped">Nu este pornit</string>
-    <string name="ftp_server_url_title">URL</string>
-    <string name="ftp_server_url_summary_no_local_inet_address">Adresa IP locală nu este cunoscută</string>
-    <string name="ftp_server_url_menu_copy_url">Copiază URL</string>
-    <string name="ftp_server_url_menu_copy_password">Copiază parola</string>
-    <string name="ftp_server_add_tile_title">Adaugă la Setările Rapide</string>
-    <string name="ftp_server_configuration_title">Configurare</string>
-    <string name="ftp_server_anonymous_login_title">Autentificare anonimă</string>
-    <string name="ftp_server_username_title">Nume utilizator</string>
-    <string name="ftp_server_password_title">Parolă</string>
-    <string name="ftp_server_port_title">Port</string>
-    <string name="ftp_server_home_directory_title">Dosar rădăcină</string>
-    <string name="ftp_server_writable_title">Permite scrierea</string>
     <string name="settings_title">Setări</string>
     <string name="settings_interface_title">Interfață</string>
     <string name="settings_locale_title">Limbă</string>
-    <string name="settings_theme_color_title">Culoarea temei</string>
-    <string name="settings_theme_color_summary">Culoarea ce apare cel mai frecvent în aplicație</string>
-    <string name="settings_material_design_3_title">Material Design 3</string>
     <string name="settings_night_mode_title">Mod de noapte</string>
     <string-array name="settings_night_mode_entries">
         <item>Urmează sistemul</item>
@@ -601,7 +477,6 @@
         <item>Întreabă ce să fac</item>
     </string-array>
     <string name="settings_show_pdf_thumbnail_pre_28_summary">Ar putea face aplicația instabilă pe versiunile vechi de Android</string>
-    <string name="settings_read_remote_files_for_thumbnail_title">Citește fișiere la distanță pentru miniaturi</string>
 
     <string name="about_title">Despre</string>
     <string name="about_version_title">Versiune</string>

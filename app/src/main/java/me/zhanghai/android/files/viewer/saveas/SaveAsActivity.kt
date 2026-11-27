@@ -13,8 +13,10 @@ import me.zhanghai.android.files.R
 import me.zhanghai.android.files.app.AppActivity
 import me.zhanghai.android.files.file.MimeType
 import me.zhanghai.android.files.file.asMimeTypeOrNull
+import me.zhanghai.android.files.file.isAppPrivatePath
 import me.zhanghai.android.files.filejob.FileJobService
 import me.zhanghai.android.files.filelist.FileListActivity
+import me.zhanghai.android.files.filelist.name
 import me.zhanghai.android.files.util.saveAsPath
 import me.zhanghai.android.files.util.showToast
 
@@ -28,12 +30,12 @@ class SaveAsActivity : AppActivity() {
         val intent = intent
         val mimeType = intent.type?.asMimeTypeOrNull() ?: MimeType.ANY
         val path = intent.saveAsPath
-        if (path == null) {
+        if (path == null || path.isAppPrivatePath(allowOpenCache = false)) {
             showToast(R.string.save_as_error)
             finish()
             return
         }
-        val title = path.fileName.toString()
+        val title = path.name
         val initialPath =
             Paths.get(
                 Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).path
@@ -46,7 +48,17 @@ class SaveAsActivity : AppActivity() {
             finish()
             return
         }
-        FileJobService.save(intent.saveAsPath!!, result, this)
+        val saveAsPath = intent.saveAsPath
+        if (
+            saveAsPath == null ||
+            saveAsPath.isAppPrivatePath(allowOpenCache = false) ||
+            result.isAppPrivatePath(allowOpenCache = false)
+        ) {
+            showToast(R.string.save_as_error)
+            finish()
+            return
+        }
+        FileJobService.save(saveAsPath, result, this)
         finish()
     }
 }

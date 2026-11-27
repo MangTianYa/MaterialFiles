@@ -12,7 +12,6 @@
     <string name="close">Sulje</string>
     <string name="copy">Kopioi</string>
     <string name="cut">Leikkaa</string>
-    <string name="default_">Oletus</string>
     <string name="delete">Poista</string>
     <string name="discard">Hylkää</string>
     <string name="edit">Muokkaa</string>
@@ -42,7 +41,6 @@
     <string name="share">Jaa</string>
     <string name="show">Näytä</string>
     <string name="skip">Ohita</string>
-    <string name="stop">Pysäytä</string>
     <string name="system_default">Järjestelmän oletus</string>
     <string name="unknown">Tuntematon</string>
     <!-- android.R.string.app_not_found -->
@@ -63,8 +61,6 @@
     <string name="notification_channel_background_activity_start_description">Suorita toimintoja sovelluksen ollessa taustalla</string>
     <string name="notification_channel_file_job_name">Tiedostotoiminnot</string>
     <string name="notification_channel_file_job_description">Näytä ja hallinnoi tiedostotoimintoja</string>
-    <string name="notification_channel_ftp_server_name">FTP-palvelin</string>
-    <string name="notification_channel_ftp_server_description">Näytä ja hallinnoi FTP-palvelinta</string>
 
     <plurals name="file_job_archive_scan_notification_title_format">
         <item quantity="one">Valmistaudutaan pakkaamaan %1$,d tiedosto (%2$s)</item>
@@ -199,7 +195,6 @@
     <string name="file_job_restore_selinux_context_error_message_format">Tapahtui virhe palauttaessa SELinux-kontekstia kohteelle “%1$s”.\n%2$s</string>
     <string name="file_job_write_error_title">Virhe kirjoittamisessa</string>
     <string name="file_job_write_error_message_format">Tapahtui virhe kirjoittaessa “%1$s”.\n%2$s</string>
-    <string name="file_job_get_information_error_message_format">Tapahtui virhe hakiessa tietoa kohteesta “%1$s”.</string>
     <string name="file_job_action_all">Suorita toiminto kaikille tiedostoille</string>
 
     <string name="file_open_apk_message">Tämä tiedosto on Android-asennustiedosto. Haluatko asentaa sen vai nähdä sen sisällön?</string>
@@ -241,15 +236,6 @@
     <string name="file_create_directory_title">Uusi kansio</string>
 
     <string name="file_list_title">Tiedostot</string>
-    <plurals name="file_list_subtitle_directory_count_format">
-        <item quantity="one">%1$,d kansio</item>
-        <item quantity="other">%1$,d kansiota</item>
-    </plurals>
-    <plurals name="file_list_subtitle_file_count_format">
-        <item quantity="one">%1$,d tiedosto</item>
-        <item quantity="other">%1$,d tiedostoa</item>
-    </plurals>
-    <string name="file_list_subtitle_separator">,\u0020</string>
     <string name="file_list_path_error_empty">Polku ei voi olla tyhjä</string>
     <string name="file_list_path_error_invalid">Virheellinen polku</string>
     <string name="file_list_action_view_sort">Näkymä ja lajittelu</string>
@@ -302,14 +288,12 @@
     </plurals>
     <string name="file_properties_basic_last_modification_time">Viimeksi muokattu</string>
     <string name="file_properties_basic_parent_directory">Ylähakemisto</string>
-    <string name="file_properties_basic_free_space">Vapaata tilaa</string>
     <string name="file_properties_image">Kuva</string>
     <string name="file_properties_media_dimensions">Mitat</string>
     <string name="file_properties_media_dimensions_format">%1$d \u00d7 %2$d</string>
     <string name="file_properties_media_date_time">Ottopäivä</string>
     <string name="file_properties_media_coordinates">Koordinaatit</string>
     <string name="file_properties_media_coordinates_format">%1$.3f, %2$.3f</string>
-    <string name="file_properties_media_address">Sijainti</string>
     <string name="file_properties_image_gps_altitude">Korkeus</string>
     <string name="file_properties_image_gps_altitude_format">%1$,.3f m</string>
     <string name="file_properties_image_equipment">Kamera</string>
@@ -361,9 +345,6 @@
     <string name="storage_list_empty">Ei tallennustilaa</string>
     <string name="storage_add_storage_title">Lisää tallennustila</string>
     <string name="storage_add_storage_document_tree">Ulkoinen tallennustila</string>
-    <string name="storage_add_storage_ftp_server">FTP-palvelin</string>
-    <string name="storage_add_storage_sftp_server">SFTP-palvelin</string>
-    <string name="storage_add_storage_smb_server">SMB-palvelin</string>
     <string name="storage_edit_device_storage_title">Muokkaa laitteen tallennustilaa</string>
     <string name="storage_edit_device_storage_name">Nimi</string>
     <string name="storage_edit_device_storage_path">polku</string>
@@ -372,88 +353,6 @@
     <string name="storage_edit_document_tree_name">Nimi</string>
     <string name="storage_edit_document_tree_uri">URI</string>
     <string name="storage_edit_document_tree_path">Polku</string>
-    <string name="storage_edit_ftp_server_title_edit">Muokkaa FTP-palvelinta</string>
-    <string name="storage_edit_ftp_server_title_add">Lisää FTP-palvelin</string>
-    <string name="storage_edit_ftp_server_host">Isäntänimi</string>
-    <string name="storage_edit_ftp_server_host_error_empty">Syötä isäntänimi</string>
-    <string name="storage_edit_ftp_server_host_error_invalid">Virheellinen isäntänimi</string>
-    <string name="storage_edit_ftp_server_port">Portti</string>
-    <string name="storage_edit_ftp_server_port_error_invalid">Virheellinen portti</string>
-    <string name="storage_edit_ftp_server_path">Polku</string>
-    <string name="storage_edit_ftp_server_path_placeholder">Voidaan jättää tyhjäksi</string>
-    <string name="storage_edit_ftp_server_name">Nimi</string>
-    <string name="storage_edit_ftp_server_name_placeholder">Käytä isäntänimeä</string>
-    <string name="storage_edit_ftp_server_protocol">Protokolla</string>
-    <string name="storage_edit_ftp_server_authentication_type">Tunnistautuminen</string>
-    <string-array name="storage_edit_ftp_server_authentication_type_entries">
-        <item>Salasana</item>
-        <item>Anonyymi</item>
-    </string-array>
-    <string name="storage_edit_ftp_server_username">Käyttäjänimi</string>
-    <string name="storage_edit_ftp_server_username_error_empty">Syötä käyttäjänimi</string>
-    <string name="storage_edit_ftp_server_password">Salasana</string>
-    <string name="storage_edit_ftp_server_mode">Tila</string>
-    <string-array name="storage_edit_ftp_server_mode_entries">
-        <item>Aktiivinen</item>
-        <item>Passiivinen</item>
-    </string-array>
-    <string name="storage_edit_ftp_server_encoding">Koodaus</string>
-    <string name="storage_edit_ftp_server_connect_and_add">Yhdistä ja lisää</string>
-    <string name="storage_edit_ftp_server_add">Lisää</string>
-    <string name="storage_edit_sftp_server_title_edit">Muokkaa SFTP-palvelinta</string>
-    <string name="storage_edit_sftp_server_title_add">Lisää SFTP-palvelin</string>
-    <string name="storage_edit_sftp_server_host">Isäntänimi</string>
-    <string name="storage_edit_sftp_server_host_error_empty">Syötä isäntänimi</string>
-    <string name="storage_edit_sftp_server_host_error_invalid">Virheellinen isäntänimi</string>
-    <string name="storage_edit_sftp_server_port">Portti</string>
-    <string name="storage_edit_sftp_server_port_error_invalid">Virheellinen portti</string>
-    <string name="storage_edit_sftp_server_path">Polku</string>
-    <string name="storage_edit_sftp_server_path_placeholder">Voidaan jättää tyhjäksi</string>
-    <string name="storage_edit_sftp_server_name">Nimi</string>
-    <string name="storage_edit_sftp_server_name_placeholder">Käytä isäntänimeä</string>
-    <string name="storage_edit_sftp_server_authentication_type">Tunnistautuminen</string>
-    <string-array name="storage_edit_sftp_server_authentication_type_entries">
-        <item>Salasana</item>
-        <item>Julkinen avain</item>
-    </string-array>
-    <string name="storage_edit_sftp_server_username">Käyttäjänimi</string>
-    <string name="storage_edit_sftp_server_username_error_empty">Syötä käyttäjänimi</string>
-    <string name="storage_edit_sftp_server_password">Salasana</string>
-    <string name="storage_edit_sftp_server_private_key">Yksityinen avain</string>
-    <string name="storage_edit_sftp_server_private_key_open_file">Avaa tiedosto</string>
-    <string name="storage_edit_sftp_server_private_key_error_empty">Syötä yksityinen avain</string>
-    <string name="storage_edit_sftp_server_private_key_error_invalid">Virheellinen yksityinen avain</string>
-    <string name="storage_edit_sftp_server_private_key_password">Ykstityisen avaimen salasana</string>
-    <string name="storage_edit_sftp_server_private_key_password_placeholder">Voidaan jättää tyhjäksi</string>
-    <string name="storage_edit_sftp_server_private_key_password_error_invalid">Virheellinen yksityisen avaimen salasana</string>
-    <string name="storage_edit_sftp_server_connect_and_add">Yhdistä ja lisää</string>
-    <string name="storage_edit_sftp_server_add">Lisää</string>
-    <string name="storage_add_lan_smb_server_loading">Etsitään SMB-palvelimia…</string>
-    <string name="storage_add_lan_smb_server_add">Lisää manuaalisesti</string>
-    <string name="storage_edit_smb_server_title_edit">Muokkaa SMB-palvelinta</string>
-    <string name="storage_edit_smb_server_title_add">Lisää SMB-palvelin</string>
-    <string name="storage_edit_smb_server_host">Isäntänimi</string>
-    <string name="storage_edit_smb_server_host_error_empty">Syötä isäntänimi</string>
-    <string name="storage_edit_smb_server_host_error_invalid">Virheellinen isäntänimi</string>
-    <string name="storage_edit_smb_server_port">Portti</string>
-    <string name="storage_edit_smb_server_port_error_invalid">Virheellinen portti</string>
-    <string name="storage_edit_smb_server_path">Polku</string>
-    <string name="storage_edit_smb_server_path_placeholder">Voidaan jättää tyhjäksi</string>
-    <string name="storage_edit_smb_server_name">Nimi</string>
-    <string name="storage_edit_smb_server_name_placeholder">Käytä isäntänimeä</string>
-    <string name="storage_edit_smb_server_authentication_type">Tunnistautuminen</string>
-    <string-array name="storage_edit_smb_server_authentication_type_entries">
-        <item>Salasana</item>
-        <item>Vieras</item>
-        <item>Anonyymi</item>
-    </string-array>
-    <string name="storage_edit_smb_server_username">Käyttäjänimi</string>
-    <string name="storage_edit_smb_server_username_error_empty">Syötä käyttäjänimi</string>
-    <string name="storage_edit_smb_server_password">Salasana</string>
-    <string name="storage_edit_smb_server_domain">Domain</string>
-    <string name="storage_edit_smb_server_connect_and_add">Yhdistä ja lisää</string>
-    <string name="storage_edit_smb_server_add">Lisää</string>
-    <string name="navigation_storage_subtitle_format">%1$s/%2$s vapaana</string>
     <string name="navigation_add_storage">Lisää tallennustila…</string>
     <string name="navigation_standard_directory_alarms">Hälytykset</string>
     <string name="navigation_standard_directory_dcim">DCIM</string>
@@ -480,30 +379,9 @@
     <string name="text_editor_encoding">Merkistökoodaus</string>
     <string name="text_editor_close_message">Haluatko varmasti hylätä tiedoston tallentamattomat muutokset?</string>
 
-    <string name="ftp_server_title">FTP-palvelin</string>
-    <string name="ftp_server_state_title">Tila</string>
-    <string name="ftp_server_state_summary_starting">Käynnistetään…</string>
-    <string name="ftp_server_state_summary_running">Käynnissä</string>
-    <string name="ftp_server_state_summary_stopping">Pysäytetään…</string>
-    <string name="ftp_server_state_summary_stopped">Ei käynnistettynä</string>
-    <string name="ftp_server_url_title">URL</string>
-    <string name="ftp_server_url_summary_no_local_inet_address">Paikallinen IP-osoite on tuntematon</string>
-    <string name="ftp_server_url_menu_copy_url">Kopioi URL</string>
-    <string name="ftp_server_url_menu_copy_password">Kopioi salasana</string>
-    <string name="ftp_server_add_tile_title">Lisää pika-asetuksiin</string>
-    <string name="ftp_server_configuration_title">Asetukset</string>
-    <string name="ftp_server_anonymous_login_title">Anonyymi kirjautuminen</string>
-    <string name="ftp_server_username_title">Käyttäjänimi</string>
-    <string name="ftp_server_password_title">Salasana</string>
-    <string name="ftp_server_port_title">Portti</string>
-    <string name="ftp_server_home_directory_title">Juurihakemisto</string>
-    <string name="ftp_server_writable_title">Salli kirjoittaminen</string>
     <string name="settings_title">Asetukset</string>
     <string name="settings_interface_title">Käyttöliittymä</string>
     <string name="settings_locale_title">Kieli</string>
-    <string name="settings_theme_color_title">Teemaväri</string>
-    <string name="settings_theme_color_summary">Eniten näytetty väri sovelluksessa</string>
-    <string name="settings_material_design_3_title">Material Design 3</string>
     <string name="settings_night_mode_title">Yötila</string>
     <string-array name="settings_night_mode_entries">
         <item>Seuraa järjestelmää</item>
@@ -546,7 +424,6 @@
         <item>Kysy, mikä toiminto suoritetaan</item>
     </string-array>
     <string name="settings_show_pdf_thumbnail_pre_28_summary">Saattaa aiheuttaa sovelluksen epävakauden vanhemmilla Android-versioilla</string>
-    <string name="settings_read_remote_files_for_thumbnail_title">Hae esikatselukuvat etätiedostoista</string>
 
     <string name="about_title">Tietoa</string>
     <string name="about_version_title">Versio</string>

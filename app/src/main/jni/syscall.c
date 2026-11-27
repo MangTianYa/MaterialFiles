@@ -326,6 +326,11 @@ static char *mallocStringFromByteString(JNIEnv *env, jobject javaByteString) {
     jsize javaLength = (*env)->GetArrayLength(env, javaBytes);
     size_t length = (size_t) javaLength;
     char *string = malloc(length + 1);
+    if (!string) {
+        (*env)->ReleaseByteArrayElements(env, javaBytes, bytes, JNI_ABORT);
+        (*env)->DeleteLocalRef(env, javaBytes);
+        return NULL;
+    }
     memcpy(string, bytes, length);
     (*env)->ReleaseByteArrayElements(env, javaBytes, bytes, JNI_ABORT);
     (*env)->DeleteLocalRef(env, javaBytes);
@@ -979,7 +984,7 @@ static jobject newStructInotifyEvent(JNIEnv *env, const struct inotify_event *ev
     jint mask = (jint) event->mask;
     jint cookie = (jint) event->cookie;
     jobject name;
-    size_t nameLength = strlen(event->name);
+    size_t nameLength = event->len > 0 ? strnlen(event->name, event->len) : 0;
     if (nameLength) {
         name = newByteString(env, event->name, nameLength);
         if (!name) {

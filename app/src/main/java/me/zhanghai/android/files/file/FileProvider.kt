@@ -19,7 +19,6 @@ import android.os.Handler
 import android.os.HandlerThread
 import android.os.ParcelFileDescriptor
 import android.os.Process
-import android.os.StrictMode
 import android.provider.DocumentsContract
 import android.provider.MediaStore
 import android.provider.OpenableColumns
@@ -50,7 +49,6 @@ import me.zhanghai.android.files.provider.document.isDocumentPath
 import me.zhanghai.android.files.provider.linux.isLinuxPath
 import me.zhanghai.android.files.provider.linux.syscall.SyscallException
 import me.zhanghai.android.files.util.hasBits
-import me.zhanghai.android.files.util.withoutPenaltyDeathOnNetwork
 import java.io.FileNotFoundException
 import java.io.IOException
 import java.io.InterruptedIOException
@@ -194,11 +192,7 @@ class FileProvider : ContentProvider() {
         }
         val options = modeBits.toOpenOptions()
         val channel = try {
-            // Strict mode thread policy is passed through binder, but some apps (notably music
-            // players) like to open file on their main thread.
-            StrictMode::class.withoutPenaltyDeathOnNetwork {
-                path.newByteChannel(options)
-            }
+            path.newByteChannel(options)
         } catch (e: IOException) {
             throw e.toFileNotFoundException()
         }
@@ -207,6 +201,7 @@ class FileProvider : ContentProvider() {
                 modeBits, ChannelCallback(channel), callbackHandler
             )
         } catch (e: IOException) {
+            runCatching { channel.close() }
             throw e.toFileNotFoundException()
         }
     }
@@ -403,6 +398,21 @@ private val Uri.fileProviderPath: Path
         // Strip the prepended slash. A slash is always prepended because our Uri path starts with
         // our URI scheme, which can never start with a slash; but our Uri has an authority so its
         // path must start with a slash.
-        val uriPath = Uri.decode(path).substring(1)
-        return Paths.get(URI.create(uriPath))
+        val rawPath = path?.takeIf { it.startsWith("/") }
+            ?: throw SecurityException("Invalid file provider URI path")
+        val uriPath = Uri.decode(rawPath).substring(1)
+        val uri = try {
+            URI.create(uriPath)
+        } catch (e: IllegalArgumentException) {
+            throw SecurityException("Invalid file provider URI", e)
+        }
+        val resolvedPath = try {
+            Paths.get(uri)
+        } catch (e: Exception) {
+            throw SecurityException("Unresolvable file provider URI", e)
+        }
+        if (resolvedPath.isAppPrivatePath(allowOpenCache = true)) {
+            throw SecurityException("Access to app-private path is denied")
+        }
+        return resolvedPath
     }

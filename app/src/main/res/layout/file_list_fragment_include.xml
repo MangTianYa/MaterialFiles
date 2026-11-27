@@ -47,10 +47,10 @@
           -->
         <me.zhanghai.android.files.ui.NavigationFrameLayout
             android:id="@+id/navigationFragment"
-            android:layout_width="wrap_content"
+            android:layout_width="304dp"
             android:layout_height="match_parent"
             android:layout_gravity="start"
-            android:background="?colorSurface"
+            android:background="@drawable/navigation_drawer_bg"
             android:fitsSystemWindows="true" />
     </androidx.drawerlayout.widget.DrawerLayout>
 </merge>

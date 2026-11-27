@@ -15,18 +15,10 @@
             android:key="@string/pref_key_locale"
             android:title="@string/settings_locale_title" />
 
-        <me.zhanghai.android.files.theme.custom.ThemeColorPreference
-            android:key="@string/pref_key_theme_color"
-            android:title="@string/settings_theme_color_title"
-            android:defaultValue="@string/pref_default_value_theme_color"
-            android:dependency="@string/pref_key_material_design_3"
-            android:summary="@string/settings_theme_color_summary" />
-
-        <SwitchPreferenceCompat
-            android:key="@string/pref_key_material_design_3"
-            android:title="@string/settings_material_design_3_title"
-            android:defaultValue="@bool/pref_default_value_material_design_3"
-            android:disableDependentsState="true" />
+        <me.zhanghai.android.files.theme.custom.DynamicColorPreference
+            android:key="@string/pref_key_dynamic_color"
+            android:title="@string/settings_dynamic_color_title"
+            android:defaultValue="@bool/pref_default_value_dynamic_color" />
 
         <rikka.preference.SimpleMenuPreference
             android:key="@string/pref_key_night_mode"
@@ -102,10 +94,5 @@
             android:defaultValue="@bool/pref_default_value_show_pdf_thumbnail_pre_28"
             android:summary="@string/settings_show_pdf_thumbnail_pre_28_summary"
             app:isPreferenceVisible="@bool/pref_visible_show_pdf_thumbnail_pre_28" />
-
-        <SwitchPreferenceCompat
-            android:key="@string/pref_key_read_remote_files_for_thumbnail"
-            android:title="@string/settings_read_remote_files_for_thumbnail_title"
-            android:defaultValue="@bool/pref_default_value_read_remote_files_for_thumbnail" />
     </PreferenceCategory>
 </PreferenceScreen>

@@ -12,7 +12,6 @@
     <string name="close">Sluiten</string>
     <string name="copy">Kopiëren</string>
     <string name="cut">Knippen</string>
-    <string name="default_">Standaard</string>
     <string name="delete">Verwijderen</string>
     <string name="discard">Verwerpen</string>
     <string name="edit">Bewerken</string>
@@ -42,7 +41,6 @@
     <string name="share">Delen</string>
     <string name="show">Tonen</string>
     <string name="skip">Overslaan</string>
-    <string name="stop">Stoppen</string>
     <string name="system_default">Systeemstandaard</string>
     <string name="unknown">Onbekend</string>
     <string name="view">Bekijken</string>
@@ -69,8 +67,6 @@
     <string name="notification_channel_background_activity_start_description">Neem taken aan terwijl de app op de achtergrond draait</string>
     <string name="notification_channel_file_job_name">Bestandshandelingen</string>
     <string name="notification_channel_file_job_description">Toon en beheer bestandshandelingen</string>
-    <string name="notification_channel_ftp_server_name">FTP-server</string>
-    <string name="notification_channel_ftp_server_description">Toon en beheer de FTP-server</string>
 
     <string name="file_action_archive_password_title">Wachtwoord vereist</string>
     <string name="file_action_archive_password_message_format">‘%1$s’ is beveiligd met een wachtwoord.</string>
@@ -216,7 +212,6 @@
     <string name="file_job_restore_selinux_context_error_message_format">Er is een fout opgetreden tijdens het herstellen van de SELinux-context van ‘%1$s’.\n%2$s</string>
     <string name="file_job_write_error_title">Fout tijdens wegschrijven</string>
     <string name="file_job_write_error_message_format">Er is een fout opgetreden tijdens het wegschrijven van ‘%1$s’.\n%2$s</string>
-    <string name="file_job_get_information_error_message_format">Er is een fout opgetreden tijdens het verkrijgen van informatie over ‘%1$s’.</string>
     <string name="file_job_remount_format">‘%1$s’ opnieuw aankoppelen als beschrijfbaar</string>
     <string name="file_job_remount_loading_format">Bezig met opnieuw aankoppelen van ‘%1$s’…</string>
     <string name="file_job_remount_success_format">‘%1$s’ is opnieuw aangekoppeld als beschrijfbaar</string>
@@ -272,15 +267,6 @@
         <item quantity="one">Map selecteren</item>
         <item quantity="other">Mappen selecteren</item>
     </plurals>
-    <plurals name="file_list_subtitle_directory_count_format">
-        <item quantity="one">%1$,d map</item>
-        <item quantity="other">%1$,d mappen</item>
-    </plurals>
-    <plurals name="file_list_subtitle_file_count_format">
-        <item quantity="one">%1$,d bestand</item>
-        <item quantity="other">%1$,d bestanden</item>
-    </plurals>
-    <string name="file_list_subtitle_separator">,\u0020</string>
     <string name="file_list_path_error_empty">Voer een locatie in</string>
     <string name="file_list_path_error_invalid">Ongeldige locatie</string>
     <string name="file_list_action_view_sort">Weergave en sortering</string>
@@ -337,7 +323,6 @@
     <string name="file_properties_basic_parent_directory">Bovenliggende map</string>
     <string name="file_properties_basic_archive_file">Archiefbestand</string>
     <string name="file_properties_basic_archive_entry">Archiefitem</string>
-    <string name="file_properties_basic_free_space">Vrije ruimte</string>
     <string name="file_properties_permission">Rechten</string>
     <string name="file_properties_permission_owner">Eigenaar</string>
     <string name="file_properties_permission_group">Groep</string>
@@ -377,7 +362,6 @@
     <string name="file_properties_media_date_time">Genomen op</string>
     <string name="file_properties_media_coordinates">Coördinaten</string>
     <string name="file_properties_media_coordinates_format">%1$.3f, %2$.3f</string>
-    <string name="file_properties_media_address">Locatie</string>
     <string name="file_properties_image_gps_altitude">Hoogte</string>
     <string name="file_properties_image_gps_altitude_format">%1$,.3f m</string>
     <string name="file_properties_image_equipment">Camera</string>
@@ -436,10 +420,6 @@
     <string name="storage_list_empty">Geen opslag</string>
     <string name="storage_add_storage_title">Opslagmedium toevoegen</string>
     <string name="storage_add_storage_document_tree">Externe opslag</string>
-    <string name="storage_add_storage_ftp_server">FTP-server</string>
-    <string name="storage_add_storage_sftp_server">SFTP-server</string>
-    <string name="storage_add_storage_smb_server">SMB-server</string>
-    <string name="storage_add_storage_webdav_server">WebDAV-server</string>
     <string name="storage_edit_device_storage_title">Apparaatopslag bewerken</string>
     <string name="storage_edit_device_storage_name">Naam</string>
     <string name="storage_edit_device_storage_path">Locatie</string>
@@ -453,114 +433,7 @@
     <string name="storage_edit_document_tree_name">Naam</string>
     <string name="storage_edit_document_tree_uri">URI</string>
     <string name="storage_edit_document_tree_path">Locatie</string>
-    <string name="storage_edit_ftp_server_title_edit">FTP-server bewerken</string>
-    <string name="storage_edit_ftp_server_title_add">FTP-server toevoegen</string>
-    <string name="storage_edit_ftp_server_host">Hostnaam</string>
-    <string name="storage_edit_ftp_server_host_error_empty">Voer een hostnaam in</string>
-    <string name="storage_edit_ftp_server_host_error_invalid">Ongeldige hostnaam</string>
-    <string name="storage_edit_ftp_server_port">Poort</string>
-    <string name="storage_edit_ftp_server_port_error_invalid">Ongeldig poortnummer</string>
-    <string name="storage_edit_ftp_server_path">Locatie</string>
-    <string name="storage_edit_ftp_server_path_placeholder">Mag leeg worden gelaten</string>
-    <string name="storage_edit_ftp_server_name">Naam</string>
-    <string name="storage_edit_ftp_server_name_placeholder">Hostnaam gebruiken</string>
-    <string name="storage_edit_ftp_server_protocol">Protocol</string>
-    <string name="storage_edit_ftp_server_authentication_type">Authenticatie</string>
-    <string-array name="storage_edit_ftp_server_authentication_type_entries">
-        <item>Wachtwoord</item>
-        <item>Anoniem</item>
-    </string-array>
-    <string name="storage_edit_ftp_server_username">Gebruikersnaam</string>
-    <string name="storage_edit_ftp_server_username_error_empty">Voer een gebruikersnaam in</string>
-    <string name="storage_edit_ftp_server_password">Wachtwoord</string>
-    <string name="storage_edit_ftp_server_mode">Modus</string>
-    <string-array name="storage_edit_ftp_server_mode_entries">
-        <item>Actief</item>
-        <item>Passief</item>
-    </string-array>
-    <string name="storage_edit_ftp_server_encoding">Versleuteling</string>
-    <string name="storage_edit_ftp_server_connect_and_add">Verbinden en toevoegen</string>
-    <string name="storage_edit_ftp_server_add">Toevoegen</string>
-    <string name="storage_edit_sftp_server_title_edit">SFTP-server bewerken</string>
-    <string name="storage_edit_sftp_server_title_add">SFTP-server toevoegen</string>
-    <string name="storage_edit_sftp_server_host">Hostnaam</string>
-    <string name="storage_edit_sftp_server_host_error_empty">Voer een hostnaam in</string>
-    <string name="storage_edit_sftp_server_host_error_invalid">Ongeldige hostnaam</string>
-    <string name="storage_edit_sftp_server_port">Poort</string>
-    <string name="storage_edit_sftp_server_port_error_invalid">Ongeldig poortnummer</string>
-    <string name="storage_edit_sftp_server_path">Locatie</string>
-    <string name="storage_edit_sftp_server_path_placeholder">Mag leeg worden gelaten</string>
-    <string name="storage_edit_sftp_server_name">Naam</string>
-    <string name="storage_edit_sftp_server_name_placeholder">Hostnaam gebruiken</string>
-    <string name="storage_edit_sftp_server_authentication_type">Authenticatie</string>
-    <string-array name="storage_edit_sftp_server_authentication_type_entries">
-        <item>Wachtwoord</item>
-        <item>Publieke sleutel</item>
-    </string-array>
-    <string name="storage_edit_sftp_server_username">Gebruikersnaam</string>
-    <string name="storage_edit_sftp_server_username_error_empty">Voer een gebruikersnaam in</string>
-    <string name="storage_edit_sftp_server_password">Wachtwoord</string>
-    <string name="storage_edit_sftp_server_private_key">Privésleutel</string>
-    <string name="storage_edit_sftp_server_private_key_open_file">Bestand openen</string>
-    <string name="storage_edit_sftp_server_private_key_error_empty">Voer een privésleutel in</string>
-    <string name="storage_edit_sftp_server_private_key_error_invalid">Ongeldige privésleutel</string>
-    <string name="storage_edit_sftp_server_private_key_password">Privésleutel</string>
-    <string name="storage_edit_sftp_server_private_key_password_placeholder">Mag leeg worden gelaten</string>
-    <string name="storage_edit_sftp_server_private_key_password_error_invalid">Ongeldige privésleutel</string>
-    <string name="storage_edit_sftp_server_connect_and_add">Verbinden en toevoegen</string>
-    <string name="storage_edit_sftp_server_add">Toevoegen</string>
-    <string name="storage_add_lan_smb_server_loading">Bezig met zoeken naar smb-servers…</string>
-    <string name="storage_add_lan_smb_server_add">Handmatig toevoegen</string>
-    <string name="storage_edit_smb_server_title_edit">SMB-server bewerken</string>
-    <string name="storage_edit_smb_server_title_add">SMB-server toevoegen</string>
-    <string name="storage_edit_smb_server_host">Hostnaam</string>
-    <string name="storage_edit_smb_server_host_error_empty">Voer een hostnaam in</string>
-    <string name="storage_edit_smb_server_host_error_invalid">Ongeldige hostnaam</string>
-    <string name="storage_edit_smb_server_port">Poort</string>
-    <string name="storage_edit_smb_server_port_error_invalid">Ongeldig poortnummer</string>
-    <string name="storage_edit_smb_server_path">Locatie</string>
-    <string name="storage_edit_smb_server_path_placeholder">Mag leeg worden gelaten</string>
-    <string name="storage_edit_smb_server_name">Naam</string>
-    <string name="storage_edit_smb_server_name_placeholder">Hostnaam gebruiken</string>
-    <string name="storage_edit_smb_server_authentication_type">Authenticatie</string>
-    <string-array name="storage_edit_smb_server_authentication_type_entries">
-        <item>Wachtwoord</item>
-        <item>Gast</item>
-        <item>Anoniem</item>
-    </string-array>
-    <string name="storage_edit_smb_server_username">Gebruikersnaam</string>
-    <string name="storage_edit_smb_server_username_error_empty">Voer een gebruikersnaam in</string>
-    <string name="storage_edit_smb_server_password">Wachtwoord</string>
-    <string name="storage_edit_smb_server_domain">Domein</string>
-    <string name="storage_edit_smb_server_connect_and_add">Verbinden en toevoegen</string>
-    <string name="storage_edit_smb_server_add">Toevoegen</string>
-    <string name="storage_edit_webdav_server_title_edit">WebDAV-server bewerken</string>
-    <string name="storage_edit_webdav_server_title_add">WebDAV-server toevoegen</string>
-    <string name="storage_edit_webdav_server_host">Hostnaam</string>
-    <string name="storage_edit_webdav_server_host_error_empty">Voer een hostnaam in</string>
-    <string name="storage_edit_webdav_server_host_error_invalid">Ongeldige hostnaam</string>
-    <string name="storage_edit_webdav_server_port">Poort</string>
-    <string name="storage_edit_webdav_server_port_error_invalid">Ongeldig poortnummer</string>
-    <string name="storage_edit_webdav_server_path">Locatie</string>
-    <string name="storage_edit_webdav_server_path_placeholder">Mag leeg worden gelaten</string>
-    <string name="storage_edit_webdav_server_name">Naam</string>
-    <string name="storage_edit_webdav_server_name_placeholder">Hostnaam gebruiken</string>
-    <string name="storage_edit_webdav_server_protocol">Protocol</string>
-    <string name="storage_edit_webdav_server_authentication_type">Authenticatie</string>
-    <string-array name="storage_edit_webdav_server_authentication_type_entries">
-        <item>Wachtwoord</item>
-        <item>Toegangssleutel</item>
-        <item>Geen</item>
-    </string-array>
-    <string name="storage_edit_webdav_server_username">Gebruikersnaam</string>
-    <string name="storage_edit_webdav_server_username_error_empty">Voer een gebruikersnaam in</string>
-    <string name="storage_edit_webdav_server_password">Wachtwoord</string>
-    <string name="storage_edit_webdav_server_access_token">Toegangssleutel</string>
-    <string name="storage_edit_webdav_server_access_token_error_empty">Voer een toegangssleutel in</string>
-    <string name="storage_edit_webdav_server_connect_and_add">Verbinden en toevoegen</string>
-    <string name="storage_edit_webdav_server_add">Toevoegen</string>
 
-    <string name="navigation_storage_subtitle_format">%1$s van %2$s vrij</string>
     <string name="navigation_add_storage">Opslagmedium toevoegen…</string>
     <string name="navigation_standard_directory_alarms">Wekkers</string>
     <string name="navigation_standard_directory_dcim">Camerafoto\'s</string>
@@ -592,33 +465,9 @@
     <string name="text_editor_encoding">Versleuteling</string>
     <string name="text_editor_close_message">Weet je zeker dat je de niet-opgeslagen wijzigingen wilt verwerpen?</string>
 
-    <string name="ftp_server_title">FTP-server</string>
-    <string name="ftp_server_state_title">Status</string>
-    <string name="ftp_server_state_summary_starting">Bezig met starten…</string>
-    <string name="ftp_server_state_summary_running">Draait</string>
-    <string name="ftp_server_state_summary_stopping">Bezig met stoppen…</string>
-    <string name="ftp_server_state_summary_stopped">Niet gestart</string>
-    <string name="ftp_server_url_title">URL</string>
-    <string name="ftp_server_url_summary_no_local_inet_address">Het lokale ip-adres is onbekend</string>
-    <string name="ftp_server_url_menu_copy_url">URL kopiëren</string>
-    <string name="ftp_server_url_menu_copy_password">Wachtwoord kopiëren</string>
-    <string name="ftp_server_add_tile_title">Toevoegen aan snelle instellingen</string>
-    <string name="ftp_server_add_tile_result_added">De ftp-server is toegevoegd aan de snelle instellingen</string>
-    <string name="ftp_server_add_tile_result_already_added">De ftp-server is al toegevoegd aan de snelle instellingen</string>
-    <string name="ftp_server_add_tile_result_error">De ftp-server kan niet worden toegevoegd aan de snelle instellingen</string>
-    <string name="ftp_server_configuration_title">Instellingen</string>
-    <string name="ftp_server_anonymous_login_title">Anoniem inloggen</string>
-    <string name="ftp_server_username_title">Gebruikersnaam</string>
-    <string name="ftp_server_password_title">Wachtwoord</string>
-    <string name="ftp_server_port_title">Poort</string>
-    <string name="ftp_server_home_directory_title">Hoofdmap</string>
-    <string name="ftp_server_writable_title">Wegschrijven toestaan</string>
     <string name="settings_title">Instellingen</string>
     <string name="settings_interface_title">Uiterlijk</string>
     <string name="settings_locale_title">Taal</string>
-    <string name="settings_theme_color_title">Themakleur</string>
-    <string name="settings_theme_color_summary">De kleur die het vaakst wordt gebruikt in de app</string>
-    <string name="settings_material_design_3_title">Material Design 3</string>
     <string name="settings_night_mode_title">Nachtmodus</string>
     <string-array name="settings_night_mode_entries">
         <item>Systeeminstellingen gebruiken</item>
@@ -662,7 +511,6 @@
     </string-array>
     <string name="settings_show_pdf_thumbnail_pre_28_title">Miniaturen van pdf-bestanden tonen</string>
     <string name="settings_show_pdf_thumbnail_pre_28_summary">Dit kan leiden tot instabiliteit op oudere Android-versies</string>
-    <string name="settings_read_remote_files_for_thumbnail_title">Miniaturen laden van externe bestanden</string>
 
     <string name="about_title">Over</string>
     <string name="about_version_title">Versie</string>

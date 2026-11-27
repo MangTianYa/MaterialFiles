@@ -7,7 +7,34 @@
 
 <resources>
     <!-- This is actually unused on v29+, so it's okay to hard code. -->
-    <color name="system_window_scrim_light_material3">#99FFFFFF</color>
-    <color name="system_window_scrim_dark_material3">#661F1F1F</color>
+    <color name="system_window_scrim_light_material3">@color/m3_violet_surface_scrim</color>
+    <color name="system_window_scrim_dark_material3">#66141218</color>
     <color name="system_window_scrim_material3">@color/system_window_scrim_light_material3</color>
+
+    <color name="m3_violet_surface">#FDF7FF</color>
+    <color name="m3_violet_surface_scrim">#99FDF7FF</color>
+    <color name="m3_violet_surface_container_lowest">#FFFFFF</color>
+    <color name="m3_violet_surface_container_low">#F7F2FA</color>
+    <color name="m3_violet_surface_container">#F1ECF6</color>
+    <color name="m3_violet_surface_container_high">#EBE5F1</color>
+    <color name="m3_violet_surface_container_highest">#E5DFEC</color>
+
+    <color name="m3_violet_primary">#6750A4</color>
+    <color name="m3_violet_on_primary">#FFFFFF</color>
+    <color name="m3_violet_primary_container">#EADDFF</color>
+    <color name="m3_violet_on_primary_container">#21005D</color>
+
+    <color name="m3_violet_secondary">#68548E</color>
+    <color name="m3_violet_on_secondary">#FFFFFF</color>
+    <color name="m3_violet_secondary_container">#E9DDFF</color>
+    <color name="m3_violet_on_secondary_container">#231047</color>
+
+    <color name="m3_violet_tertiary">#7D5260</color>
+    <color name="m3_violet_on_tertiary">#FFFFFF</color>
+
+    <color name="m3_violet_on_surface">#1D1A22</color>
+    <color name="m3_violet_on_surface_variant">#49454F</color>
+    <color name="m3_violet_outline">#79747E</color>
+    <color name="m3_violet_outline_variant">#CAC4D0</color>
+    <color name="m3_violet_error">#B3261E</color>
 </resources>

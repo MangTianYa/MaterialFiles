@@ -15,13 +15,13 @@ import me.zhanghai.android.files.compat.EnvironmentCompat2
 import me.zhanghai.android.files.filelist.FileSortOptions
 import me.zhanghai.android.files.filelist.FileViewType
 import me.zhanghai.android.files.filelist.OpenApkDefaultAction
+import me.zhanghai.android.files.filelist.RecentAccessEntry
 import me.zhanghai.android.files.navigation.BookmarkDirectory
 import me.zhanghai.android.files.navigation.StandardDirectorySettings
 import me.zhanghai.android.files.provider.root.RootStrategy
 import me.zhanghai.android.files.storage.FileSystemRoot
 import me.zhanghai.android.files.storage.PrimaryStorageVolume
 import me.zhanghai.android.files.storage.Storage
-import me.zhanghai.android.files.theme.custom.ThemeColor
 import me.zhanghai.android.files.theme.night.NightMode
 import java.io.File
 
@@ -38,6 +38,24 @@ object Settings {
             @Suppress("DEPRECATION")
             Paths.get(Environment.getExternalStorageDirectory().absolutePath)
         )
+
+    val FILE_LIST_LAST_DIRECTORY: SettingLiveData<Path?> =
+        ParcelValueSettingLiveData(R.string.pref_key_file_list_last_directory, null)
+
+    val FILE_LIST_LEFT_PANE_DIRECTORY: SettingLiveData<Path?> =
+        ParcelValueSettingLiveData(R.string.pref_key_file_list_left_pane_directory, null)
+
+    val FILE_LIST_RIGHT_PANE_DIRECTORY: SettingLiveData<Path?> =
+        ParcelValueSettingLiveData(R.string.pref_key_file_list_right_pane_directory, null)
+
+    val DUAL_PANE_ACTIVE_INDEX: SettingLiveData<Int> =
+        IntegerSettingLiveData(
+            R.string.pref_key_dual_pane_active_index,
+            R.integer.pref_default_value_dual_pane_active_index
+        )
+
+    val RECENT_ACCESS_ENTRIES: SettingLiveData<List<RecentAccessEntry>> =
+        ParcelValueSettingLiveData(R.string.pref_key_recent_access_entries, emptyList())
 
     val FILE_LIST_PERSISTENT_DRAWER_OPEN: SettingLiveData<Boolean> =
         BooleanSettingLiveData(
@@ -66,48 +84,9 @@ object Settings {
     val CREATE_ARCHIVE_TYPE: SettingLiveData<Int> =
         ResourceIdSettingLiveData(R.string.pref_key_create_archive_type, R.id.zipRadio)
 
-    val FTP_SERVER_ANONYMOUS_LOGIN: SettingLiveData<Boolean> =
+    val DYNAMIC_COLOR: SettingLiveData<Boolean> =
         BooleanSettingLiveData(
-            R.string.pref_key_ftp_server_anonymous_login,
-            R.bool.pref_default_value_ftp_server_anonymous_login
-        )
-
-    val FTP_SERVER_USERNAME: SettingLiveData<String> =
-        StringSettingLiveData(
-            R.string.pref_key_ftp_server_username, R.string.pref_default_value_ftp_server_username
-        )
-
-    val FTP_SERVER_PASSWORD: SettingLiveData<String> =
-        StringSettingLiveData(
-            R.string.pref_key_ftp_server_password, R.string.pref_default_value_empty
-        )
-
-    val FTP_SERVER_PORT: SettingLiveData<Int> =
-        IntegerSettingLiveData(
-            R.string.pref_key_ftp_server_port, R.integer.pref_default_value_ftp_server_port
-        )
-
-    val FTP_SERVER_HOME_DIRECTORY: SettingLiveData<Path> =
-        ParcelValueSettingLiveData(
-            R.string.pref_key_ftp_server_home_directory,
-            @Suppress("DEPRECATION")
-            Paths.get(Environment.getExternalStorageDirectory().absolutePath)
-        )
-
-    val FTP_SERVER_WRITABLE: SettingLiveData<Boolean> =
-        BooleanSettingLiveData(
-            R.string.pref_key_ftp_server_writable, R.bool.pref_default_value_ftp_server_writable
-        )
-
-    val THEME_COLOR: SettingLiveData<ThemeColor> =
-        EnumSettingLiveData(
-            R.string.pref_key_theme_color, R.string.pref_default_value_theme_color,
-            ThemeColor::class.java
-        )
-
-    val MATERIAL_DESIGN_3: SettingLiveData<Boolean> =
-        BooleanSettingLiveData(
-            R.string.pref_key_material_design_3, R.bool.pref_default_value_material_design_3
+            R.string.pref_key_dynamic_color, R.bool.pref_default_value_dynamic_color
         )
 
     val NIGHT_MODE: SettingLiveData<NightMode> =
@@ -176,9 +155,8 @@ object Settings {
         R.bool.pref_default_value_show_pdf_thumbnail_pre_28
     )
 
-    val READ_REMOTE_FILES_FOR_THUMBNAIL: SettingLiveData<Boolean> =
-        BooleanSettingLiveData(
-            R.string.pref_key_read_remote_files_for_thumbnail,
-            R.bool.pref_default_value_read_remote_files_for_thumbnail
-        )
+    val TEXT_EDITOR_SHOW_LINE_NUMBERS: SettingLiveData<Boolean> = BooleanSettingLiveData(
+        R.string.pref_key_text_editor_show_line_numbers,
+        R.bool.pref_default_value_text_editor_show_line_numbers
+    )
 }

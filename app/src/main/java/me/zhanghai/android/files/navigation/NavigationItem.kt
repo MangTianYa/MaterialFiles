@@ -24,6 +24,11 @@ abstract class NavigationItem {
 
     open fun getSubtitle(context: Context): String? = null
 
+    open val isStorageCard: Boolean
+        get() = false
+
+    open fun getStorageUsagePercent(context: Context): Int? = null
+
     open fun isChecked(listener: Listener): Boolean = false
 
     abstract fun onClick(listener: Listener)
@@ -31,7 +36,7 @@ abstract class NavigationItem {
     open fun onLongClick(listener: Listener): Boolean = false
 
     interface Listener {
-        val currentPath: Path
+        val currentPathOrNull: Path?
         fun navigateTo(path: Path)
         fun navigateToRoot(path: Path)
         fun launchIntent(intent: Intent)

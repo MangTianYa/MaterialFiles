@@ -9,7 +9,6 @@ import android.os.Build
 import android.os.Bundle
 import me.zhanghai.android.files.R
 import me.zhanghai.android.files.theme.custom.CustomThemeHelper
-import me.zhanghai.android.files.theme.custom.ThemeColor
 import me.zhanghai.android.files.theme.night.NightMode
 import me.zhanghai.android.files.theme.night.NightModeHelper
 import me.zhanghai.android.files.ui.PreferenceFragmentCompat
@@ -38,21 +37,12 @@ class SettingsPreferenceFragment : PreferenceFragmentCompat() {
         // different lifecycles" if activity is finished and instantly started again. To work around
         // this, always use an instance method reference.
         // https://stackoverflow.com/a/27524543
-        //Settings.THEME_COLOR.observe(viewLifecycleOwner) { CustomThemeHelper.sync() }
-        //Settings.MATERIAL_DESIGN_3.observe(viewLifecycleOwner) { CustomThemeHelper.sync() }
-        //Settings.NIGHT_MODE.observe(viewLifecycleOwner) { NightModeHelper.sync() }
-        //Settings.BLACK_NIGHT_MODE.observe(viewLifecycleOwner) { CustomThemeHelper.sync() }
-        Settings.THEME_COLOR.observe(viewLifecycleOwner, this::onThemeColorChanged)
-        Settings.MATERIAL_DESIGN_3.observe(viewLifecycleOwner, this::onMaterialDesign3Changed)
+        Settings.DYNAMIC_COLOR.observe(viewLifecycleOwner, this::onDynamicColorChanged)
         Settings.NIGHT_MODE.observe(viewLifecycleOwner, this::onNightModeChanged)
         Settings.BLACK_NIGHT_MODE.observe(viewLifecycleOwner, this::onBlackNightModeChanged)
     }
 
-    private fun onThemeColorChanged(themeColor: ThemeColor) {
-        CustomThemeHelper.sync()
-    }
-
-    private fun onMaterialDesign3Changed(isMaterialDesign3: Boolean) {
+    private fun onDynamicColorChanged(dynamicColor: Boolean) {
         CustomThemeHelper.sync()
     }
 

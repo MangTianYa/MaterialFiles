@@ -24,6 +24,7 @@ object StorageVolumeListLiveData : LiveData<List<StorageVolume>>() {
         application.registerReceiverCompat(
             object : BroadcastReceiver() {
                 override fun onReceive(context: Context, intent: Intent) {
+                    StorageSpaceResolver.clearCache()
                     loadValue()
                 }
             }, IntentFilter().apply {

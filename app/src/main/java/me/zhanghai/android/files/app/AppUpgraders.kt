@@ -33,8 +33,6 @@ import me.zhanghai.android.files.provider.document.DocumentFileSystem
 import me.zhanghai.android.files.provider.document.resolver.ExternalStorageProviderHacks
 import me.zhanghai.android.files.provider.linux.LinuxFileSystem
 import me.zhanghai.android.files.provider.root.RootStrategy
-import me.zhanghai.android.files.provider.sftp.SftpFileSystem
-import me.zhanghai.android.files.provider.smb.SmbFileSystem
 import me.zhanghai.android.files.storage.DocumentTree
 import me.zhanghai.android.files.storage.FileSystemRoot
 import me.zhanghai.android.files.storage.PrimaryStorageVolume
@@ -392,10 +390,6 @@ private fun migratePath1_4_0(oldParcel: Parcel, newParcel: Parcel) {
             newParcel.writeParcelable(oldParcel.readParcelable<LinuxFileSystem>(), 0)
             oldParcel.readBooleanCompat()
         }
-        "me.zhanghai.android.files.provider.sftp.SftpPath" ->
-            newParcel.writeParcelable(oldParcel.readParcelable<SftpFileSystem>(), 0)
-        "me.zhanghai.android.files.provider.smb.SmbPath" ->
-            newParcel.writeParcelable(oldParcel.readParcelable<SmbFileSystem>(), 0)
         else -> throw IllegalStateException(className)
     }
 }

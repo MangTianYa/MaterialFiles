@@ -8,10 +8,10 @@ package me.zhanghai.android.files.filejob
 import me.zhanghai.android.files.util.showToast
 import java.io.IOException
 import java.io.InterruptedIOException
-import java.util.Random
+import java.util.concurrent.atomic.AtomicInteger
 
 abstract class FileJob {
-    val id = Random().nextInt()
+    val id: Int = nextNonZeroId()
 
     internal lateinit var service: FileJobService
         private set
@@ -34,4 +34,17 @@ abstract class FileJob {
 
     @Throws(IOException::class)
     protected abstract fun run()
+
+    companion object {
+        private val nextJobId = AtomicInteger(1)
+
+        private fun nextNonZeroId(): Int {
+            while (true) {
+                val candidate = nextJobId.getAndAdd(2) and Int.MAX_VALUE
+                if (candidate != 0) {
+                    return candidate
+                }
+            }
+        }
+    }
 }

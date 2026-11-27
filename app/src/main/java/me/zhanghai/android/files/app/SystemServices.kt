@@ -10,7 +10,6 @@ import android.content.ClipboardManager
 import android.content.ContentResolver
 import android.content.SharedPreferences
 import android.content.pm.PackageManager
-import android.net.wifi.WifiManager
 import android.os.PowerManager
 import android.os.storage.StorageManager
 import android.view.inputmethod.InputMethodManager
@@ -19,7 +18,6 @@ import androidx.preference.PreferenceManager
 import java.util.concurrent.Executor
 import me.zhanghai.android.files.compat.getSystemServiceCompat
 import me.zhanghai.android.files.compat.mainExecutorCompat
-import okhttp3.OkHttpClient
 
 val appClassLoader = AppProvider::class.java.classLoader
 
@@ -36,8 +34,6 @@ val contentResolver: ContentResolver by lazy { application.contentResolver }
 val defaultSharedPreferences: SharedPreferences by lazy {
     PreferenceManager.getDefaultSharedPreferences(application)
 }
-
-val okHttpClient: OkHttpClient by lazy { OkHttpClient() }
 
 val inputMethodManager: InputMethodManager by lazy {
     application.getSystemServiceCompat(InputMethodManager::class.java)
@@ -57,8 +53,4 @@ val powerManager: PowerManager by lazy {
 
 val storageManager: StorageManager by lazy {
     application.getSystemServiceCompat(StorageManager::class.java)
-}
-
-val wifiManager: WifiManager by lazy {
-    application.getSystemServiceCompat(WifiManager::class.java)
 }

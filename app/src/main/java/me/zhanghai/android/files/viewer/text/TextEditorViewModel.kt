@@ -24,7 +24,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.runInterruptible
 import kotlinx.coroutines.withContext
 import me.zhanghai.android.files.filejob.FileJobService
-import me.zhanghai.android.files.provider.common.readAllBytes
+import me.zhanghai.android.files.provider.common.newInputStream
 import me.zhanghai.android.files.provider.common.size
 import me.zhanghai.android.files.util.ActionState
 import me.zhanghai.android.files.util.DataState
@@ -32,42 +32,32 @@ import me.zhanghai.android.files.util.isFinished
 import me.zhanghai.android.files.util.isReady
 import me.zhanghai.android.files.util.toError
 import me.zhanghai.android.files.util.toLoading
+import java.io.ByteArrayOutputStream
 import java.io.IOException
 import java.nio.charset.StandardCharsets
 
-class TextEditorViewModel(file: Path) : ViewModel() {
-    private val _file = MutableStateFlow(file)
+class TextEditorViewModel(val filePath: Path) : ViewModel() {
+    private val _file = MutableStateFlow(filePath)
     val file = _file.asStateFlow()
 
     private val _bytesState = MutableStateFlow<DataState<ByteArray>>(DataState.Loading())
 
     private var loadJob: Job? = null
-    private var reloadJob: Job? = null
 
     init {
-        viewModelScope.launch {
-            _file.collectLatest {
-                loadJob?.cancel()?.also { loadJob = null }
-                reloadJob?.cancel()?.also { reloadJob = null }
-                loadJob = launch {
-                    mapFileToBytesState(it)
-                    if (isActive) {
-                        loadJob = null
-                    }
-                }
-            }
-        }
+        load()
     }
 
     fun reload() {
-        viewModelScope.launch {
-            loadJob?.cancel()?.also { loadJob = null }
-            reloadJob?.cancel()?.also { reloadJob = null }
-            reloadJob = launch {
-                mapFileToBytesState(_file.value)
-                if (isActive) {
-                    reloadJob = null
-                }
+        load()
+    }
+
+    private fun load() {
+        loadJob?.cancel()
+        loadJob = viewModelScope.launch {
+            mapFileToBytesState(filePath)
+            if (isActive) {
+                loadJob = null
             }
         }
     }
@@ -76,19 +66,59 @@ class TextEditorViewModel(file: Path) : ViewModel() {
         _bytesState.value = _bytesState.value.toLoading()
         try {
             val bytes = runInterruptible(Dispatchers.IO) {
-                val size = file.size()
-                if (size > MAX_FILE_SIZE) {
-                    throw IOException("File size $size is too large")
+                val reportedSize = file.size()
+                if (reportedSize > MAX_FILE_SIZE) {
+                    throw IOException("File size $reportedSize is too large")
                 }
-                file.readAllBytes()
+                file.newInputStream().use { input ->
+                    val output = ByteArrayOutputStream(
+                        reportedSize.coerceIn(0L, 64 * 1024L).toInt()
+                    )
+                    val buffer = ByteArray(8192)
+                    var total = 0L
+                    while (true) {
+                        val read = input.read(buffer)
+                        if (read < 0) {
+                            break
+                        }
+                        total += read
+                        if (total > MAX_FILE_SIZE) {
+                            throw IOException("File exceeds maximum size $MAX_FILE_SIZE")
+                        }
+                        output.write(buffer, 0, read)
+                    }
+                    output.toByteArray()
+                }
+            }
+            if (isBinaryContent(bytes)) {
+                throw IOException("Binary file cannot be opened as plain text")
             }
             currentCoroutineContext().ensureActive()
             _bytesState.value = DataState.Success(bytes)
         } catch (e: CancellationException) {
-            e.printStackTrace()
+            throw e
         } catch (e: Exception) {
             _bytesState.value = _bytesState.value.toError(e)
         }
+    }
+
+    private fun isBinaryContent(bytes: ByteArray): Boolean {
+        if (bytes.isEmpty()) return false
+        // Allow UTF-16 BOM text files even though they contain NUL bytes.
+        if (bytes.size >= 2) {
+            val b0 = bytes[0].toInt() and 0xFF
+            val b1 = bytes[1].toInt() and 0xFF
+            if ((b0 == 0xFE && b1 == 0xFF) || (b0 == 0xFF && b1 == 0xFE)) {
+                return false
+            }
+        }
+        val sampleSize = bytes.size.coerceAtMost(BINARY_SNIFF_BYTES)
+        for (i in 0 until sampleSize) {
+            if (bytes[i].toInt() == 0) {
+                return true
+            }
+        }
+        return false
     }
 
     val encoding = MutableStateFlow(StandardCharsets.UTF_8)
@@ -111,7 +141,7 @@ class TextEditorViewModel(file: Path) : ViewModel() {
                                 currentCoroutineContext().ensureActive()
                                 _textState.value = DataState.Success(text)
                             } catch (e: CancellationException) {
-                                e.printStackTrace()
+                                throw e
                             } catch (e: Exception) {
                                 _textState.value = _textState.value.toError(e)
                             }
@@ -130,17 +160,18 @@ class TextEditorViewModel(file: Path) : ViewModel() {
     val writeFileState = _writeFileState.asStateFlow()
 
     fun writeFile(path: Path, text: String, context: Context) {
+        if (!_writeFileState.value.isReady) {
+            return
+        }
+        val argument = path to text
+        _writeFileState.value = ActionState.Running(argument)
         viewModelScope.launch {
-            check(_writeFileState.value.isReady)
-            val argument = path to text
-            _writeFileState.value = ActionState.Running(argument)
             val bytes = withContext(Dispatchers.Default) {
                 text.toByteArray(encoding.value)
             }
             FileJobService.write(path, bytes, context) { successful ->
                 if (successful) {
                     loadJob?.cancel()?.also { loadJob = null }
-                    reloadJob?.cancel()?.also { reloadJob = null }
                     _bytesState.value = DataState.Success(bytes)
                 }
                 _writeFileState.value = if (successful) {
@@ -155,8 +186,7 @@ class TextEditorViewModel(file: Path) : ViewModel() {
     }
 
     fun finishWritingFile() {
-        viewModelScope.launch {
-            check(_writeFileState.value.isFinished)
+        if (_writeFileState.value.isFinished) {
             _writeFileState.value = ActionState.Ready()
         }
     }
@@ -175,5 +205,6 @@ class TextEditorViewModel(file: Path) : ViewModel() {
 
     companion object {
         private const val MAX_FILE_SIZE = 1024 * 1024.toLong()
+        private const val BINARY_SNIFF_BYTES = 4096
     }
 }

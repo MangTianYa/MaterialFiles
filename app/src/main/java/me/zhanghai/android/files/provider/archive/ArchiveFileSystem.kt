@@ -153,6 +153,7 @@ internal class ArchiveFileSystem(
                 return
             }
             provider.removeFileSystem(this)
+            passwords = emptyList()
             isRefreshNeeded = false
             entries = null
             tree = null

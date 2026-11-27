@@ -12,7 +12,6 @@
     <string name="close">閉じる</string>
     <string name="copy">コピー</string>
     <string name="cut">切り取り</string>
-    <string name="default_">デフォルト</string>
     <string name="delete">削除</string>
     <string name="discard">破棄</string>
     <string name="edit">編集</string>
@@ -42,7 +41,6 @@
     <string name="share">共有</string>
     <string name="show">表示</string>
     <string name="skip">スキップ</string>
-    <string name="stop">停止</string>
     <string name="system_default">システムのデフォルト</string>
     <string name="unknown">不明</string>
     <string name="view">表示</string>
@@ -68,8 +66,6 @@
     <string name="notification_channel_background_activity_start_description">バックグラウンドでのアプリの実行です</string>
     <string name="notification_channel_file_job_name">ファイル操作</string>
     <string name="notification_channel_file_job_description">ファイル操作の表示・制御です</string>
-    <string name="notification_channel_ftp_server_name">FTP サーバー</string>
-    <string name="notification_channel_ftp_server_description">FTP サーバーの表示・制御です</string>
 
     <string name="file_action_archive_password_title">パスワードが必要</string>
     <string name="file_action_archive_password_message_format">「%1$s」はパスワードで保護されています。</string>
@@ -195,7 +191,6 @@
     <string name="file_job_restore_selinux_context_error_message_format">「%1$s」の SELinux コンテキストを復元中にエラーが発生しました。\n%2$s</string>
     <string name="file_job_write_error_title">書き込み中にエラーが発生しました</string>
     <string name="file_job_write_error_message_format">「%1$s」の書き込み中にエラーが発生しました。\n%2$s</string>
-    <string name="file_job_get_information_error_message_format">「%1$s」の情報を取得中にエラーが発生しました。</string>
     <string name="file_job_remount_format">「%1$s」を読み書き可として再マウント</string>
     <string name="file_job_remount_loading_format">「%1$s」を読み書き可として再マウントしています…</string>
     <string name="file_job_remount_success_format">「%1$s」が読み書き可として再マウントされました</string>
@@ -246,13 +241,6 @@
     <plurals name="file_list_title_open_directory">
         <item quantity="other">フォルダを選択</item>
     </plurals>
-    <plurals name="file_list_subtitle_directory_count_format">
-        <item quantity="other">フォルダ %1$,d 件</item>
-    </plurals>
-    <plurals name="file_list_subtitle_file_count_format">
-        <item quantity="other">ファイル %1$,d 件</item>
-    </plurals>
-    <string name="file_list_subtitle_separator">,\u0020</string>
     <string name="file_list_path_error_empty">パスは空白にできません</string>
     <string name="file_list_path_error_invalid">無効なパスです</string>
     <string name="file_list_action_view_sort">表示と並べ替え</string>
@@ -308,7 +296,6 @@
     <string name="file_properties_basic_parent_directory">親フォルダ</string>
     <string name="file_properties_basic_archive_file">圧縮ファイル</string>
     <string name="file_properties_basic_archive_entry">アーカイブエントリー</string>
-    <string name="file_properties_basic_free_space">空き容量</string>
     <string name="file_properties_permission">権限</string>
     <string name="file_properties_permission_owner">所有者</string>
     <string name="file_properties_permission_group">グループ</string>
@@ -348,7 +335,6 @@
     <string name="file_properties_media_date_time">撮影</string>
     <string name="file_properties_media_coordinates">座標</string>
     <string name="file_properties_media_coordinates_format">%1$.3f, %2$.3f</string>
-    <string name="file_properties_media_address">場所</string>
     <string name="file_properties_image_gps_altitude">高度</string>
     <string name="file_properties_image_gps_altitude_format">%1$,.3f m</string>
     <string name="file_properties_image_equipment">カメラ</string>
@@ -406,10 +392,6 @@
     <string name="storage_list_empty">ストレージがありません</string>
     <string name="storage_add_storage_title">ストレージを追加</string>
     <string name="storage_add_storage_document_tree">外部ストレージ</string>
-    <string name="storage_add_storage_ftp_server">FTP サーバー</string>
-    <string name="storage_add_storage_sftp_server">SFTP サーバー</string>
-    <string name="storage_add_storage_smb_server">SMB サーバー</string>
-    <string name="storage_add_storage_webdav_server">WebDAV サーバー</string>
     <string name="storage_edit_device_storage_title">デバイスのストレージを編集</string>
     <string name="storage_edit_device_storage_name">名前</string>
     <string name="storage_edit_device_storage_path">パス</string>
@@ -423,114 +405,7 @@
     <string name="storage_edit_document_tree_name">名前</string>
     <string name="storage_edit_document_tree_uri">URI</string>
     <string name="storage_edit_document_tree_path">パス</string>
-    <string name="storage_edit_ftp_server_title_edit">FTP サーバーを編集</string>
-    <string name="storage_edit_ftp_server_title_add">FTP サーバーを追加</string>
-    <string name="storage_edit_ftp_server_host">ホスト名</string>
-    <string name="storage_edit_ftp_server_host_error_empty">ホスト名を入力してください</string>
-    <string name="storage_edit_ftp_server_host_error_invalid">無効なホスト名です</string>
-    <string name="storage_edit_ftp_server_port">ポート</string>
-    <string name="storage_edit_ftp_server_port_error_invalid">無効なポートです</string>
-    <string name="storage_edit_ftp_server_path">パス</string>
-    <string name="storage_edit_ftp_server_path_placeholder">空白にもできます</string>
-    <string name="storage_edit_ftp_server_name">名前</string>
-    <string name="storage_edit_ftp_server_name_placeholder">ホスト名を使用する</string>
-    <string name="storage_edit_ftp_server_protocol">プロトコル</string>
-    <string name="storage_edit_ftp_server_authentication_type">認証</string>
-    <string-array name="storage_edit_ftp_server_authentication_type_entries">
-        <item>パスワード</item>
-        <item>匿名</item>
-    </string-array>
-    <string name="storage_edit_ftp_server_username">ユーザー名</string>
-    <string name="storage_edit_ftp_server_username_error_empty">ユーザー名を入力してください</string>
-    <string name="storage_edit_ftp_server_password">パスワード</string>
-    <string name="storage_edit_ftp_server_mode">モード</string>
-    <string-array name="storage_edit_ftp_server_mode_entries">
-        <item>アクティブ</item>
-        <item>パッシブ</item>
-    </string-array>
-    <string name="storage_edit_ftp_server_encoding">文字コード</string>
-    <string name="storage_edit_ftp_server_connect_and_add">接続して追加</string>
-    <string name="storage_edit_ftp_server_add">追加</string>
-    <string name="storage_edit_sftp_server_title_edit">SFTP サーバーを編集</string>
-    <string name="storage_edit_sftp_server_title_add">SFTP サーバーを追加</string>
-    <string name="storage_edit_sftp_server_host">ホスト名</string>
-    <string name="storage_edit_sftp_server_host_error_empty">ホスト名を入力してください</string>
-    <string name="storage_edit_sftp_server_host_error_invalid">無効なホスト名です</string>
-    <string name="storage_edit_sftp_server_port">ポート</string>
-    <string name="storage_edit_sftp_server_port_error_invalid">無効なポートです</string>
-    <string name="storage_edit_sftp_server_path">パス</string>
-    <string name="storage_edit_sftp_server_path_placeholder">空白にもできます</string>
-    <string name="storage_edit_sftp_server_name">名前</string>
-    <string name="storage_edit_sftp_server_name_placeholder">ホスト名を使用する</string>
-    <string name="storage_edit_sftp_server_authentication_type">認証</string>
-    <string-array name="storage_edit_sftp_server_authentication_type_entries">
-        <item>パスワード</item>
-        <item>公開鍵</item>
-    </string-array>
-    <string name="storage_edit_sftp_server_username">ユーザー名</string>
-    <string name="storage_edit_sftp_server_username_error_empty">ユーザー名を入力してください</string>
-    <string name="storage_edit_sftp_server_password">パスワード</string>
-    <string name="storage_edit_sftp_server_private_key">秘密鍵</string>
-    <string name="storage_edit_sftp_server_private_key_open_file">ファイルを開く</string>
-    <string name="storage_edit_sftp_server_private_key_error_empty">秘密鍵を入力してください</string>
-    <string name="storage_edit_sftp_server_private_key_error_invalid">無効な秘密鍵です</string>
-    <string name="storage_edit_sftp_server_private_key_password">秘密鍵のパスワード</string>
-    <string name="storage_edit_sftp_server_private_key_password_placeholder">空白にもできます</string>
-    <string name="storage_edit_sftp_server_private_key_password_error_invalid">無効な秘密鍵のパスワードです</string>
-    <string name="storage_edit_sftp_server_connect_and_add">接続して追加</string>
-    <string name="storage_edit_sftp_server_add">追加</string>
-    <string name="storage_add_lan_smb_server_loading">SMB サーバーを検索中…</string>
-    <string name="storage_add_lan_smb_server_add">手動で追加</string>
-    <string name="storage_edit_smb_server_title_edit">SMB サーバーを編集</string>
-    <string name="storage_edit_smb_server_title_add">SMB サーバーを追加</string>
-    <string name="storage_edit_smb_server_host">ホスト名</string>
-    <string name="storage_edit_smb_server_host_error_empty">ホスト名を入力してください</string>
-    <string name="storage_edit_smb_server_host_error_invalid">無効なホスト名です</string>
-    <string name="storage_edit_smb_server_port">ポート</string>
-    <string name="storage_edit_smb_server_port_error_invalid">無効なポートです</string>
-    <string name="storage_edit_smb_server_path">パス</string>
-    <string name="storage_edit_smb_server_path_placeholder">空白にもできます</string>
-    <string name="storage_edit_smb_server_name">名前</string>
-    <string name="storage_edit_smb_server_name_placeholder">ホスト名を使用する</string>
-    <string name="storage_edit_smb_server_authentication_type">認証</string>
-    <string-array name="storage_edit_smb_server_authentication_type_entries">
-        <item>パスワード</item>
-        <item>ゲスト</item>
-        <item>匿名</item>
-    </string-array>
-    <string name="storage_edit_smb_server_username">ユーザー名</string>
-    <string name="storage_edit_smb_server_username_error_empty">ユーザー名を入力してください</string>
-    <string name="storage_edit_smb_server_password">パスワード</string>
-    <string name="storage_edit_smb_server_domain">ドメイン</string>
-    <string name="storage_edit_smb_server_connect_and_add">接続して追加</string>
-    <string name="storage_edit_smb_server_add">追加</string>
-    <string name="storage_edit_webdav_server_title_edit">WebDAV サーバーを編集</string>
-    <string name="storage_edit_webdav_server_title_add">WebDAV サーバーを追加</string>
-    <string name="storage_edit_webdav_server_host">ホスト名</string>
-    <string name="storage_edit_webdav_server_host_error_empty">ホスト名を入力してください</string>
-    <string name="storage_edit_webdav_server_host_error_invalid">無効なホスト名です</string>
-    <string name="storage_edit_webdav_server_port">ポート</string>
-    <string name="storage_edit_webdav_server_port_error_invalid">無効なポートです</string>
-    <string name="storage_edit_webdav_server_path">パス</string>
-    <string name="storage_edit_webdav_server_path_placeholder">空白にもできます</string>
-    <string name="storage_edit_webdav_server_name">名前</string>
-    <string name="storage_edit_webdav_server_name_placeholder">ホスト名を使用する</string>
-    <string name="storage_edit_webdav_server_protocol">プロトコル</string>
-    <string name="storage_edit_webdav_server_authentication_type">認証</string>
-    <string-array name="storage_edit_webdav_server_authentication_type_entries">
-        <item>パスワード</item>
-        <item>アクセストークン</item>
-        <item>なし</item>
-    </string-array>
-    <string name="storage_edit_webdav_server_username">ユーザー名</string>
-    <string name="storage_edit_webdav_server_username_error_empty">ユーザー名を入力してください</string>
-    <string name="storage_edit_webdav_server_password">パスワード</string>
-    <string name="storage_edit_webdav_server_access_token">アクセストークン</string>
-    <string name="storage_edit_webdav_server_access_token_error_empty">アクセストークンを入力してください</string>
-    <string name="storage_edit_webdav_server_connect_and_add">接続して追加</string>
-    <string name="storage_edit_webdav_server_add">追加</string>
 
-    <string name="navigation_storage_subtitle_format">空き容量 %1$s / %2$s</string>
     <string name="navigation_add_storage">ストレージを追加…</string>
     <string name="navigation_standard_directory_alarms">アラーム</string>
     <string name="navigation_standard_directory_dcim">写真</string>
@@ -562,33 +437,9 @@
     <string name="text_editor_encoding">エンコーディング</string>
     <string name="text_editor_close_message">本当にこのドキュメントの保存していない変更は破棄しますか？</string>
 
-    <string name="ftp_server_title">FTP サーバー</string>
-    <string name="ftp_server_state_title">状態</string>
-    <string name="ftp_server_state_summary_starting">開始中…</string>
-    <string name="ftp_server_state_summary_running">実行中</string>
-    <string name="ftp_server_state_summary_stopping">停止中…</string>
-    <string name="ftp_server_state_summary_stopped">待機中</string>
-    <string name="ftp_server_url_title">URL</string>
-    <string name="ftp_server_url_summary_no_local_inet_address">未知のローカル IP です</string>
-    <string name="ftp_server_url_menu_copy_url">URL をコピー</string>
-    <string name="ftp_server_url_menu_copy_password">パスワードをコピー</string>
-    <string name="ftp_server_add_tile_title">クイック設定に追加</string>
-    <string name="ftp_server_add_tile_result_added">「FTP サーバー」はクイック設定に追加されました</string>
-    <string name="ftp_server_add_tile_result_already_added">「FTP サーバー」は既にクイック設定に追加されています</string>
-    <string name="ftp_server_add_tile_result_error">クイック設定に「FTP サーバー」を追加中にエラーが発生しました</string>
-    <string name="ftp_server_configuration_title">設定</string>
-    <string name="ftp_server_anonymous_login_title">匿名ログイン</string>
-    <string name="ftp_server_username_title">ユーザー名</string>
-    <string name="ftp_server_password_title">パスワード</string>
-    <string name="ftp_server_port_title">ポート</string>
-    <string name="ftp_server_home_directory_title">Root フォルダ</string>
-    <string name="ftp_server_writable_title">書き込みを許可</string>
     <string name="settings_title">設定</string>
     <string name="settings_interface_title">外観</string>
     <string name="settings_locale_title">言語</string>
-    <string name="settings_theme_color_title">テーマカラー</string>
-    <string name="settings_theme_color_summary">アプリ内で優先して使用する色です</string>
-    <string name="settings_material_design_3_title">Material Design 3</string>
     <string name="settings_night_mode_title">夜間モード</string>
     <string-array name="settings_night_mode_entries">
         <item>システム設定に従う</item>
@@ -631,7 +482,6 @@
     </string-array>
     <string name="settings_show_pdf_thumbnail_pre_28_title">PDF ドキュメントのサムネイルを表示する</string>
     <string name="settings_show_pdf_thumbnail_pre_28_summary">古いバージョンの Android ではアプリが不安定になる可能性があります</string>
-    <string name="settings_read_remote_files_for_thumbnail_title">リモートファイルのサムネイルを読み込む</string>
 
     <string name="about_title">このアプリについて</string>
     <string name="about_version_title">バージョン</string>

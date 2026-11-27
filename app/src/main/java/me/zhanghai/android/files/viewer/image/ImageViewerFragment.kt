@@ -26,6 +26,8 @@ import kotlinx.parcelize.WriteWith
 import me.zhanghai.android.files.R
 import me.zhanghai.android.files.databinding.ImageViewerFragmentBinding
 import me.zhanghai.android.files.file.fileProviderUri
+import me.zhanghai.android.files.file.isAppPrivatePath
+import me.zhanghai.android.files.filelist.name
 import me.zhanghai.android.files.provider.common.delete
 import me.zhanghai.android.files.ui.DepthPageTransformer
 import me.zhanghai.android.files.util.ParcelableArgs
@@ -36,6 +38,7 @@ import me.zhanghai.android.files.util.createSendImageIntent
 import me.zhanghai.android.files.util.extraPath
 import me.zhanghai.android.files.util.extraPathList
 import me.zhanghai.android.files.util.finish
+import me.zhanghai.android.files.util.isTrustedInternalIntent
 import me.zhanghai.android.files.util.getState
 import me.zhanghai.android.files.util.mediumAnimTime
 import me.zhanghai.android.files.util.putState
@@ -60,7 +63,10 @@ class ImageViewerFragment : Fragment(), ConfirmDeleteDialogFragment.Listener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        paths = (savedInstanceState?.getState<State>()?.paths ?: argsPaths).toMutableList()
+        val allowOpenCache = args.intent.isTrustedInternalIntent
+        paths = (savedInstanceState?.getState<State>()?.paths ?: argsPaths)
+            .filter { !it.isAppPrivatePath(allowOpenCache = allowOpenCache) }
+            .toMutableList()
 
         setHasOptionsMenu(true)
     }
@@ -187,7 +193,7 @@ class ImageViewerFragment : Fragment(), ConfirmDeleteDialogFragment.Listener {
 
     private fun updateTitle() {
         val path = currentPath
-        requireActivity().title = path.fileName.toString()
+        requireActivity().title = path.name
         val size = paths.size
         binding.toolbar.subtitle = if (size > 1) {
             getString(

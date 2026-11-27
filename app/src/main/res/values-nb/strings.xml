@@ -12,7 +12,6 @@
     <string name="close">Lukk</string>
     <string name="copy">Kopiér</string>
     <string name="cut">Klipp ut</string>
-    <string name="default_">Standard</string>
     <string name="delete">Slett</string>
     <string name="discard">Forkast</string>
     <string name="edit">Rediger</string>
@@ -42,7 +41,6 @@
     <string name="share">Del</string>
     <string name="show">Vis</string>
     <string name="skip">Hopp over</string>
-    <string name="stop">Stopp</string>
     <string name="system_default">Systemstandard</string>
     <string name="unknown">Ukjent</string>
     <string name="view">Se innholdet</string>
@@ -69,8 +67,6 @@
     <string name="notification_channel_background_activity_start_description">Utfør handlinger mens appen er i bakgrunnen</string>
     <string name="notification_channel_file_job_name">Filhandlinger</string>
     <string name="notification_channel_file_job_description">Se og kontrollér filhandlinger</string>
-    <string name="notification_channel_ftp_server_name">FTP-tjener</string>
-    <string name="notification_channel_ftp_server_description">Se og kontrollér FTP-tjeneren</string>
 
     <string name="file_action_archive_password_title">Passord kreves</string>
     <string name="file_action_archive_password_message_format">«%1$s» er passordbeskyttet.</string>
@@ -216,7 +212,6 @@
     <string name="file_job_restore_selinux_context_error_message_format">Det oppsto en feil under gjenoppretting av SELinux-kontekst for «%1$s».\n%2$s</string>
     <string name="file_job_write_error_title">Feil under skriving</string>
     <string name="file_job_write_error_message_format">Det oppsto en feil under skriving til «%1$s».\n%2$s</string>
-    <string name="file_job_get_information_error_message_format">Det oppsto en feil under henting av informasjon om «%1$s».</string>
     <string name="file_job_remount_format">Koble til «%1$s» på nytt med lese- og skrivetilgang</string>
     <string name="file_job_remount_loading_format">Kobler til «%1$s» på nytt med lese- og skrivetilgang …</string>
     <string name="file_job_remount_success_format">«%1$s» er koblet til på nytt med lese- og skrivetilgang</string>
@@ -272,15 +267,6 @@
         <item quantity="one">Velg en mappe</item>
         <item quantity="other">Velg mapper</item>
     </plurals>
-    <plurals name="file_list_subtitle_directory_count_format">
-        <item quantity="one">%1$,d mappe</item>
-        <item quantity="other">%1$,d mapper</item>
-    </plurals>
-    <plurals name="file_list_subtitle_file_count_format">
-        <item quantity="one">%1$,d mappe</item>
-        <item quantity="other">%1$,d mapper</item>
-    </plurals>
-    <string name="file_list_subtitle_separator">,\u0020</string>
     <string name="file_list_path_error_empty">Banen kan ikke være tom</string>
     <string name="file_list_path_error_invalid">Ugyldig bane</string>
     <string name="file_list_action_view_sort">Se og sortér</string>
@@ -337,7 +323,6 @@
     <string name="file_properties_basic_parent_directory">Overordnet mappe</string>
     <string name="file_properties_basic_archive_file">Arkivfil</string>
     <string name="file_properties_basic_archive_entry">Arkivoppføring</string>
-    <string name="file_properties_basic_free_space">Ledig plass</string>
     <string name="file_properties_permission">Tillatelser</string>
     <string name="file_properties_permission_owner">Eier</string>
     <string name="file_properties_permission_group">Gruppe</string>
@@ -377,7 +362,6 @@
     <string name="file_properties_media_date_time">Tatt</string>
     <string name="file_properties_media_coordinates">Koordinater</string>
     <string name="file_properties_media_coordinates_format">%1$.3f, %2$.3f</string>
-    <string name="file_properties_media_address">Posisjon</string>
     <string name="file_properties_image_gps_altitude">Høyde over havet</string>
     <string name="file_properties_image_gps_altitude_format">%1$,.3f m</string>
     <string name="file_properties_image_equipment">Kamera</string>
@@ -436,10 +420,6 @@
     <string name="storage_list_empty">Ingen lagring</string>
     <string name="storage_add_storage_title">Legg til lagring</string>
     <string name="storage_add_storage_document_tree">Ekstern lagring</string>
-    <string name="storage_add_storage_ftp_server">FTP-tjener</string>
-    <string name="storage_add_storage_sftp_server">SFTP-tjener</string>
-    <string name="storage_add_storage_smb_server">SMB-tjener</string>
-    <string name="storage_add_storage_webdav_server">WebDAV-tjener</string>
     <string name="storage_edit_device_storage_title">Rediger lagring på enheten</string>
     <string name="storage_edit_device_storage_name">Navn</string>
     <string name="storage_edit_device_storage_path">Bane</string>
@@ -453,114 +433,7 @@
     <string name="storage_edit_document_tree_name">Navn</string>
     <string name="storage_edit_document_tree_uri">URI</string>
     <string name="storage_edit_document_tree_path">Bane</string>
-    <string name="storage_edit_ftp_server_title_edit">Rediger FTP-tjener</string>
-    <string name="storage_edit_ftp_server_title_add">Legg til FTP-tjener</string>
-    <string name="storage_edit_ftp_server_host">Vertsnavn</string>
-    <string name="storage_edit_ftp_server_host_error_empty">Skriv inn et vertsnavn</string>
-    <string name="storage_edit_ftp_server_host_error_invalid">Ugyldig vertsnavn</string>
-    <string name="storage_edit_ftp_server_port">Port</string>
-    <string name="storage_edit_ftp_server_port_error_invalid">Ugyldig port</string>
-    <string name="storage_edit_ftp_server_path">Bane</string>
-    <string name="storage_edit_ftp_server_path_placeholder">Kan være tomt</string>
-    <string name="storage_edit_ftp_server_name">Navn</string>
-    <string name="storage_edit_ftp_server_name_placeholder">Bruk vertsnavn</string>
-    <string name="storage_edit_ftp_server_protocol">Protokoll</string>
-    <string name="storage_edit_ftp_server_authentication_type">Autentisering</string>
-    <string-array name="storage_edit_ftp_server_authentication_type_entries">
-        <item>Passord</item>
-        <item>Anonym</item>
-    </string-array>
-    <string name="storage_edit_ftp_server_username">Brukernavn</string>
-    <string name="storage_edit_ftp_server_username_error_empty">Skriv inn et brukernavn</string>
-    <string name="storage_edit_ftp_server_password">Passord</string>
-    <string name="storage_edit_ftp_server_mode">Modus</string>
-    <string-array name="storage_edit_ftp_server_mode_entries">
-        <item>Aktiv</item>
-        <item>Passiv</item>
-    </string-array>
-    <string name="storage_edit_ftp_server_encoding">Koding</string>
-    <string name="storage_edit_ftp_server_connect_and_add">Koble til og legg til</string>
-    <string name="storage_edit_ftp_server_add">Legg til</string>
-    <string name="storage_edit_sftp_server_title_edit">Rediger SFTP-tjener</string>
-    <string name="storage_edit_sftp_server_title_add">Legg til SFTP-tjener</string>
-    <string name="storage_edit_sftp_server_host">Vertsnavn</string>
-    <string name="storage_edit_sftp_server_host_error_empty">Skriv inn vertsnavn</string>
-    <string name="storage_edit_sftp_server_host_error_invalid">Ugyldig vertsnavn</string>
-    <string name="storage_edit_sftp_server_port">Port</string>
-    <string name="storage_edit_sftp_server_port_error_invalid">Ugyldig port</string>
-    <string name="storage_edit_sftp_server_path">Bane</string>
-    <string name="storage_edit_sftp_server_path_placeholder">Kan være tomt</string>
-    <string name="storage_edit_sftp_server_name">Navn</string>
-    <string name="storage_edit_sftp_server_name_placeholder">Bruk vertsnavn</string>
-    <string name="storage_edit_sftp_server_authentication_type">Autentisering</string>
-    <string-array name="storage_edit_sftp_server_authentication_type_entries">
-        <item>Passord</item>
-        <item>Offentlig nøkkel</item>
-    </string-array>
-    <string name="storage_edit_sftp_server_username">Brukernavn</string>
-    <string name="storage_edit_sftp_server_username_error_empty">Skriv inn et brukernavn</string>
-    <string name="storage_edit_sftp_server_password">Passord</string>
-    <string name="storage_edit_sftp_server_private_key">Privat nøkkel</string>
-    <string name="storage_edit_sftp_server_private_key_open_file">Åpne fil</string>
-    <string name="storage_edit_sftp_server_private_key_error_empty">Skriv inn en privat nøkkel</string>
-    <string name="storage_edit_sftp_server_private_key_error_invalid">Ugyldig privat nøkkel</string>
-    <string name="storage_edit_sftp_server_private_key_password">Passord for privat nøkkel</string>
-    <string name="storage_edit_sftp_server_private_key_password_placeholder">Kan være tomt</string>
-    <string name="storage_edit_sftp_server_private_key_password_error_invalid">Ugyldig passord for privat nøkkel</string>
-    <string name="storage_edit_sftp_server_connect_and_add">Koble til og legg til</string>
-    <string name="storage_edit_sftp_server_add">Legg til</string>
-    <string name="storage_add_lan_smb_server_loading">Søker etter SMB-tjenere …</string>
-    <string name="storage_add_lan_smb_server_add">Legg til manuelt</string>
-    <string name="storage_edit_smb_server_title_edit">Rediger SMB-tjener</string>
-    <string name="storage_edit_smb_server_title_add">Legg til SMB-tjener</string>
-    <string name="storage_edit_smb_server_host">Vertsnavn</string>
-    <string name="storage_edit_smb_server_host_error_empty">Skriv inn et vertsnavn</string>
-    <string name="storage_edit_smb_server_host_error_invalid">Ugyldig vertsnavn</string>
-    <string name="storage_edit_smb_server_port">Port</string>
-    <string name="storage_edit_smb_server_port_error_invalid">Ugyldig port</string>
-    <string name="storage_edit_smb_server_path">Bane</string>
-    <string name="storage_edit_smb_server_path_placeholder">Kan være tomt</string>
-    <string name="storage_edit_smb_server_name">Navn</string>
-    <string name="storage_edit_smb_server_name_placeholder">Bruk vertsnavn</string>
-    <string name="storage_edit_smb_server_authentication_type">Autentisering</string>
-    <string-array name="storage_edit_smb_server_authentication_type_entries">
-        <item>Passord</item>
-        <item>Gjest</item>
-        <item>Anonym</item>
-    </string-array>
-    <string name="storage_edit_smb_server_username">Brukernavn</string>
-    <string name="storage_edit_smb_server_username_error_empty">Skriv inn et brukernavn</string>
-    <string name="storage_edit_smb_server_password">Passord</string>
-    <string name="storage_edit_smb_server_domain">Domene</string>
-    <string name="storage_edit_smb_server_connect_and_add">Koble til og legg til</string>
-    <string name="storage_edit_smb_server_add">Legg til</string>
-    <string name="storage_edit_webdav_server_title_edit">Rediger WebDAV-tjener</string>
-    <string name="storage_edit_webdav_server_title_add">Legg til WebDAV-tjener</string>
-    <string name="storage_edit_webdav_server_host">Vertsnavn</string>
-    <string name="storage_edit_webdav_server_host_error_empty">Skriv inn et vertsnavn</string>
-    <string name="storage_edit_webdav_server_host_error_invalid">Ugyldig vertsnavn</string>
-    <string name="storage_edit_webdav_server_port">Port</string>
-    <string name="storage_edit_webdav_server_port_error_invalid">Ugyldig port</string>
-    <string name="storage_edit_webdav_server_path">Bane</string>
-    <string name="storage_edit_webdav_server_path_placeholder">Kan være tomt</string>
-    <string name="storage_edit_webdav_server_name">Navn</string>
-    <string name="storage_edit_webdav_server_name_placeholder">Bruk vertsnavn</string>
-    <string name="storage_edit_webdav_server_protocol">Protokoll</string>
-    <string name="storage_edit_webdav_server_authentication_type">Autentisering</string>
-    <string-array name="storage_edit_webdav_server_authentication_type_entries">
-        <item>Passord</item>
-        <item>Tilgangstoken</item>
-        <item>Ingen</item>
-    </string-array>
-    <string name="storage_edit_webdav_server_username">Brukernavn</string>
-    <string name="storage_edit_webdav_server_username_error_empty">Skriv inn et brukernavn</string>
-    <string name="storage_edit_webdav_server_password">Passord</string>
-    <string name="storage_edit_webdav_server_access_token">Tilgangstoken</string>
-    <string name="storage_edit_webdav_server_access_token_error_empty">Skriv inn et tilgangstoken</string>
-    <string name="storage_edit_webdav_server_connect_and_add">Koble til og legg til</string>
-    <string name="storage_edit_webdav_server_add">Legg til</string>
 
-    <string name="navigation_storage_subtitle_format">%1$s av %2$s ledig</string>
     <string name="navigation_add_storage">Legg til lagring …</string>
     <string name="navigation_standard_directory_alarms">Alarmer</string>
     <string name="navigation_standard_directory_dcim">DCIM</string>
@@ -592,33 +465,9 @@
     <string name="text_editor_encoding">Tegnkoding</string>
     <string name="text_editor_close_message">Er du sikker på at du vil forkaste de ulagrede endringene i dette dokumentet?</string>
 
-    <string name="ftp_server_title">FTP-tjener</string>
-    <string name="ftp_server_state_title">Status</string>
-    <string name="ftp_server_state_summary_starting">Starter …</string>
-    <string name="ftp_server_state_summary_running">Kjører</string>
-    <string name="ftp_server_state_summary_stopping">Stopper …</string>
-    <string name="ftp_server_state_summary_stopped">Ikke startet</string>
-    <string name="ftp_server_url_title">URL</string>
-    <string name="ftp_server_url_summary_no_local_inet_address">Lokal IP-adresse er ukjent</string>
-    <string name="ftp_server_url_menu_copy_url">Kopiér URL</string>
-    <string name="ftp_server_url_menu_copy_password">Kopiér passord</string>
-    <string name="ftp_server_add_tile_title">Legg til i hurtiginnstillingene</string>
-    <string name="ftp_server_add_tile_result_added">«FTP-tjener» er lagt til i hurtiginnstillingene</string>
-    <string name="ftp_server_add_tile_result_already_added">«FTP-tjener» er allerede lagt til i hurtiginnstillingene</string>
-    <string name="ftp_server_add_tile_result_error">Feil under tilføying av «FTP-tjener» til hurtiginnstillingene</string>
-    <string name="ftp_server_configuration_title">Konfigurasjon</string>
-    <string name="ftp_server_anonymous_login_title">Anonym innlogging</string>
-    <string name="ftp_server_username_title">Brukernavn</string>
-    <string name="ftp_server_password_title">Passord</string>
-    <string name="ftp_server_port_title">Port</string>
-    <string name="ftp_server_home_directory_title">Rotmappen</string>
-    <string name="ftp_server_writable_title">Tillat skriving</string>
     <string name="settings_title">Innstillinger</string>
     <string name="settings_interface_title">Grensesnitt</string>
     <string name="settings_locale_title">Språk</string>
-    <string name="settings_theme_color_title">Temafarge</string>
-    <string name="settings_theme_color_summary">Den mest brukte fargen i appen</string>
-    <string name="settings_material_design_3_title">Material Design 3</string>
     <string name="settings_night_mode_title">Nattmodus</string>
     <string-array name="settings_night_mode_entries">
         <item>Følg systemet</item>
@@ -662,7 +511,6 @@
     </string-array>
     <string name="settings_show_pdf_thumbnail_pre_28_title">Vis miniatyrbilde for PDF-filer</string>
     <string name="settings_show_pdf_thumbnail_pre_28_summary">Kan gjøre appen ustabil på eldre Android-versjoner</string>
-    <string name="settings_read_remote_files_for_thumbnail_title">Les eksterne filer for miniatyrbilder</string>
 
     <string name="about_title">Om appen</string>
     <string name="about_version_title">Versjon</string>

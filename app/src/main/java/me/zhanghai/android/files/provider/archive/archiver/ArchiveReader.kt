@@ -37,6 +37,9 @@ object ArchiveReader {
         val entries = mutableMapOf<Path, ReadArchive.Entry>()
         val rawEntries = readEntries(file, passwords)
         for (entry in rawEntries) {
+            if ('\u0000' in entry.name) {
+                continue
+            }
             var path = rootPath.resolve(entry.name)
             // Normalize an absolute path to prevent path traversal attack.
             if (!path.isAbsolute) {

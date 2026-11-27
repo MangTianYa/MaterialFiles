@@ -12,7 +12,6 @@
     <string name="close">Zamknij</string>
     <string name="copy">Kopiuj</string>
     <string name="cut">Wytnij</string>
-    <string name="default_">Domyślny</string>
     <string name="delete">Usuń</string>
     <string name="discard">Odrzuć</string>
     <string name="edit">Edytuj</string>
@@ -42,7 +41,6 @@
     <string name="share">Udostępnij </string>
     <string name="show">Pokaż</string>
     <string name="skip">Pomiń</string>
-    <string name="stop">Zatrzymaj</string>
     <string name="system_default">Ustawienie domyślne systemu</string>
     <string name="unknown">Nieznany</string>
     <string name="view">Podgląd</string>
@@ -71,8 +69,6 @@
     <string name="notification_channel_background_activity_start_description">Podejmuj działania, gdy aplikacja działa w tle</string>
     <string name="notification_channel_file_job_name">Operacje na plikach</string>
     <string name="notification_channel_file_job_description">Wyświetlanie i sterowanie operacjami na plikach</string>
-    <string name="notification_channel_ftp_server_name">Serwer FTP</string>
-    <string name="notification_channel_ftp_server_description">Wyświetl i zarządzaj serwerem FTP</string>
 
     <string name="file_action_archive_password_title">Wymagane hasło</string>
     <string name="file_action_archive_password_message_format">„%1$s” jest chronione hasłem.</string>
@@ -258,7 +254,6 @@
     <string name="file_job_restore_selinux_context_error_message_format">Wystąpił błąd podczas przywracania kontekstu SELinux dla „%1$s”.\n%2$s</string>
     <string name="file_job_write_error_title">Błąd podczas zapisu</string>
     <string name="file_job_write_error_message_format">Wystąpił błąd podczas zapisu „%1$s”.\n%2$s</string>
-    <string name="file_job_get_information_error_message_format">Wystąpił błąd podczas pobierania informacji o „%1$s”.</string>
     <string name="file_job_remount_format">Zamontuj ponownie „%1$s” z uprawnieniem do odczytu i zapisu</string>
     <string name="file_job_remount_loading_format">Ponowne montowanie „%1$s” z uprawnieniem do odczytu i zapisu</string>
     <string name="file_job_remount_success_format">„%1$s” został zamontowany ponownie z uprawnieniem do odczytu i zapisu</string>
@@ -324,19 +319,6 @@
         <item quantity="many">Wybierz katalogi</item>
         <item quantity="other">Wybierz katalogi</item>
     </plurals>
-    <plurals name="file_list_subtitle_directory_count_format">
-        <item quantity="one">%1$,d katalog</item>
-        <item quantity="few">%1$,d katalogi</item>
-        <item quantity="many">%1$,d katalogów</item>
-        <item quantity="other">%1$,d katalogów</item>
-    </plurals>
-    <plurals name="file_list_subtitle_file_count_format">
-        <item quantity="one">%1$,d plik</item>
-        <item quantity="few">%1$,d pliki</item>
-        <item quantity="many">%1$,d plików</item>
-        <item quantity="other">%1$,d plików</item>
-    </plurals>
-    <string name="file_list_subtitle_separator">,\u0020</string>
     <string name="file_list_path_error_empty">Ścieżka nie może być pusta</string>
     <string name="file_list_path_error_invalid">Nieprawidłowa ścieżka</string>
     <string name="file_list_action_view_sort">Przeglądaj i sortuj</string>
@@ -395,7 +377,6 @@
     <string name="file_properties_basic_parent_directory">Katalog nadrzędny</string>
     <string name="file_properties_basic_archive_file">Zarchiwizuj plik</string>
     <string name="file_properties_basic_archive_entry">Wpis archiwum</string>
-    <string name="file_properties_basic_free_space">Wolna przestrzeń</string>
     <string name="file_properties_permission">Uprawnienia</string>
     <string name="file_properties_permission_owner">Właściciel</string>
     <string name="file_properties_permission_group">Grupa</string>
@@ -435,7 +416,6 @@
     <string name="file_properties_media_date_time">Data zrobienia zdjęcia</string>
     <string name="file_properties_media_coordinates">Współrzędne</string>
     <string name="file_properties_media_coordinates_format">%1$.3f, %2$.3f</string>
-    <string name="file_properties_media_address">Lokalizacja</string>
     <string name="file_properties_image_gps_altitude">Wysokość</string>
     <string name="file_properties_image_gps_altitude_format">%1$,.3f m</string>
     <string name="file_properties_image_equipment">Aparat</string>
@@ -496,10 +476,6 @@
     <string name="storage_list_empty">Brak nośników</string>
     <string name="storage_add_storage_title">Dodaj nośnik</string>
     <string name="storage_add_storage_document_tree">Zewnętrzny nośnik pamięci</string>
-    <string name="storage_add_storage_ftp_server">Serwer FTP</string>
-    <string name="storage_add_storage_sftp_server">Serwer SFTP</string>
-    <string name="storage_add_storage_smb_server">Serwer SMB</string>
-    <string name="storage_add_storage_webdav_server">Serwer WebDAV</string>
     <string name="storage_edit_device_storage_title">Edytuj pamięć urządzenia</string>
     <string name="storage_edit_device_storage_name">Nazwa</string>
     <string name="storage_edit_device_storage_path">Ścieżka</string>
@@ -513,114 +489,7 @@
     <string name="storage_edit_document_tree_name">Nazwa</string>
     <string name="storage_edit_document_tree_uri">URI</string>
     <string name="storage_edit_document_tree_path">Ścieżka</string>
-    <string name="storage_edit_ftp_server_title_edit">Edytuj serwer FTP</string>
-    <string name="storage_edit_ftp_server_title_add">Dodaj serwer FTP</string>
-    <string name="storage_edit_ftp_server_host">Nazwa hosta</string>
-    <string name="storage_edit_ftp_server_host_error_empty">Wprowadź nazwę hosta</string>
-    <string name="storage_edit_ftp_server_host_error_invalid">Nieprawidłowa nazwa hosta</string>
-    <string name="storage_edit_ftp_server_port">Port</string>
-    <string name="storage_edit_ftp_server_port_error_invalid">Nieprawidłowy port</string>
-    <string name="storage_edit_ftp_server_path">Ścieżka</string>
-    <string name="storage_edit_ftp_server_path_placeholder">Można pozostawić puste</string>
-    <string name="storage_edit_ftp_server_name">Nazwa</string>
-    <string name="storage_edit_ftp_server_name_placeholder">Użyj nazwy hosta</string>
-    <string name="storage_edit_ftp_server_protocol">Protokół</string>
-    <string name="storage_edit_ftp_server_authentication_type">Poświadczenie</string>
-    <string-array name="storage_edit_ftp_server_authentication_type_entries">
-        <item>Hasło</item>
-        <item>Anonimowe</item>
-    </string-array>
-    <string name="storage_edit_ftp_server_username">Nazwa użytkownika</string>
-    <string name="storage_edit_ftp_server_username_error_empty">Wprowadź nazwę użytkownika</string>
-    <string name="storage_edit_ftp_server_password">Hasło</string>
-    <string name="storage_edit_ftp_server_mode">Tryb</string>
-    <string-array name="storage_edit_ftp_server_mode_entries">
-        <item>Aktywny</item>
-        <item>Pasywny</item>
-    </string-array>
-    <string name="storage_edit_ftp_server_encoding">Kodowanie</string>
-    <string name="storage_edit_ftp_server_connect_and_add">Połącz i dodaj</string>
-    <string name="storage_edit_ftp_server_add">Dodaj</string>
-    <string name="storage_edit_sftp_server_title_edit">Edytuj serwer SFTP</string>
-    <string name="storage_edit_sftp_server_title_add">Dodaj serwer SFTP</string>
-    <string name="storage_edit_sftp_server_host">Nazwa hosta</string>
-    <string name="storage_edit_sftp_server_host_error_empty">Wprowadź nazwę hosta</string>
-    <string name="storage_edit_sftp_server_host_error_invalid">Nieprawidłowa nazwa hosta</string>
-    <string name="storage_edit_sftp_server_port">Port</string>
-    <string name="storage_edit_sftp_server_port_error_invalid">Nieprawidłowy port</string>
-    <string name="storage_edit_sftp_server_path">Ścieżka</string>
-    <string name="storage_edit_sftp_server_path_placeholder">Można pozostawić puste</string>
-    <string name="storage_edit_sftp_server_name">Nazwa</string>
-    <string name="storage_edit_sftp_server_name_placeholder">Użyj nazwy hosta</string>
-    <string name="storage_edit_sftp_server_authentication_type">Poświadczenie</string>
-    <string-array name="storage_edit_sftp_server_authentication_type_entries">
-        <item>Hasło</item>
-        <item>Klucz publiczny</item>
-    </string-array>
-    <string name="storage_edit_sftp_server_username">Nazwa użytkownika</string>
-    <string name="storage_edit_sftp_server_username_error_empty">Wprowadź nazwę użytkownika</string>
-    <string name="storage_edit_sftp_server_password">Hasło</string>
-    <string name="storage_edit_sftp_server_private_key">Klucz prywatny</string>
-    <string name="storage_edit_sftp_server_private_key_open_file">Otwórz plik</string>
-    <string name="storage_edit_sftp_server_private_key_error_empty">Wprowadź klucz prywatny</string>
-    <string name="storage_edit_sftp_server_private_key_error_invalid">Nieprawidłowy klucz prywatny</string>
-    <string name="storage_edit_sftp_server_private_key_password">Hasło klucza prywatnego</string>
-    <string name="storage_edit_sftp_server_private_key_password_placeholder">Można pozostawić puste</string>
-    <string name="storage_edit_sftp_server_private_key_password_error_invalid">Nieprawidłowe hasło klucza prywatnego</string>
-    <string name="storage_edit_sftp_server_connect_and_add">Połącz i dodaj</string>
-    <string name="storage_edit_sftp_server_add">Dodaj</string>
-    <string name="storage_add_lan_smb_server_loading">Wyszukiwanie serwerów SMB…</string>
-    <string name="storage_add_lan_smb_server_add">Dodaj ręcznie</string>
-    <string name="storage_edit_smb_server_title_edit">Edytuj serwer SMB</string>
-    <string name="storage_edit_smb_server_title_add">Dodaj serwer SMB</string>
-    <string name="storage_edit_smb_server_host">Nazwa hosta</string>
-    <string name="storage_edit_smb_server_host_error_empty">Wprowadź nazwę hosta</string>
-    <string name="storage_edit_smb_server_host_error_invalid">Nieprawidłowa nazwa hosta</string>
-    <string name="storage_edit_smb_server_port">Port</string>
-    <string name="storage_edit_smb_server_port_error_invalid">Nieprawidłowy port</string>
-    <string name="storage_edit_smb_server_path">Ścieżka</string>
-    <string name="storage_edit_smb_server_path_placeholder">Można pozostawić puste</string>
-    <string name="storage_edit_smb_server_name">Nazwa</string>
-    <string name="storage_edit_smb_server_name_placeholder">Użyj nazwy hosta</string>
-    <string name="storage_edit_smb_server_authentication_type">Poświadczenie</string>
-    <string-array name="storage_edit_smb_server_authentication_type_entries">
-        <item>Hasło</item>
-        <item>Gość</item>
-        <item>Anonimowe</item>
-    </string-array>
-    <string name="storage_edit_smb_server_username">Nazwa użytkownika</string>
-    <string name="storage_edit_smb_server_username_error_empty">Wprowadź nazwę użytkownika</string>
-    <string name="storage_edit_smb_server_password">Hasło</string>
-    <string name="storage_edit_smb_server_domain">Domena</string>
-    <string name="storage_edit_smb_server_connect_and_add">Połącz i dodaj</string>
-    <string name="storage_edit_smb_server_add">Dodaj</string>
-    <string name="storage_edit_webdav_server_title_edit">Edytuj serwer WebDAV</string>
-    <string name="storage_edit_webdav_server_title_add">Dodaj serwer WebDAV</string>
-    <string name="storage_edit_webdav_server_host">Nazwa hosta</string>
-    <string name="storage_edit_webdav_server_host_error_empty">Podaj nazwę hosta</string>
-    <string name="storage_edit_webdav_server_host_error_invalid">Nieprawidłowa nazwa hosta</string>
-    <string name="storage_edit_webdav_server_port">Port</string>
-    <string name="storage_edit_webdav_server_port_error_invalid">Nieprawidłowy port</string>
-    <string name="storage_edit_webdav_server_path">Ścieżka</string>
-    <string name="storage_edit_webdav_server_path_placeholder">Można pozostawić puste</string>
-    <string name="storage_edit_webdav_server_name">Nazwa</string>
-    <string name="storage_edit_webdav_server_name_placeholder">Użyj nazwy hosta</string>
-    <string name="storage_edit_webdav_server_protocol">Protokół</string>
-    <string name="storage_edit_webdav_server_authentication_type">Poświadczenie</string>
-    <string-array name="storage_edit_webdav_server_authentication_type_entries">
-        <item>Hasło</item>
-        <item>Token dostępu</item>
-        <item>Brak</item>
-    </string-array>
-    <string name="storage_edit_webdav_server_username">Nazwa użytkownika</string>
-    <string name="storage_edit_webdav_server_username_error_empty">Podaj nazwę użytkownika</string>
-    <string name="storage_edit_webdav_server_password">Hasło</string>
-    <string name="storage_edit_webdav_server_access_token">Token dostępu</string>
-    <string name="storage_edit_webdav_server_access_token_error_empty">Podaj token dostępu</string>
-    <string name="storage_edit_webdav_server_connect_and_add">Połącz i dodaj</string>
-    <string name="storage_edit_webdav_server_add">Dodaj</string>
 
-    <string name="navigation_storage_subtitle_format">%1$s wolne z %2$s</string>
     <string name="navigation_add_storage">Dodaj nośnik…</string>
     <string name="navigation_standard_directory_alarms">Alarmy</string>
     <string name="navigation_standard_directory_dcim">DCIM</string>
@@ -652,33 +521,9 @@
     <string name="text_editor_encoding">Kodowanie</string>
     <string name="text_editor_close_message">Czy na pewno chcesz porzucić niezapisane zmiany w tym dokumencie?</string>
 
-    <string name="ftp_server_title">Serwer FTP</string>
-    <string name="ftp_server_state_title">Status</string>
-    <string name="ftp_server_state_summary_starting">Uruchomianie…</string>
-    <string name="ftp_server_state_summary_running">Uruchomiony</string>
-    <string name="ftp_server_state_summary_stopping">Zatrzymywanie…</string>
-    <string name="ftp_server_state_summary_stopped">Nieuruchomiony</string>
-    <string name="ftp_server_url_title">Adres URL</string>
-    <string name="ftp_server_url_summary_no_local_inet_address">Lokalny adres IP jest nieznany</string>
-    <string name="ftp_server_url_menu_copy_url">Skopiuj adres URL</string>
-    <string name="ftp_server_url_menu_copy_password">Skopiuj hasło</string>
-    <string name="ftp_server_add_tile_title">Dodaj do Szybkich ustawień</string>
-    <string name="ftp_server_add_tile_result_added">„Serwer FTP” został dodany do Szybkich ustawień</string>
-    <string name="ftp_server_add_tile_result_already_added">„Serwer FTP” został już dodany do Szybkich ustawień</string>
-    <string name="ftp_server_add_tile_result_error">Błąd podczas dodawania „Serwera FTP” do Szybkich ustawień</string>
-    <string name="ftp_server_configuration_title">Konfiguracja</string>
-    <string name="ftp_server_anonymous_login_title">Logowanie anonimowe</string>
-    <string name="ftp_server_username_title">Nazwa użytkownika</string>
-    <string name="ftp_server_password_title">Hasło</string>
-    <string name="ftp_server_port_title">Port</string>
-    <string name="ftp_server_home_directory_title">Katalog główny</string>
-    <string name="ftp_server_writable_title">Zezwól na zapis</string>
     <string name="settings_title">Ustawienia</string>
     <string name="settings_interface_title">Interfejs</string>
     <string name="settings_locale_title">Język</string>
-    <string name="settings_theme_color_title">Kolor motywu</string>
-    <string name="settings_theme_color_summary">Kolor pojawiający się najczęściej w aplikacji</string>
-    <string name="settings_material_design_3_title">Material Design 3</string>
     <string name="settings_night_mode_title">Ciemny motyw</string>
     <string-array name="settings_night_mode_entries">
         <item>Zgodnie z ustawieniem systemu</item>
@@ -724,7 +569,6 @@
     </string-array>
     <string name="settings_show_pdf_thumbnail_pre_28_title">Pokaż miniaturę dokumentów PDF</string>
     <string name="settings_show_pdf_thumbnail_pre_28_summary">Może spowodować niestabilność aplikacji w starszych wersjach systemu Android</string>
-    <string name="settings_read_remote_files_for_thumbnail_title">Odczytaj zdalne pliki w celu uzyskania miniatury</string>
 
     <string name="about_title">O aplikacji</string>
     <string name="about_version_title">Wersja</string>

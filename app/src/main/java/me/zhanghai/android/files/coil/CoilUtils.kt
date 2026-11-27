@@ -14,7 +14,6 @@ import coil.size.Size
 import coil.size.isOriginal
 import coil.size.pxOrElse
 import java8.nio.file.Path
-import me.zhanghai.android.files.filelist.isRemotePath
 
 val Bitmap.Config.isHardware: Boolean
     get() = Build.VERSION.SDK_INT >= Build.VERSION_CODES.O && this == Bitmap.Config.HARDWARE
@@ -22,7 +21,7 @@ val Bitmap.Config.isHardware: Boolean
 fun Bitmap.Config.toSoftware(): Bitmap.Config = if (isHardware) Bitmap.Config.ARGB_8888 else this
 
 val Path.dataSource: DataSource
-    get() = if (isRemotePath) DataSource.NETWORK else DataSource.DISK
+    get() = DataSource.DISK
 
 inline fun Size.widthPx(scale: Scale, original: () -> Int): Int =
     if (isOriginal) original() else width.toPx(scale)

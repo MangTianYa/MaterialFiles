@@ -14,7 +14,6 @@
     <string name="close">Закрыть</string>
     <string name="copy">Копировать</string>
     <string name="cut">Вырезать</string>
-    <string name="default_">По умолчанию</string>
     <string name="delete">Удалить</string>
     <string name="discard">Отказаться</string>
     <string name="edit">Редактировать</string>
@@ -44,7 +43,6 @@
     <string name="share">Поделиться</string>
     <string name="show">Показать</string>
     <string name="skip">Пропустить</string>
-    <string name="stop">Остановить</string>
     <string name="system_default">Системный</string>
     <string name="unknown">Неизвестно</string>
     <string name="view">Просмотр</string>
@@ -73,8 +71,6 @@
     <string name="notification_channel_background_activity_start_description">Разрешить действия, пока приложение находится в фоновом режиме</string>
     <string name="notification_channel_file_job_name">Операции с файлами</string>
     <string name="notification_channel_file_job_description">Отображать и управлять операциями с файлами</string>
-    <string name="notification_channel_ftp_server_name">FTP-сервер</string>
-    <string name="notification_channel_ftp_server_description">Отображать и управлять FTP-сервером</string>
 
     <string name="file_action_archive_password_title">Нужен пароль</string>
     <string name="file_action_archive_password_message_format">“%1$s” защищённый паролем.</string>
@@ -260,7 +256,6 @@
     <string name="file_job_restore_selinux_context_error_message_format">Произошла ошибка при восстановлении контекста SELinux для “%1$s”.\n%2$s</string>
     <string name="file_job_write_error_title">Ошибка во время записи</string>
     <string name="file_job_write_error_message_format">Произошла ошибка записи “%1$s”.\n%2$s</string>
-    <string name="file_job_get_information_error_message_format">Произошла ошибка при получении информации о “%1$s”.</string>
     <string name="file_job_remount_format">Перемонтировать “%1$s” в режим чтение-запись</string>
     <string name="file_job_remount_loading_format">Перемонтирование “%1$s” в режим чтение-запись…</string>
     <string name="file_job_remount_success_format">“%1$s” был перемонтирован в режим чтение-запись</string>
@@ -326,19 +321,6 @@
         <item quantity="many">Выбрать папки</item>
         <item quantity="other">Выбрать папки</item>
     </plurals>
-    <plurals name="file_list_subtitle_directory_count_format">
-        <item quantity="one">%1$,d папка</item>
-        <item quantity="few">%1$,d папки</item>
-        <item quantity="many">%1$,d папок</item>
-        <item quantity="other">%1$,d папки</item>
-    </plurals>
-    <plurals name="file_list_subtitle_file_count_format">
-        <item quantity="one">%1$,d файл</item>
-        <item quantity="few">%1$,d файла</item>
-        <item quantity="many">%1$,d файлов</item>
-        <item quantity="other">%1$,d файлов</item>
-    </plurals>
-    <string name="file_list_subtitle_separator">,\u0020</string>
     <string name="file_list_path_error_empty">Путь не может быть пустым</string>
     <string name="file_list_path_error_invalid">Неверный путь</string>
     <string name="file_list_action_view_sort">Настройки просмотра</string>
@@ -397,7 +379,6 @@
     <string name="file_properties_basic_parent_directory">Родительская папка</string>
     <string name="file_properties_basic_archive_file">Файл архива</string>
     <string name="file_properties_basic_archive_entry">Элемент архива</string>
-    <string name="file_properties_basic_free_space">Свободное место</string>
     <string name="file_properties_permission">Разрешения</string>
     <string name="file_properties_permission_owner">Владелец</string>
     <string name="file_properties_permission_group">Группа</string>
@@ -437,7 +418,6 @@
     <string name="file_properties_media_date_time">Время съёмки</string>
     <string name="file_properties_media_coordinates">Координаты</string>
     <string name="file_properties_media_coordinates_format">%1$.3f, %2$.3f</string>
-    <string name="file_properties_media_address">Местоположение</string>
     <string name="file_properties_image_gps_altitude">Высота</string>
     <string name="file_properties_image_gps_altitude_format">%1$,.3f м</string>
     <string name="file_properties_image_equipment">Камера</string>
@@ -498,10 +478,6 @@
     <string name="storage_list_empty">Нет накопителей</string>
     <string name="storage_add_storage_title">Добавить накопитель</string>
     <string name="storage_add_storage_document_tree">Внешний накопитель</string>
-    <string name="storage_add_storage_ftp_server">FTP сервер</string>
-    <string name="storage_add_storage_sftp_server">SFTP сервер</string>
-    <string name="storage_add_storage_smb_server">SMB сервер</string>
-    <string name="storage_add_storage_webdav_server">WebDAV сервер</string>
     <string name="storage_edit_device_storage_title">Редактировать накопитель</string>
     <string name="storage_edit_device_storage_name">Имя</string>
     <string name="storage_edit_device_storage_path">Путь</string>
@@ -515,114 +491,7 @@
     <string name="storage_edit_document_tree_name">Имя</string>
     <string name="storage_edit_document_tree_uri">URI</string>
     <string name="storage_edit_document_tree_path">Путь</string>
-    <string name="storage_edit_ftp_server_title_edit">Редактировать FTP сервер</string>
-    <string name="storage_edit_ftp_server_title_add">Добавить FTP сервер</string>
-    <string name="storage_edit_ftp_server_host">Имя хоста</string>
-    <string name="storage_edit_ftp_server_host_error_empty">Введите имя хоста</string>
-    <string name="storage_edit_ftp_server_host_error_invalid">Неверное имя хоста</string>
-    <string name="storage_edit_ftp_server_port">Порт</string>
-    <string name="storage_edit_ftp_server_port_error_invalid">Неверный порт</string>
-    <string name="storage_edit_ftp_server_path">Путь</string>
-    <string name="storage_edit_ftp_server_path_placeholder">Может быть пустым</string>
-    <string name="storage_edit_ftp_server_name">Имя</string>
-    <string name="storage_edit_ftp_server_name_placeholder">Используйте имя хоста</string>
-    <string name="storage_edit_ftp_server_protocol">Протокол</string>
-    <string name="storage_edit_ftp_server_authentication_type">Авторизация</string>
-    <string-array name="storage_edit_ftp_server_authentication_type_entries">
-        <item>Пароль</item>
-        <item>Анонимно</item>
-    </string-array>
-    <string name="storage_edit_ftp_server_username">Имя пользователя</string>
-    <string name="storage_edit_ftp_server_username_error_empty">Введите имя пользователя</string>
-    <string name="storage_edit_ftp_server_password">Пароль</string>
-    <string name="storage_edit_ftp_server_mode">Режим</string>
-    <string-array name="storage_edit_ftp_server_mode_entries">
-        <item>Активный</item>
-        <item>Пассивный</item>
-    </string-array>
-    <string name="storage_edit_ftp_server_encoding">Кодировка</string>
-    <string name="storage_edit_ftp_server_connect_and_add">Соединиться и добавить</string>
-    <string name="storage_edit_ftp_server_add">Добавить</string>
-    <string name="storage_edit_sftp_server_title_edit">Редактировать SFTP сервер</string>
-    <string name="storage_edit_sftp_server_title_add">Добавить SFTP сервер</string>
-    <string name="storage_edit_sftp_server_host">Имя хоста</string>
-    <string name="storage_edit_sftp_server_host_error_empty">Введите имя хоста</string>
-    <string name="storage_edit_sftp_server_host_error_invalid">Неверное имя хоста</string>
-    <string name="storage_edit_sftp_server_port">Порт</string>
-    <string name="storage_edit_sftp_server_port_error_invalid">Неверный порт</string>
-    <string name="storage_edit_sftp_server_path">Путь</string>
-    <string name="storage_edit_sftp_server_path_placeholder">Может быть пустым</string>
-    <string name="storage_edit_sftp_server_name">Имя</string>
-    <string name="storage_edit_sftp_server_name_placeholder">Используйте имя хоста</string>
-    <string name="storage_edit_sftp_server_authentication_type">Авторизация</string>
-    <string-array name="storage_edit_sftp_server_authentication_type_entries">
-        <item>Пароль</item>
-        <item>Публичный ключ</item>
-    </string-array>
-    <string name="storage_edit_sftp_server_username">Имя пользователя</string>
-    <string name="storage_edit_sftp_server_username_error_empty">Введите имя пользователя</string>
-    <string name="storage_edit_sftp_server_password">Пароль</string>
-    <string name="storage_edit_sftp_server_private_key">Приватный ключ</string>
-    <string name="storage_edit_sftp_server_private_key_open_file">Открыть файл</string>
-    <string name="storage_edit_sftp_server_private_key_error_empty">Введите приватный ключ</string>
-    <string name="storage_edit_sftp_server_private_key_error_invalid">Неверный приватный ключ</string>
-    <string name="storage_edit_sftp_server_private_key_password">Пароль приватного ключа</string>
-    <string name="storage_edit_sftp_server_private_key_password_placeholder">Может быть пустым</string>
-    <string name="storage_edit_sftp_server_private_key_password_error_invalid">Неверный пароль приватного ключа</string>
-    <string name="storage_edit_sftp_server_connect_and_add">Соединиться и добавить</string>
-    <string name="storage_edit_sftp_server_add">Добавить</string>
-    <string name="storage_add_lan_smb_server_loading">Поиск SMB серверов…</string>
-    <string name="storage_add_lan_smb_server_add">Добавить вручную</string>
-    <string name="storage_edit_smb_server_title_edit">Редактировать SMB сервер</string>
-    <string name="storage_edit_smb_server_title_add">Добавить SMB сервер</string>
-    <string name="storage_edit_smb_server_host">Имя хоста</string>
-    <string name="storage_edit_smb_server_host_error_empty">Введите имя хоста</string>
-    <string name="storage_edit_smb_server_host_error_invalid">Неверное имя хоста</string>
-    <string name="storage_edit_smb_server_port">Порт</string>
-    <string name="storage_edit_smb_server_port_error_invalid">Неверный порт</string>
-    <string name="storage_edit_smb_server_path">Путь</string>
-    <string name="storage_edit_smb_server_path_placeholder">Может быть пустым</string>
-    <string name="storage_edit_smb_server_name">Имя</string>
-    <string name="storage_edit_smb_server_name_placeholder">Используется имя хоста</string>
-    <string name="storage_edit_smb_server_authentication_type">Авторизация</string>
-    <string-array name="storage_edit_smb_server_authentication_type_entries">
-        <item>Пароль</item>
-        <item>Гость</item>
-        <item>Анонимно</item>
-    </string-array>
-    <string name="storage_edit_smb_server_username">Имя пользователя</string>
-    <string name="storage_edit_smb_server_username_error_empty">Введите имя пользователя</string>
-    <string name="storage_edit_smb_server_password">Пароль</string>
-    <string name="storage_edit_smb_server_domain">Домен</string>
-    <string name="storage_edit_smb_server_connect_and_add">Добавить и соединиться</string>
-    <string name="storage_edit_smb_server_add">Добавить</string>
-    <string name="storage_edit_webdav_server_title_edit">Редактировать WebDAV сервер</string>
-    <string name="storage_edit_webdav_server_title_add">Добавить WebDAV сервер</string>
-    <string name="storage_edit_webdav_server_host">Имя хоста</string>
-    <string name="storage_edit_webdav_server_host_error_empty">Введите имя хоста</string>
-    <string name="storage_edit_webdav_server_host_error_invalid">Неверное имя хоста</string>
-    <string name="storage_edit_webdav_server_port">Порт</string>
-    <string name="storage_edit_webdav_server_port_error_invalid">Неверный порт</string>
-    <string name="storage_edit_webdav_server_path">Путь</string>
-    <string name="storage_edit_webdav_server_path_placeholder">Может быть пустым</string>
-    <string name="storage_edit_webdav_server_name">Имя</string>
-    <string name="storage_edit_webdav_server_name_placeholder">Используется имя хоста</string>
-    <string name="storage_edit_webdav_server_protocol">Протокол</string>
-    <string name="storage_edit_webdav_server_authentication_type">Аутентификация</string>
-    <string-array name="storage_edit_webdav_server_authentication_type_entries">
-        <item>Пароль</item>
-        <item>Токен доступа</item>
-        <item>Нет</item>
-    </string-array>
-    <string name="storage_edit_webdav_server_username">Имя пользователя</string>
-    <string name="storage_edit_webdav_server_username_error_empty">Введите имя пользователя</string>
-    <string name="storage_edit_webdav_server_password">Пароль</string>
-    <string name="storage_edit_webdav_server_access_token">Токен доступа</string>
-    <string name="storage_edit_webdav_server_access_token_error_empty">Введите токен доступа</string>
-    <string name="storage_edit_webdav_server_connect_and_add">Соединиться и добавить</string>
-    <string name="storage_edit_webdav_server_add">Добавить</string>
 
-    <string name="navigation_storage_subtitle_format">%1$s свободно из %2$s</string>
     <string name="navigation_add_storage">Добавить накопитель…</string>
     <string name="navigation_standard_directory_alarms">Будильник</string>
     <string name="navigation_standard_directory_dcim">DCIM</string>
@@ -654,33 +523,9 @@
     <string name="text_editor_encoding">Кодировка</string>
     <string name="text_editor_close_message">Вы уверены что хотите отказаться от несохраненных изменений в документе?</string>
 
-    <string name="ftp_server_title">FTP сервер</string>
-    <string name="ftp_server_state_title">Статус</string>
-    <string name="ftp_server_state_summary_starting">Запуск…</string>
-    <string name="ftp_server_state_summary_running">Запущен</string>
-    <string name="ftp_server_state_summary_stopping">Остановка…</string>
-    <string name="ftp_server_state_summary_stopped">Не запущен</string>
-    <string name="ftp_server_url_title">URL</string>
-    <string name="ftp_server_url_summary_no_local_inet_address">Локальный IP-адрес неизвестен</string>
-    <string name="ftp_server_url_menu_copy_url">Скопировать URL</string>
-    <string name="ftp_server_url_menu_copy_password">Скопировать пароль</string>
-    <string name="ftp_server_add_tile_title">Добавить в Быстрые настройки</string>
-    <string name="ftp_server_add_tile_result_added">“FTP server” был добавлен в Быстрые настройки</string>
-    <string name="ftp_server_add_tile_result_already_added">“FTP server” уже добавлен в Быстрые настройки</string>
-    <string name="ftp_server_add_tile_result_error">Ошибка при добавлении “FTP server” в Быстрые настройки</string>
-    <string name="ftp_server_configuration_title">Конфигурация</string>
-    <string name="ftp_server_anonymous_login_title">Анонимный вход</string>
-    <string name="ftp_server_username_title">Имя пользователя</string>
-    <string name="ftp_server_password_title">Пароль</string>
-    <string name="ftp_server_port_title">Порт</string>
-    <string name="ftp_server_home_directory_title">Корневой каталог</string>
-    <string name="ftp_server_writable_title">Разрешить запись</string>
     <string name="settings_title">Настройки</string>
     <string name="settings_interface_title">Интерфейс</string>
     <string name="settings_locale_title">Язык</string>
-    <string name="settings_theme_color_title">Цвет темы</string>
-    <string name="settings_theme_color_summary">Цвет для элементов в приложении</string>
-    <string name="settings_material_design_3_title">Material Design 3</string>
     <string name="settings_night_mode_title">Ночной режим</string>
     <string-array name="settings_night_mode_entries">
         <item>Использовать системные настройки</item>
@@ -726,7 +571,6 @@
     </string-array>
     <string name="settings_show_pdf_thumbnail_pre_28_title">Показывать миниатюры для документов PDF</string>
     <string name="settings_show_pdf_thumbnail_pre_28_summary">Приложение может стать нестабильным на старых версиях Android</string>
-    <string name="settings_read_remote_files_for_thumbnail_title">Показывать миниатюры для сетевых файлов</string>
 
     <string name="about_title">О программе</string>
     <string name="about_version_title">Версия</string>

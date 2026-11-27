@@ -12,7 +12,9 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runInterruptible
+import me.zhanghai.android.files.navigation.NavigationItemListLiveData
 import me.zhanghai.android.files.provider.common.PosixFileStore
+import me.zhanghai.android.files.storage.StorageSpaceResolver
 import me.zhanghai.android.files.util.ActionState
 import me.zhanghai.android.files.util.isFinished
 import me.zhanghai.android.files.util.isReady
@@ -30,6 +32,8 @@ class FileJobErrorViewModel : ViewModel() {
                 runInterruptible(Dispatchers.IO) {
                     fileStore.isReadOnly = false
                 }
+                StorageSpaceResolver.clearCache()
+                NavigationItemListLiveData.refreshStorageStats()
                 ActionState.Success(fileStore, Unit)
             } catch (e: Exception) {
                 ActionState.Error(fileStore, e)

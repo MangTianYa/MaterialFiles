@@ -131,6 +131,10 @@ class FileJobService : Service() {
             startJob(CreateFileJob(path, createDirectory), context)
         }
 
+        fun createSymbolicLink(sources: List<Path>, targetDirectory: Path, context: Context) {
+            startJob(CreateSymbolicLinkJob(sources, targetDirectory), context)
+        }
+
         fun delete(paths: List<Path>, context: Context) {
             startJob(DeleteFileJob(paths), context)
         }
@@ -149,6 +153,10 @@ class FileJobService : Service() {
 
         fun rename(path: Path, newName: String, context: Context) {
             startJob(RenameFileJob(path, newName), context)
+        }
+
+        fun batchRename(renames: List<Pair<Path, String>>, context: Context) {
+            startJob(BatchRenameFileJob(renames), context)
         }
 
         fun restoreSeLinuxContext(path: Path, recursive: Boolean, context: Context) {

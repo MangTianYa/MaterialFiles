@@ -14,7 +14,6 @@
     <string name="close">Loka</string>
     <string name="copy">Afrita</string>
     <string name="cut">Klippa</string>
-    <string name="default_">Sjálfgefið</string>
     <string name="delete">Eyða</string>
     <string name="discard">Henda</string>
     <string name="edit">Breyta</string>
@@ -44,7 +43,6 @@
     <string name="share">Deila</string>
     <string name="show">Birta</string>
     <string name="skip">Sleppa</string>
-    <string name="stop">Stöðva</string>
     <string name="system_default">Sjálfgefið í kerfinu</string>
     <string name="unknown">Óþekkt</string>
     <string name="view">Skoða</string>
@@ -71,8 +69,6 @@
     <string name="notification_channel_background_activity_start_description">Framkvæma aðgerðir á meðan verið er í bakgrunni</string>
     <string name="notification_channel_file_job_name">Skráaaðgerðir</string>
     <string name="notification_channel_file_job_description">Birta og stýra skráaaðgerðum</string>
-    <string name="notification_channel_ftp_server_name">FTP-netþjónn</string>
-    <string name="notification_channel_ftp_server_description">Birta og stýra FTP-netþjóninum</string>
 
     <string name="file_action_archive_password_title">Lykilorðs krafist</string>
     <string name="file_action_archive_password_message_format">“%1$s” er varið með lykilorði.</string>
@@ -218,7 +214,6 @@
     <string name="file_job_restore_selinux_context_error_message_format">Villa kom upp við að endurheimta SELinux-samhengi fyrir “%1$s”.\n%2$s</string>
     <string name="file_job_write_error_title">Villa kom upp við að skrifa</string>
     <string name="file_job_write_error_message_format">Villa kom upp við að skrifa “%1$s”.\n%2$s</string>
-    <string name="file_job_get_information_error_message_format">Villa kom upp við að nálgast upplýsingar um “%1$s”.</string>
     <string name="file_job_remount_format">Endurtengja “%1$s” sem les-skrifanlegt</string>
     <string name="file_job_remount_loading_format">Endurtengi “%1$s” sem les-skrifanlegt</string>
     <string name="file_job_remount_success_format">“%1$s” hefur verið endurtengt sem les-skrifanlegt</string>
@@ -274,15 +269,6 @@
         <item quantity="one">Veldu möppu</item>
         <item quantity="other">Veldu möppur</item>
     </plurals>
-    <plurals name="file_list_subtitle_directory_count_format">
-        <item quantity="one">%1$,d mappa</item>
-        <item quantity="other">%1$,d möppur</item>
-    </plurals>
-    <plurals name="file_list_subtitle_file_count_format">
-        <item quantity="one">%1$,d skrá</item>
-        <item quantity="other">%1$,d skrár</item>
-    </plurals>
-    <string name="file_list_subtitle_separator">,\u0020</string>
     <string name="file_list_path_error_empty">Slóð má ekki vera auð</string>
     <string name="file_list_path_error_invalid">Ógild slóð</string>
     <string name="file_list_action_view_sort">Skoðun og röðun</string>
@@ -339,7 +325,6 @@
     <string name="file_properties_basic_parent_directory">Yfirmappa</string>
     <string name="file_properties_basic_archive_file">Setja skrá í geymslu</string>
     <string name="file_properties_basic_archive_entry">Setja færslu í geymslu</string>
-    <string name="file_properties_basic_free_space">Laust pláss</string>
     <string name="file_properties_permission">Heimildir</string>
     <string name="file_properties_permission_owner">Eigandi</string>
     <string name="file_properties_permission_group">Hópur</string>
@@ -379,7 +364,6 @@
     <string name="file_properties_media_date_time">Tekin</string>
     <string name="file_properties_media_coordinates">Hnit</string>
     <string name="file_properties_media_coordinates_format">%1$.3f, %2$.3f</string>
-    <string name="file_properties_media_address">Staðsetning</string>
     <string name="file_properties_image_gps_altitude">Hæð</string>
     <string name="file_properties_image_gps_altitude_format">%1$,.3f m</string>
     <string name="file_properties_image_equipment">Myndavél</string>
@@ -438,10 +422,6 @@
     <string name="storage_list_empty">Ekkert geymslurými</string>
     <string name="storage_add_storage_title">Bæta við geymslurými</string>
     <string name="storage_add_storage_document_tree">Ytra geymslurými</string>
-    <string name="storage_add_storage_ftp_server">FTP-netþjónn</string>
-    <string name="storage_add_storage_sftp_server">SFTP-netþjónn</string>
-    <string name="storage_add_storage_smb_server">SMB-netþjónn</string>
-    <string name="storage_add_storage_webdav_server">WebDAV-þjónn</string>
     <string name="storage_edit_device_storage_title">Breyta geymslurými tækis</string>
     <string name="storage_edit_device_storage_name">Nafn</string>
     <string name="storage_edit_device_storage_path">Slóð</string>
@@ -455,114 +435,7 @@
     <string name="storage_edit_document_tree_name">Nafn</string>
     <string name="storage_edit_document_tree_uri">URI-slóð</string>
     <string name="storage_edit_document_tree_path">Slóð</string>
-    <string name="storage_edit_ftp_server_title_edit">Breyta FTP-netþjóni</string>
-    <string name="storage_edit_ftp_server_title_add">Bæta við FTP-netþjóni</string>
-    <string name="storage_edit_ftp_server_host">Vélarheiti</string>
-    <string name="storage_edit_ftp_server_host_error_empty">Settu inn vélarheiti</string>
-    <string name="storage_edit_ftp_server_host_error_invalid">Ógilt vélarheiti</string>
-    <string name="storage_edit_ftp_server_port">Gátt</string>
-    <string name="storage_edit_ftp_server_port_error_invalid">Ógild gátt</string>
-    <string name="storage_edit_ftp_server_path">Slóð</string>
-    <string name="storage_edit_ftp_server_path_placeholder">Má skilja eftir autt</string>
-    <string name="storage_edit_ftp_server_name">Nafn</string>
-    <string name="storage_edit_ftp_server_name_placeholder">Nota vélarheiti</string>
-    <string name="storage_edit_ftp_server_protocol">Samskiptamáti</string>
-    <string name="storage_edit_ftp_server_authentication_type">Auðkenning</string>
-    <string-array name="storage_edit_ftp_server_authentication_type_entries">
-        <item>Lykilorð</item>
-        <item>Nafnlaus</item>
-    </string-array>
-    <string name="storage_edit_ftp_server_username">Notandanafn</string>
-    <string name="storage_edit_ftp_server_username_error_empty">Settu inn notandanafn</string>
-    <string name="storage_edit_ftp_server_password">Lykilorð</string>
-    <string name="storage_edit_ftp_server_mode">Hamur</string>
-    <string-array name="storage_edit_ftp_server_mode_entries">
-        <item>Virkt</item>
-        <item>Passíft</item>
-    </string-array>
-    <string name="storage_edit_ftp_server_encoding">Kóðun</string>
-    <string name="storage_edit_ftp_server_connect_and_add">Tengjast og bæta við</string>
-    <string name="storage_edit_ftp_server_add">Bæta við</string>
-    <string name="storage_edit_sftp_server_title_edit">Breyta SFTP-netþjóni</string>
-    <string name="storage_edit_sftp_server_title_add">Bæta við SFTP-netþjóni</string>
-    <string name="storage_edit_sftp_server_host">Vélarheiti</string>
-    <string name="storage_edit_sftp_server_host_error_empty">Settu inn vélarheiti</string>
-    <string name="storage_edit_sftp_server_host_error_invalid">Ógilt vélarheiti</string>
-    <string name="storage_edit_sftp_server_port">Gátt</string>
-    <string name="storage_edit_sftp_server_port_error_invalid">Ógild gátt</string>
-    <string name="storage_edit_sftp_server_path">Slóð</string>
-    <string name="storage_edit_sftp_server_path_placeholder">Má skilja eftir autt</string>
-    <string name="storage_edit_sftp_server_name">Nafn</string>
-    <string name="storage_edit_sftp_server_name_placeholder">Nota vélarheiti</string>
-    <string name="storage_edit_sftp_server_authentication_type">Auðkenning</string>
-    <string-array name="storage_edit_sftp_server_authentication_type_entries">
-        <item>Lykilorð</item>
-        <item>Dreifilykill</item>
-    </string-array>
-    <string name="storage_edit_sftp_server_username">Notandanafn</string>
-    <string name="storage_edit_sftp_server_username_error_empty">Settu inn notandanafn</string>
-    <string name="storage_edit_sftp_server_password">Lykilorð</string>
-    <string name="storage_edit_sftp_server_private_key">Einkalykill</string>
-    <string name="storage_edit_sftp_server_private_key_open_file">Opna skrá</string>
-    <string name="storage_edit_sftp_server_private_key_error_empty">Settu inn einkalykil</string>
-    <string name="storage_edit_sftp_server_private_key_error_invalid">Ógildur einkalykill</string>
-    <string name="storage_edit_sftp_server_private_key_password">Lykilorð einkalykils</string>
-    <string name="storage_edit_sftp_server_private_key_password_placeholder">Má skilja eftir autt</string>
-    <string name="storage_edit_sftp_server_private_key_password_error_invalid">Ógilt lykilorð einkalykils</string>
-    <string name="storage_edit_sftp_server_connect_and_add">Tengjast og bæta við</string>
-    <string name="storage_edit_sftp_server_add">Bæta við</string>
-    <string name="storage_add_lan_smb_server_loading">Leita að SMB-netþjónum…</string>
-    <string name="storage_add_lan_smb_server_add">Bæta við handvirkt</string>
-    <string name="storage_edit_smb_server_title_edit">Breyta SMB-netþjóni</string>
-    <string name="storage_edit_smb_server_title_add">Bæta við SMB-netþjóni</string>
-    <string name="storage_edit_smb_server_host">Vélarheiti</string>
-    <string name="storage_edit_smb_server_host_error_empty">Settu inn vélarheiti</string>
-    <string name="storage_edit_smb_server_host_error_invalid">Ógilt vélarheiti</string>
-    <string name="storage_edit_smb_server_port">Gátt</string>
-    <string name="storage_edit_smb_server_port_error_invalid">Ógild gátt</string>
-    <string name="storage_edit_smb_server_path">Slóð</string>
-    <string name="storage_edit_smb_server_path_placeholder">Má skilja eftir autt</string>
-    <string name="storage_edit_smb_server_name">Nafn</string>
-    <string name="storage_edit_smb_server_name_placeholder">Nota vélarheiti</string>
-    <string name="storage_edit_smb_server_authentication_type">Auðkenning</string>
-    <string-array name="storage_edit_smb_server_authentication_type_entries">
-        <item>Lykilorð</item>
-        <item>Gestur</item>
-        <item>Nafnlaus</item>
-    </string-array>
-    <string name="storage_edit_smb_server_username">Notandanafn</string>
-    <string name="storage_edit_smb_server_username_error_empty">Settu inn notandanafn</string>
-    <string name="storage_edit_smb_server_password">Lykilorð</string>
-    <string name="storage_edit_smb_server_domain">Lén</string>
-    <string name="storage_edit_smb_server_connect_and_add">Tengjast og bæta við</string>
-    <string name="storage_edit_smb_server_add">Bæta við</string>
-    <string name="storage_edit_webdav_server_title_edit">Breyta WebDAV-þjóni</string>
-    <string name="storage_edit_webdav_server_title_add">Bæta við WebDAV-þjóni</string>
-    <string name="storage_edit_webdav_server_host">Vélarheiti</string>
-    <string name="storage_edit_webdav_server_host_error_empty">Settu inn vélarheiti</string>
-    <string name="storage_edit_webdav_server_host_error_invalid">Ógilt vélarheiti</string>
-    <string name="storage_edit_webdav_server_port">Gátt</string>
-    <string name="storage_edit_webdav_server_port_error_invalid">Ógild gátt</string>
-    <string name="storage_edit_webdav_server_path">Slóð</string>
-    <string name="storage_edit_webdav_server_path_placeholder">Má skilja eftir autt</string>
-    <string name="storage_edit_webdav_server_name">Nafn</string>
-    <string name="storage_edit_webdav_server_name_placeholder">Nota vélarheiti</string>
-    <string name="storage_edit_webdav_server_protocol">Samskiptamáti</string>
-    <string name="storage_edit_webdav_server_authentication_type">Auðkenning</string>
-    <string-array name="storage_edit_webdav_server_authentication_type_entries">
-        <item>Lykilorð</item>
-        <item>Aðgangsteikn</item>
-        <item>Ekkert</item>
-    </string-array>
-    <string name="storage_edit_webdav_server_username">Notandanafn</string>
-    <string name="storage_edit_webdav_server_username_error_empty">Settu inn notandanafn</string>
-    <string name="storage_edit_webdav_server_password">Lykilorð</string>
-    <string name="storage_edit_webdav_server_access_token">Aðgangsteikn</string>
-    <string name="storage_edit_webdav_server_access_token_error_empty">Settu inn aðgangsteikn</string>
-    <string name="storage_edit_webdav_server_connect_and_add">Tengjast og bæta við</string>
-    <string name="storage_edit_webdav_server_add">Bæta við</string>
 
-    <string name="navigation_storage_subtitle_format">%1$s laust af %2$s</string>
     <string name="navigation_add_storage">Bæta við geymslurými…</string>
     <string name="navigation_standard_directory_alarms">Áminningar</string>
     <string name="navigation_standard_directory_dcim">DCIM</string>
@@ -594,33 +467,9 @@
     <string name="text_editor_encoding">Kóðun</string>
     <string name="text_editor_close_message">Ertu viss um að þú viljir henda óvistuðum breytingum á þessu skjali?</string>
 
-    <string name="ftp_server_title">FTP-netþjónn</string>
-    <string name="ftp_server_state_title">Staða</string>
-    <string name="ftp_server_state_summary_starting">Ræsing…</string>
-    <string name="ftp_server_state_summary_running">Keyrandi</string>
-    <string name="ftp_server_state_summary_stopping">Stöðvast…</string>
-    <string name="ftp_server_state_summary_stopped">Ekki ræst</string>
-    <string name="ftp_server_url_title">URL-slóð</string>
-    <string name="ftp_server_url_summary_no_local_inet_address">Staðvært IP-vistfang er ekki þekkt</string>
-    <string name="ftp_server_url_menu_copy_url">Afrita slóð</string>
-    <string name="ftp_server_url_menu_copy_password">Afrita lykilorð</string>
-    <string name="ftp_server_add_tile_title">Bæta í flýtistillingar</string>
-    <string name="ftp_server_add_tile_result_added">“FTP-netþjónn” hefur verið bætt í flýtistillingar</string>
-    <string name="ftp_server_add_tile_result_already_added">“FTP-netþjónn” hefur þegar verið bætt í flýtistillingar</string>
-    <string name="ftp_server_add_tile_result_error">Villa við að bæta “FTP-netþjónn” í flýtistillingar</string>
-    <string name="ftp_server_configuration_title">Uppsetning</string>
-    <string name="ftp_server_anonymous_login_title">Nafnlaus innskráning</string>
-    <string name="ftp_server_username_title">Notandanafn</string>
-    <string name="ftp_server_password_title">Lykilorð</string>
-    <string name="ftp_server_port_title">Gátt</string>
-    <string name="ftp_server_home_directory_title">Rótarmappa</string>
-    <string name="ftp_server_writable_title">Leyfa skrifun</string>
     <string name="settings_title">Stillingar</string>
     <string name="settings_interface_title">Viðmót</string>
     <string name="settings_locale_title">Tungumál</string>
-    <string name="settings_theme_color_title">Litur þema</string>
-    <string name="settings_theme_color_summary">Litur sem birtist oftast í forritinu</string>
-    <string name="settings_material_design_3_title">Material-hönnun 3</string>
     <string name="settings_night_mode_title">Næturhamur</string>
     <string-array name="settings_night_mode_entries">
         <item>Fylgja kerfi</item>
@@ -664,7 +513,6 @@
     </string-array>
     <string name="settings_show_pdf_thumbnail_pre_28_title">Birta smámyndir fyrir PDF-skjöl</string>
     <string name="settings_show_pdf_thumbnail_pre_28_summary">Gæti gert forritið óstöðugt í eldri útgáfum Android</string>
-    <string name="settings_read_remote_files_for_thumbnail_title">Lesa fjartengdar skrár til að útbúa smámyndir</string>
 
     <string name="about_title">Um hugbúnaðinn</string>
     <string name="about_version_title">Útgáfa</string>

@@ -113,7 +113,8 @@ abstract class RootableFileSystemProvider(
     override fun isHidden(path: Path): Boolean = callRootable(path, true) { isHidden(path) }
 
     @Throws(IOException::class)
-    override fun getFileStore(path: Path): FileStore = localProvider.getFileStore(path)
+    override fun getFileStore(path: Path): FileStore =
+        callRootable(path, true) { getFileStore(path) }
 
     @Throws(IOException::class)
     override fun checkAccess(path: Path, vararg modes: AccessMode) {

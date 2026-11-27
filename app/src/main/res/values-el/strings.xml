@@ -12,7 +12,6 @@
     <string name="close">Κλείσιμο</string>
     <string name="copy">Αντιγραφή</string>
     <string name="cut">Αποκοπή</string>
-    <string name="default_">Προεπιλογή</string>
     <string name="delete">Διαγραφή</string>
     <string name="discard">Απόρριψη</string>
     <string name="edit">Επεξεργασία</string>
@@ -42,7 +41,6 @@
     <string name="share">Κοινή χρήση</string>
     <string name="show">Εμφάνιση</string>
     <string name="skip">Παράλειψη</string>
-    <string name="stop">Να σταματήσει</string>
     <string name="system_default">Προεπιλογή συστήματος</string>
     <string name="unknown">Άγνωστο</string>
     <string name="view">Προβολή</string>
@@ -69,8 +67,6 @@
     <string name="notification_channel_background_activity_start_description">Να προβαίνει σε ενέργειες ενώ η εφαρμογή βρίσκεται στο παρασκήνιο</string>
     <string name="notification_channel_file_job_name">Λειτουργίες αρχείων</string>
     <string name="notification_channel_file_job_description">Προβολή και έλεγχος λειτουργιών αρχείων</string>
-    <string name="notification_channel_ftp_server_name">Διακομιστής FTP</string>
-    <string name="notification_channel_ftp_server_description">Προβολή και έλεγχος του διακομιστή FTP</string>
 
     <string name="file_action_archive_password_title">Απαιτείται κωδικός</string>
     <string name="file_action_archive_password_message_format">Το “%1$s” προστατεύεται από κωδικό.</string>
@@ -216,7 +212,6 @@
     <string name="file_job_restore_selinux_context_error_message_format">Υπήρξε σφάλμα κατά την επαναφορά του SELinux context για “%1$s”.\n%2$s</string>
     <string name="file_job_write_error_title">Σφάλμα κατά την εγγραφή</string>
     <string name="file_job_write_error_message_format">Υπήρξε σφάλμα κατά την εγγραφή “%1$s”.\n%2$s</string>
-    <string name="file_job_get_information_error_message_format">Υπήρξε σφάλμα στη λήψη πληροφοριών για “%1$s”.</string>
     <string name="file_job_remount_format">Επαναπροσάρτηση “%1$s” ως read-write</string>
     <string name="file_job_remount_loading_format">Γίνεται επαναπροσάρτηση “%1$s” ως read-write…</string>
     <string name="file_job_remount_success_format">“%1$s” έχει επαναπροσαρτηθεί ως read-write</string>
@@ -272,15 +267,6 @@
         <item quantity="one">Επιλέξτε έναν φάκελο</item>
         <item quantity="other">Επιλέξτε φακέλους</item>
     </plurals>
-    <plurals name="file_list_subtitle_directory_count_format">
-        <item quantity="one">%1$,d φάκελος</item>
-        <item quantity="other">%1$,d φάκελοι</item>
-    </plurals>
-    <plurals name="file_list_subtitle_file_count_format">
-        <item quantity="one">%1$,d αρχείο</item>
-        <item quantity="other">%1$,d αρχεία</item>
-    </plurals>
-    <string name="file_list_subtitle_separator">,\u0020</string>
     <string name="file_list_path_error_empty">Η διαδρομή δεν μπορεί να είναι κενή</string>
     <string name="file_list_path_error_invalid">Άκυρη διαδρομή</string>
     <string name="file_list_action_view_sort">Προβολή και ταξινόμηση</string>
@@ -337,7 +323,6 @@
     <string name="file_properties_basic_parent_directory">Γονικός Φάκελος</string>
     <string name="file_properties_basic_archive_file">Αρχειοθέτηση Αρχείου</string>
     <string name="file_properties_basic_archive_entry">Καταχώρηση Αρχειοθήκης</string>
-    <string name="file_properties_basic_free_space">Ελεύθερος Χώρος</string>
     <string name="file_properties_permission">Δικαιώματα</string>
     <string name="file_properties_permission_owner">Κάτοχος</string>
     <string name="file_properties_permission_group">Ομάδα</string>
@@ -377,7 +362,6 @@
     <string name="file_properties_media_date_time">Λήφθηκε στις</string>
     <string name="file_properties_media_coordinates">Συντεταγμένες</string>
     <string name="file_properties_media_coordinates_format">%1$.3f, %2$.3f</string>
-    <string name="file_properties_media_address">Τοποθεσία</string>
     <string name="file_properties_image_gps_altitude">Υψόμετρο</string>
     <string name="file_properties_image_gps_altitude_format">%1$,.3f m</string>
     <string name="file_properties_image_equipment">Κάμερα</string>
@@ -436,10 +420,6 @@
     <string name="storage_list_empty">Χωρίς χώρο αποθήκευσης</string>
     <string name="storage_add_storage_title">Προσθήκη χώρου αποθήκευσης</string>
     <string name="storage_add_storage_document_tree">Εξωτερικός χώρος αποθήκευσης</string>
-    <string name="storage_add_storage_ftp_server">Διακομιστής FTP</string>
-    <string name="storage_add_storage_sftp_server">Διακομιστής SFTP</string>
-    <string name="storage_add_storage_smb_server">Διακομιστής SMB</string>
-    <string name="storage_add_storage_webdav_server">Διακομιστής WebDAV</string>
     <string name="storage_edit_device_storage_title">Επεξεργασία χώρου αποθήκευσης συσκευής</string>
     <string name="storage_edit_device_storage_name">Όνομα</string>
     <string name="storage_edit_device_storage_path">Διαδρομή</string>
@@ -453,114 +433,7 @@
     <string name="storage_edit_document_tree_name">Όνομα</string>
     <string name="storage_edit_document_tree_uri">URI</string>
     <string name="storage_edit_document_tree_path">Διαδρομή</string>
-    <string name="storage_edit_ftp_server_title_edit">Επεξεργασία διακομιστή FTP</string>
-    <string name="storage_edit_ftp_server_title_add">Προσθήκη διακομιστή FTP</string>
-    <string name="storage_edit_ftp_server_host">Όνομα υπολογιστή</string>
-    <string name="storage_edit_ftp_server_host_error_empty">Εισάγετε ένα όνομα υπολογιστή</string>
-    <string name="storage_edit_ftp_server_host_error_invalid">Μη έγκυρο όνομα υπολογιστή</string>
-    <string name="storage_edit_ftp_server_port">Θύρα</string>
-    <string name="storage_edit_ftp_server_port_error_invalid">Μη έγκυρη θύρα</string>
-    <string name="storage_edit_ftp_server_path">Διαδρομή</string>
-    <string name="storage_edit_ftp_server_path_placeholder">Μπορεί να μείνει κενό</string>
-    <string name="storage_edit_ftp_server_name">Όνομα</string>
-    <string name="storage_edit_ftp_server_name_placeholder">Χρήση ονόματος υπολογιστή</string>
-    <string name="storage_edit_ftp_server_protocol">Πρωτόκολλο</string>
-    <string name="storage_edit_ftp_server_authentication_type">Αυθεντικοποίηση</string>
-    <string-array name="storage_edit_ftp_server_authentication_type_entries">
-        <item>Κωδικός</item>
-        <item>Ανώνυμα</item>
-    </string-array>
-    <string name="storage_edit_ftp_server_username">Όνομα χρήστη</string>
-    <string name="storage_edit_ftp_server_username_error_empty">Εισάγετε ένα όνομα χρήστη</string>
-    <string name="storage_edit_ftp_server_password">Κωδικός</string>
-    <string name="storage_edit_ftp_server_mode">Λειτουργία</string>
-    <string-array name="storage_edit_ftp_server_mode_entries">
-        <item>Ενεργός</item>
-        <item>Παθητικός</item>
-    </string-array>
-    <string name="storage_edit_ftp_server_encoding">Κωδικοποίηση</string>
-    <string name="storage_edit_ftp_server_connect_and_add">Σύνδεση και προσθήκη</string>
-    <string name="storage_edit_ftp_server_add">Προσθήκη</string>
-    <string name="storage_edit_sftp_server_title_edit">Επεξεργασία διακομιστή SFTP</string>
-    <string name="storage_edit_sftp_server_title_add">Προσθήκη διακομιστή SFTP</string>
-    <string name="storage_edit_sftp_server_host">Όνομα υπολογιστή</string>
-    <string name="storage_edit_sftp_server_host_error_empty">Εισάγετε ένα όνομα υπολογιστή</string>
-    <string name="storage_edit_sftp_server_host_error_invalid">Μη έγκυρο όνομα υπολογιστή</string>
-    <string name="storage_edit_sftp_server_port">Θύρα</string>
-    <string name="storage_edit_sftp_server_port_error_invalid">Μη έγκυρη θύρα</string>
-    <string name="storage_edit_sftp_server_path">Διαδρομή</string>
-    <string name="storage_edit_sftp_server_path_placeholder">Μπορεί να μείνει κενό</string>
-    <string name="storage_edit_sftp_server_name">Όνομα</string>
-    <string name="storage_edit_sftp_server_name_placeholder">Χρήση ονόματος υπολογιστή</string>
-    <string name="storage_edit_sftp_server_authentication_type">Αυθεντικοποίηση</string>
-    <string-array name="storage_edit_sftp_server_authentication_type_entries">
-        <item>Κωδικός</item>
-        <item>Δημόσιο κλειδί</item>
-    </string-array>
-    <string name="storage_edit_sftp_server_username">Όνομα χρήστη</string>
-    <string name="storage_edit_sftp_server_username_error_empty">Εισάγετε ένα όνομα χρήστη</string>
-    <string name="storage_edit_sftp_server_password">Κωδικός</string>
-    <string name="storage_edit_sftp_server_private_key">Ιδιωτικό κλειδί</string>
-    <string name="storage_edit_sftp_server_private_key_open_file">Άνοιγμα αρχείου</string>
-    <string name="storage_edit_sftp_server_private_key_error_empty">Εισάγετε ένα ιδιωτικό κλειδί</string>
-    <string name="storage_edit_sftp_server_private_key_error_invalid">Μη έγκυρο ιδιωτικό κλειδί</string>
-    <string name="storage_edit_sftp_server_private_key_password">Κωδικός ιδιωτικού κλειδιού</string>
-    <string name="storage_edit_sftp_server_private_key_password_placeholder">Μπορεί να μείνει κενό</string>
-    <string name="storage_edit_sftp_server_private_key_password_error_invalid">Μη έγκυρος κωδικός ιδιωτικού κλειδιού</string>
-    <string name="storage_edit_sftp_server_connect_and_add">Σύνδεση και προσθήκη</string>
-    <string name="storage_edit_sftp_server_add">Προσθήκη</string>
-    <string name="storage_add_lan_smb_server_loading">Αναζήτηση για διακομιστές SMB…</string>
-    <string name="storage_add_lan_smb_server_add">Χειροκίνητη προσθήκη</string>
-    <string name="storage_edit_smb_server_title_edit">Επεξεργασία διακομιστή SMB</string>
-    <string name="storage_edit_smb_server_title_add">Προσθήκη διακομιστή SMB</string>
-    <string name="storage_edit_smb_server_host">Όνομα υπολογιστή</string>
-    <string name="storage_edit_smb_server_host_error_empty">Εισάγετε ένα όνομα υπολογιστή</string>
-    <string name="storage_edit_smb_server_host_error_invalid">Μη έγκυρο όνομα υπολογιστή</string>
-    <string name="storage_edit_smb_server_port">Θύρα</string>
-    <string name="storage_edit_smb_server_port_error_invalid">Μη έγκυρη θύρα</string>
-    <string name="storage_edit_smb_server_path">Διαδρομή</string>
-    <string name="storage_edit_smb_server_path_placeholder">Μπορεί να μείνει κενό</string>
-    <string name="storage_edit_smb_server_name">Όνομα</string>
-    <string name="storage_edit_smb_server_name_placeholder">Χρήση ονόματος υπολογιστή</string>
-    <string name="storage_edit_smb_server_authentication_type">Αυθεντικοποίηση</string>
-    <string-array name="storage_edit_smb_server_authentication_type_entries">
-        <item>Κωδικός</item>
-        <item>Επισκέπτης</item>
-        <item>Ανώνυμα</item>
-    </string-array>
-    <string name="storage_edit_smb_server_username">Όνομα χρήστη</string>
-    <string name="storage_edit_smb_server_username_error_empty">Εισάγετε ένα όνομα χρήστη</string>
-    <string name="storage_edit_smb_server_password">Κωδικός</string>
-    <string name="storage_edit_smb_server_domain">Τομέας</string>
-    <string name="storage_edit_smb_server_connect_and_add">Σύνδεση και προσθήκη</string>
-    <string name="storage_edit_smb_server_add">Προσθήκη</string>
-    <string name="storage_edit_webdav_server_title_edit">Επεξεργασία διακομιστή WebDAV</string>
-    <string name="storage_edit_webdav_server_title_add">Προσθήκη διακομιστή WebDAV</string>
-    <string name="storage_edit_webdav_server_host">Όνομα υπολογιστή</string>
-    <string name="storage_edit_webdav_server_host_error_empty">Εισάγετε ένα όνομα υπολογιστή</string>
-    <string name="storage_edit_webdav_server_host_error_invalid">Μη έγκυρο όνομα υπολογιστή</string>
-    <string name="storage_edit_webdav_server_port">Θύρα</string>
-    <string name="storage_edit_webdav_server_port_error_invalid">Μη έγκυρη θύρα</string>
-    <string name="storage_edit_webdav_server_path">Διαδρομή</string>
-    <string name="storage_edit_webdav_server_path_placeholder">Μπορεί να μείνει κενό</string>
-    <string name="storage_edit_webdav_server_name">Όνομα</string>
-    <string name="storage_edit_webdav_server_name_placeholder">Χρήση ονόματος υπολογιστή</string>
-    <string name="storage_edit_webdav_server_protocol">Πρωτόκολλο</string>
-    <string name="storage_edit_webdav_server_authentication_type">Αυθεντικοποίηση</string>
-    <string-array name="storage_edit_webdav_server_authentication_type_entries">
-        <item>Κωδικός</item>
-        <item>Διακριτικό πρόσβασης</item>
-        <item>Κανένα</item>
-    </string-array>
-    <string name="storage_edit_webdav_server_username">Όνομα χρήστη</string>
-    <string name="storage_edit_webdav_server_username_error_empty">Εισάγετε ένα όνομα χρήστη</string>
-    <string name="storage_edit_webdav_server_password">Κωδικός</string>
-    <string name="storage_edit_webdav_server_access_token">Διακριτικό πρόσβασης</string>
-    <string name="storage_edit_webdav_server_access_token_error_empty">Εισάγετε ένα διακριτικό πρόσβασης</string>
-    <string name="storage_edit_webdav_server_connect_and_add">Σύνδεση και προσθήκη</string>
-    <string name="storage_edit_webdav_server_add">Προσθήκη</string>
 
-    <string name="navigation_storage_subtitle_format">%1$s ελεύθερα από %2$s</string>
     <string name="navigation_add_storage">Προσθήκη χώρου αποθήκευσης…</string>
     <string name="navigation_standard_directory_alarms">Ξυπνητήρια</string>
     <string name="navigation_standard_directory_dcim">DCIM</string>
@@ -592,33 +465,9 @@
     <string name="text_editor_encoding">Κωδικοποίηση</string>
     <string name="text_editor_close_message">Σίγουρα θέλετε να απορρίψετε τις μη αποθηκευμένες αλλαγές σε αυτό το έγγραφο;</string>
 
-    <string name="ftp_server_title">Διακομιστής FTP</string>
-    <string name="ftp_server_state_title">Κατάσταση</string>
-    <string name="ftp_server_state_summary_starting">Εκκίνηση…</string>
-    <string name="ftp_server_state_summary_running">Εκτελείται</string>
-    <string name="ftp_server_state_summary_stopping">Διακοπή…</string>
-    <string name="ftp_server_state_summary_stopped">Δεν ξεκίνησε</string>
-    <string name="ftp_server_url_title">URL</string>
-    <string name="ftp_server_url_summary_no_local_inet_address">Η τοπική διεύθυνση IP είναι άγνωστη</string>
-    <string name="ftp_server_url_menu_copy_url">Αντιγραφή URL</string>
-    <string name="ftp_server_url_menu_copy_password">Αντιγραφή κωδικού</string>
-    <string name="ftp_server_add_tile_title">Προσθήκη στις Γρήγορες Ρυθμίσεις</string>
-    <string name="ftp_server_add_tile_result_added">“Διακομιστής FTP” έχει προστεθεί στις Γρήγορες Ρυθμίσεις</string>
-    <string name="ftp_server_add_tile_result_already_added">“Διακομιστής FTP” έχει ήδη προστεθεί στις Γρήγορες Ρυθμίσεις</string>
-    <string name="ftp_server_add_tile_result_error">Σφάλμα κατά την προσθήκη “Διακομιστής FTP” στις Γρήγορες Ρυθμίσεις</string>
-    <string name="ftp_server_configuration_title">Διαμόρφωση</string>
-    <string name="ftp_server_anonymous_login_title">Ανώνυμη σύνδεση</string>
-    <string name="ftp_server_username_title">Όνομα χρήστη</string>
-    <string name="ftp_server_password_title">Κωδικός</string>
-    <string name="ftp_server_port_title">Θύρα</string>
-    <string name="ftp_server_home_directory_title">Φάκελος ρίζας</string>
-    <string name="ftp_server_writable_title">Αποδοχή εγγραφής</string>
     <string name="settings_title">Ρυθμίσεις</string>
     <string name="settings_interface_title">Διεπαφή</string>
     <string name="settings_locale_title">Γλώσσα</string>
-    <string name="settings_theme_color_title">Χρώμα θέματος</string>
-    <string name="settings_theme_color_summary">Χρώμα που εμφανίζεται συχνότερα στην εφαρμογή</string>
-    <string name="settings_material_design_3_title">Σχεδίαση Υλικού 3</string>
     <string name="settings_night_mode_title">Νυχτερινή λειτουργία</string>
     <string-array name="settings_night_mode_entries">
         <item>Ακολουθεί το σύστημα</item>
@@ -662,7 +511,6 @@
     </string-array>
     <string name="settings_show_pdf_thumbnail_pre_28_title">Εμφάνιση μικρογραφίας για έγγραφα PDF</string>
     <string name="settings_show_pdf_thumbnail_pre_28_summary">Μπορεί να κάνει την εφαρμογή ασταθή σε παλαιότερες εκδόσεις Android</string>
-    <string name="settings_read_remote_files_for_thumbnail_title">Ανάγνωση απόμακρων αρχείων για μικρογραφία</string>
 
     <string name="about_title">Σχετικά</string>
     <string name="about_version_title">Έκδοση</string>

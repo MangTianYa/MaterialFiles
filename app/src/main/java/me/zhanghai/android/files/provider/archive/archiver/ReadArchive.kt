@@ -232,12 +232,16 @@ class ReadArchive : Closeable {
 
         @Throws(IOException::class)
         override fun read(): Int {
+            oneByteBuffer.clear()
             read(oneByteBuffer)
             return if (oneByteBuffer.hasRemaining()) oneByteBuffer.get().toUByte().toInt() else -1
         }
 
         @Throws(IOException::class)
         override fun read(b: ByteArray, off: Int, len: Int): Int {
+            if (len == 0) {
+                return 0
+            }
             val buffer = ByteBuffer.wrap(b, off, len)
             read(buffer)
             return if (buffer.hasRemaining()) buffer.remaining() else -1
@@ -245,9 +249,10 @@ class ReadArchive : Closeable {
 
         @Throws(IOException::class)
         private fun read(buffer: ByteBuffer) {
-            buffer.clear()
+            val start = buffer.position()
             Archive.readData(archive, buffer)
-            buffer.flip()
+            buffer.limit(buffer.position())
+            buffer.position(start)
         }
     }
 }

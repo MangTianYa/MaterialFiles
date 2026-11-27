@@ -12,7 +12,6 @@
     <string name="close">Bezárás</string>
     <string name="copy">Másolás</string>
     <string name="cut">Kivágás</string>
-    <string name="default_">Alapértelmezett</string>
     <string name="delete">Törlés</string>
     <string name="discard">Elvetés</string>
     <string name="edit">Szerkesztés</string>
@@ -42,7 +41,6 @@
     <string name="share">Megosztás</string>
     <string name="show">Megjelenítés</string>
     <string name="skip">Kihagyás</string>
-    <string name="stop">Leállítás</string>
     <string name="system_default">Rendszer alapértelmezése</string>
     <string name="unknown">Ismeretlen</string>
     <string name="view">Nézet</string>
@@ -69,8 +67,6 @@
     <string name="notification_channel_background_activity_start_description">Műveletek elvégzése, míg az alkalmazás a háttérben van</string>
     <string name="notification_channel_file_job_name">Fájlműveletek</string>
     <string name="notification_channel_file_job_description">Fájlműveletek megjelenítése és vezérlése</string>
-    <string name="notification_channel_ftp_server_name">FTP-kiszolgáló</string>
-    <string name="notification_channel_ftp_server_description">FTP-kiszolgáló megjelenítése és vezérlése</string>
 
     <string name="file_action_archive_password_title">Jelszó szükséges</string>
     <string name="file_action_archive_password_message_format">“%1$s” jelszóval védett.</string>
@@ -216,7 +212,6 @@
     <string name="file_job_restore_selinux_context_error_message_format">Hiba történt a(z) „%1$s” SELinux környezetének helyreállításakor.\n%2$s</string>
     <string name="file_job_write_error_title">Hiba az íráskor</string>
     <string name="file_job_write_error_message_format">Hiba történt a(z) „%1$s” írásakor.\n%2$s</string>
-    <string name="file_job_get_information_error_message_format">Hiba történt a(z) „%1$s” információinak lekérésekor.</string>
     <string name="file_job_remount_format">A(z) „%1$s” újracsatolása írhatóként</string>
     <string name="file_job_remount_loading_format">A(z) „%1$s” újracsatolása írhatóként…</string>
     <string name="file_job_remount_success_format">A(z) „%1$s” újra lett csatolva írhatóként</string>
@@ -272,15 +267,6 @@
         <item quantity="one">Mappa kiválasztása</item>
         <item quantity="other">Mappák kiválasztása</item>
     </plurals>
-    <plurals name="file_list_subtitle_directory_count_format">
-        <item quantity="one">%1$,d mappa</item>
-        <item quantity="other">%1$,d mappa</item>
-    </plurals>
-    <plurals name="file_list_subtitle_file_count_format">
-        <item quantity="one">%1$,d fájl</item>
-        <item quantity="other">%1$,d fájl</item>
-    </plurals>
-    <string name="file_list_subtitle_separator">,\u0020</string>
     <string name="file_list_path_error_empty">Az útvonal nem lehet üres</string>
     <string name="file_list_path_error_invalid">Érvénytelen útvonal</string>
     <string name="file_list_action_view_sort">Megtekintés és rendezés</string>
@@ -337,7 +323,6 @@
     <string name="file_properties_basic_parent_directory"> Szülőmappa</string>
     <string name="file_properties_basic_archive_file">Fájl archiválása</string>
     <string name="file_properties_basic_archive_entry">Bejegyzés archiválása</string>
-    <string name="file_properties_basic_free_space">Szabad hely</string>
     <string name="file_properties_permission">Engedélyek</string>
     <string name="file_properties_permission_owner">Tulajdonos</string>
     <string name="file_properties_permission_group">Csoport</string>
@@ -377,7 +362,6 @@
     <string name="file_properties_media_date_time">Készítés ideje</string>
     <string name="file_properties_media_coordinates">Koordináták</string>
     <string name="file_properties_media_coordinates_format">%1$.3f, %2$.3f</string>
-    <string name="file_properties_media_address">Hely</string>
     <string name="file_properties_image_gps_altitude">Magasság</string>
     <string name="file_properties_image_gps_altitude_format">%1$,.3f m</string>
     <string name="file_properties_image_equipment">Kamera</string>
@@ -436,10 +420,6 @@
     <string name="storage_list_empty">Nincs tároló</string>
     <string name="storage_add_storage_title">Tároló hozzáadása</string>
     <string name="storage_add_storage_document_tree">Külső tároló</string>
-    <string name="storage_add_storage_ftp_server">FTP-kiszolgáló</string>
-    <string name="storage_add_storage_sftp_server">SFTP-kiszolgáló</string>
-    <string name="storage_add_storage_smb_server">SMB-kiszolgáló</string>
-    <string name="storage_add_storage_webdav_server">WebDAV kiszolgáló</string>
     <string name="storage_edit_device_storage_title">Tárolóeszköz szerkesztése</string>
     <string name="storage_edit_device_storage_name">Név</string>
     <string name="storage_edit_device_storage_path">Útvonal</string>
@@ -453,114 +433,7 @@
     <string name="storage_edit_document_tree_name">Név</string>
     <string name="storage_edit_document_tree_uri">URI</string>
     <string name="storage_edit_document_tree_path">Útvonal</string>
-    <string name="storage_edit_ftp_server_title_edit">FTP-kiszolgáló szerkesztése</string>
-    <string name="storage_edit_ftp_server_title_add">FTP-kiszolgáló hozzáadása</string>
-    <string name="storage_edit_ftp_server_host">Gépnév</string>
-    <string name="storage_edit_ftp_server_host_error_empty">Gépnév megadása</string>
-    <string name="storage_edit_ftp_server_host_error_invalid">Érvénytelen gépnév</string>
-    <string name="storage_edit_ftp_server_port">Port</string>
-    <string name="storage_edit_ftp_server_port_error_invalid">Érvénytelen port</string>
-    <string name="storage_edit_ftp_server_path">Útvonal</string>
-    <string name="storage_edit_ftp_server_path_placeholder">Üresen hagyható</string>
-    <string name="storage_edit_ftp_server_name">Név</string>
-    <string name="storage_edit_ftp_server_name_placeholder">Gépnév használata</string>
-    <string name="storage_edit_ftp_server_protocol">Protokoll</string>
-    <string name="storage_edit_ftp_server_authentication_type">Hitelesítés</string>
-    <string-array name="storage_edit_ftp_server_authentication_type_entries">
-        <item>Jelszó</item>
-        <item>Névtelen</item>
-    </string-array>
-    <string name="storage_edit_ftp_server_username">Felhasználónév</string>
-    <string name="storage_edit_ftp_server_username_error_empty">Felhasználónév megadása</string>
-    <string name="storage_edit_ftp_server_password">Jelszó</string>
-    <string name="storage_edit_ftp_server_mode">Átviteli mód</string>
-    <string-array name="storage_edit_ftp_server_mode_entries">
-        <item>Aktív</item>
-        <item>Passzív</item>
-    </string-array>
-    <string name="storage_edit_ftp_server_encoding">Kódolás</string>
-    <string name="storage_edit_ftp_server_connect_and_add">Hozzáadás és csatlakozás</string>
-    <string name="storage_edit_ftp_server_add">Hozzáadás</string>
-    <string name="storage_edit_sftp_server_title_edit">SFTP-kiszolgáló szerkesztése</string>
-    <string name="storage_edit_sftp_server_title_add">SFTP-kiszolgáló hozzáadása</string>
-    <string name="storage_edit_sftp_server_host">Gépnév</string>
-    <string name="storage_edit_sftp_server_host_error_empty">Adjon meg egy gépnevet</string>
-    <string name="storage_edit_sftp_server_host_error_invalid">Érvénytelen gépnév</string>
-    <string name="storage_edit_sftp_server_port">Port</string>
-    <string name="storage_edit_sftp_server_port_error_invalid">Érvénytelen port</string>
-    <string name="storage_edit_sftp_server_path">Útvonal</string>
-    <string name="storage_edit_sftp_server_path_placeholder">Üresen hagyható</string>
-    <string name="storage_edit_sftp_server_name">Név</string>
-    <string name="storage_edit_sftp_server_name_placeholder">Gépnév használata</string>
-    <string name="storage_edit_sftp_server_authentication_type">Hitelesítés</string>
-    <string-array name="storage_edit_sftp_server_authentication_type_entries">
-        <item>Jelszó</item>
-        <item>Nyilvános kulcs</item>
-    </string-array>
-    <string name="storage_edit_sftp_server_username">Felhasználónév</string>
-    <string name="storage_edit_sftp_server_username_error_empty">Adjon meg egy felhasználónevet</string>
-    <string name="storage_edit_sftp_server_password">Jelszó</string>
-    <string name="storage_edit_sftp_server_private_key">Privát kulcs</string>
-    <string name="storage_edit_sftp_server_private_key_open_file">Fájl megnyitása</string>
-    <string name="storage_edit_sftp_server_private_key_error_empty">Adjon meg egy privát kulcsot</string>
-    <string name="storage_edit_sftp_server_private_key_error_invalid">Érvénytelen privát kulcs</string>
-    <string name="storage_edit_sftp_server_private_key_password">Privát kulcs jelszava</string>
-    <string name="storage_edit_sftp_server_private_key_password_placeholder">Üresen hagyható</string>
-    <string name="storage_edit_sftp_server_private_key_password_error_invalid">Privát kulcs jelszava érvénytelen</string>
-    <string name="storage_edit_sftp_server_connect_and_add">Kapcsolódás és hozzáadás</string>
-    <string name="storage_edit_sftp_server_add">Hozzáadása</string>
-    <string name="storage_add_lan_smb_server_loading">SMB-kiszolgálók keresése…</string>
-    <string name="storage_add_lan_smb_server_add">Hozzáadás kézzel</string>
-    <string name="storage_edit_smb_server_title_edit">SMB-kiszolgáló szerkesztése</string>
-    <string name="storage_edit_smb_server_title_add">SMB-kiszolgáló hozzáadása</string>
-    <string name="storage_edit_smb_server_host">Gépnév</string>
-    <string name="storage_edit_smb_server_host_error_empty">Adjon meg egy gépnevet</string>
-    <string name="storage_edit_smb_server_host_error_invalid">Érvénytelen gépnév</string>
-    <string name="storage_edit_smb_server_port">Port</string>
-    <string name="storage_edit_smb_server_port_error_invalid">Érvénytelen port</string>
-    <string name="storage_edit_smb_server_path">Útvonal</string>
-    <string name="storage_edit_smb_server_path_placeholder">Üresen hagyható</string>
-    <string name="storage_edit_smb_server_name">Név</string>
-    <string name="storage_edit_smb_server_name_placeholder">Gépnév használata</string>
-    <string name="storage_edit_smb_server_authentication_type">Hitelesítés</string>
-    <string-array name="storage_edit_smb_server_authentication_type_entries">
-        <item>Jelszó</item>
-        <item>Vendég</item>
-        <item>Névtelen</item>
-    </string-array>
-    <string name="storage_edit_smb_server_username">Felhasználónév</string>
-    <string name="storage_edit_smb_server_username_error_empty">Adjon meg egy felhasználónevet</string>
-    <string name="storage_edit_smb_server_password">Jelszót</string>
-    <string name="storage_edit_smb_server_domain">Domain</string>
-    <string name="storage_edit_smb_server_connect_and_add">Kapcsolódás és hozzáadás</string>
-    <string name="storage_edit_smb_server_add">Hozzáadás</string>
-    <string name="storage_edit_webdav_server_title_edit">WebDAV kiszolgáló szerkesztése</string>
-    <string name="storage_edit_webdav_server_title_add">WebDAV kiszolgáló hozzáadása</string>
-    <string name="storage_edit_webdav_server_host">Állomásnév</string>
-    <string name="storage_edit_webdav_server_host_error_empty">Írj be egy állomásnevet</string>
-    <string name="storage_edit_webdav_server_host_error_invalid">Érvénytelen állomásnév</string>
-    <string name="storage_edit_webdav_server_port">Port</string>
-    <string name="storage_edit_webdav_server_port_error_invalid">Érvénytelen port</string>
-    <string name="storage_edit_webdav_server_path">Útvonal</string>
-    <string name="storage_edit_webdav_server_path_placeholder">Üresen hagyható</string>
-    <string name="storage_edit_webdav_server_name">Név</string>
-    <string name="storage_edit_webdav_server_name_placeholder">Állomásnév használata</string>
-    <string name="storage_edit_webdav_server_protocol">Protokoll</string>
-    <string name="storage_edit_webdav_server_authentication_type">Hitelesítés</string>
-    <string-array name="storage_edit_webdav_server_authentication_type_entries">
-        <item>Jelszó</item>
-        <item>Hozzáférési token</item>
-        <item>Nincs</item>
-    </string-array>
-    <string name="storage_edit_webdav_server_username">Felhasználónév</string>
-    <string name="storage_edit_webdav_server_username_error_empty">Adj meg egy felhasználónevet</string>
-    <string name="storage_edit_webdav_server_password">Jelszó</string>
-    <string name="storage_edit_webdav_server_access_token">Hozzáférési token</string>
-    <string name="storage_edit_webdav_server_access_token_error_empty">Hozzáférési token megadása</string>
-    <string name="storage_edit_webdav_server_connect_and_add">Csatlakozás és hozzáadás</string>
-    <string name="storage_edit_webdav_server_add">Hozzáadás</string>
 
-    <string name="navigation_storage_subtitle_format">%1$s szabad ennyiből: %2$s</string>
     <string name="navigation_add_storage">Tároló hozzáadása…</string>
     <string name="navigation_standard_directory_alarms">Riasztások</string>
     <string name="navigation_standard_directory_dcim">DCIM</string>
@@ -592,33 +465,9 @@
     <string name="text_editor_encoding">Kódolás</string>
     <string name="text_editor_close_message">Biztos, hogy elveti a dokumentum mentetlen módosításait?</string>
 
-    <string name="ftp_server_title">FTP-kiszolgáló</string>
-    <string name="ftp_server_state_title">Állapot</string>
-    <string name="ftp_server_state_summary_starting">Indítás…</string>
-    <string name="ftp_server_state_summary_running">Fut</string>
-    <string name="ftp_server_state_summary_stopping">Leállítás…</string>
-    <string name="ftp_server_state_summary_stopped">Nem fut</string>
-    <string name="ftp_server_url_title">Webcím</string>
-    <string name="ftp_server_url_summary_no_local_inet_address">A helyi IP-cím ismeretlen</string>
-    <string name="ftp_server_url_menu_copy_url">Webcím másolása</string>
-    <string name="ftp_server_url_menu_copy_password">Jelszó másolása</string>
-    <string name="ftp_server_add_tile_title">Hozzáadás a gyors beállításokhoz</string>
-    <string name="ftp_server_add_tile_result_added">“FTP kiszolgáló” hozzádva a Gyors Beállításokhoz</string>
-    <string name="ftp_server_add_tile_result_already_added">“FTP kiszolgáló” már a gyors beállítások része</string>
-    <string name="ftp_server_add_tile_result_error">Hiba a “FTP kiszolgáló” gyors beállítások hozzáadása közben</string>
-    <string name="ftp_server_configuration_title">Beállítás</string>
-    <string name="ftp_server_anonymous_login_title">Névtelen bejelentkezés</string>
-    <string name="ftp_server_username_title">Felhasználónév</string>
-    <string name="ftp_server_password_title">Jelszó</string>
-    <string name="ftp_server_port_title">Port</string>
-    <string name="ftp_server_home_directory_title">Gyökérmappa</string>
-    <string name="ftp_server_writable_title">Írás engedélyezése</string>
     <string name="settings_title">Beállítások</string>
     <string name="settings_interface_title">Felület</string>
     <string name="settings_locale_title">Nyelv</string>
-    <string name="settings_theme_color_title">Téma színe</string>
-    <string name="settings_theme_color_summary">A szín, amely a leggyakrabban megjelenik az alkalmazásban</string>
-    <string name="settings_material_design_3_title">Material Design 3</string>
     <string name="settings_night_mode_title">Éjszakai mód</string>
     <string-array name="settings_night_mode_entries">
         <item>Rendszertéma követése</item>
@@ -662,7 +511,6 @@
     </string-array>
     <string name="settings_show_pdf_thumbnail_pre_28_title">PDF dokumentumok miniatűrképének mutatása</string>
     <string name="settings_show_pdf_thumbnail_pre_28_summary">Az Android régebbi verzióinál instabillá teheti az alkalmazást</string>
-    <string name="settings_read_remote_files_for_thumbnail_title">Távoli fájlok olvasása a bélyegképekhez</string>
 
     <string name="about_title">Névjegy</string>
     <string name="about_version_title">Verzió</string>

@@ -36,22 +36,3 @@
     public static **[] values();
 }
 -keepnames class me.zhanghai.android.files.** implements android.os.Parcelable
-
-# Apache FtpServer
--keepclassmembers class * implements org.apache.mina.core.service.IoProcessor {
-    public <init>(java.util.concurrent.ExecutorService);
-    public <init>(java.util.concurrent.Executor);
-    public <init>();
-}
-
-# Bouncy Castle
--keep class org.bouncycastle.jcajce.provider.** { *; }
--keep class org.bouncycastle.jce.provider.** { *; }
-
-# SMBJ
--dontwarn javax.el.**
--dontwarn org.ietf.jgss.**
--dontwarn sun.security.x509.X509Key
-
-# SMBJ-RPC
--dontwarn java.rmi.UnmarshalException

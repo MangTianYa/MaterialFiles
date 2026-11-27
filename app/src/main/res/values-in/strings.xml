@@ -12,7 +12,6 @@
     <string name="close">Tutup</string>
     <string name="copy">Salin</string>
     <string name="cut">Potong</string>
-    <string name="default_">Bawaan</string>
     <string name="delete">Hapus</string>
     <string name="discard">Batal</string>
     <string name="edit">Edit</string>
@@ -42,7 +41,6 @@
     <string name="share">Bagikan</string>
     <string name="show">Tampilkan</string>
     <string name="skip">Lewati</string>
-    <string name="stop">Hentikan</string>
     <string name="system_default">Bawaan sistem</string>
     <string name="unknown">Tidak diketahui</string>
     <string name="view">Lihat</string>
@@ -68,8 +66,6 @@
     <string name="notification_channel_background_activity_start_description">Ambil tindakan saat apl berada di latar belakang</string>
     <string name="notification_channel_file_job_name">Tindakan berkas</string>
     <string name="notification_channel_file_job_description">Tampilkan dan kontrol tindakan berkas</string>
-    <string name="notification_channel_ftp_server_name">Server FTP</string>
-    <string name="notification_channel_ftp_server_description">Tampilkan dan kontrol server FTP</string>
 
     <string name="file_action_archive_password_title">Membutuhkan sandi</string>
     <string name="file_action_archive_password_message_format">“%1$s” dilindungi sandi.</string>
@@ -195,7 +191,6 @@
     <string name="file_job_restore_selinux_context_error_message_format">Telah terjadi kesalahan saat mengembalikan koteks SELinux untuk “%1$s”.\n%2$s</string>
     <string name="file_job_write_error_title">Terjadi kesalahan saat menyimpan</string>
     <string name="file_job_write_error_message_format">Telah terjadi kesalahan saat menyimpan “%1$s”.\n%2$s</string>
-    <string name="file_job_get_information_error_message_format">Telah terjadi kesalahan saat mengambil informasi tentang “%1$s”.</string>
     <string name="file_job_remount_format">Mount ulang “%1$s” sebagai read-write</string>
     <string name="file_job_remount_loading_format">Mount ulang “%1$s” sebagai read-write…</string>
     <string name="file_job_remount_success_format">“%1$s” telah dimount sebagai read-write</string>
@@ -246,13 +241,6 @@
     <plurals name="file_list_title_open_directory">
         <item quantity="other">Pilih folder</item>
     </plurals>
-    <plurals name="file_list_subtitle_directory_count_format">
-        <item quantity="other">%1$,d folder</item>
-    </plurals>
-    <plurals name="file_list_subtitle_file_count_format">
-        <item quantity="other">%1$,d berkas</item>
-    </plurals>
-    <string name="file_list_subtitle_separator">,\u0020</string>
     <string name="file_list_path_error_empty">Jalur tidak boleh kosong</string>
     <string name="file_list_path_error_invalid">Jalur tidak valid</string>
     <string name="file_list_action_view_sort">Lihat dan urutkan</string>
@@ -308,7 +296,6 @@
     <string name="file_properties_basic_parent_directory">Folder Induk</string>
     <string name="file_properties_basic_archive_file">Berkas Arsip</string>
     <string name="file_properties_basic_archive_entry">Entri Arsip</string>
-    <string name="file_properties_basic_free_space">Ruang Kosong</string>
     <string name="file_properties_permission">Perizinan</string>
     <string name="file_properties_permission_owner">Pemilik</string>
     <string name="file_properties_permission_group">Grup</string>
@@ -346,7 +333,6 @@
     <string name="file_properties_media_date_time">Diambil pada</string>
     <string name="file_properties_media_coordinates">Koordinat</string>
     <string name="file_properties_media_coordinates_format">%1$.3f, %2$.3f</string>
-    <string name="file_properties_media_address">Lokasi</string>
     <string name="file_properties_image_gps_altitude">Ketinggian</string>
     <string name="file_properties_image_gps_altitude_format">%1$,.3f m</string>
     <string name="file_properties_image_equipment">Kamera</string>
@@ -404,10 +390,6 @@
     <string name="storage_list_empty">Tidak ada penyimpanan</string>
     <string name="storage_add_storage_title">Tambah penyimpanan</string>
     <string name="storage_add_storage_document_tree">Penyimpanan eksternal</string>
-    <string name="storage_add_storage_ftp_server">Server FTP</string>
-    <string name="storage_add_storage_sftp_server">Server SFTP</string>
-    <string name="storage_add_storage_smb_server">Server SMB</string>
-    <string name="storage_add_storage_webdav_server">Peladen WebDAV</string>
     <string name="storage_edit_device_storage_title">Sunting penyimpanan perangkat</string>
     <string name="storage_edit_device_storage_name">Nama</string>
     <string name="storage_edit_device_storage_path">Jalur</string>
@@ -421,114 +403,7 @@
     <string name="storage_edit_document_tree_name">Nama</string>
     <string name="storage_edit_document_tree_uri">URI</string>
     <string name="storage_edit_document_tree_path">Jalur</string>
-    <string name="storage_edit_ftp_server_title_edit">Sunting server FTP</string>
-    <string name="storage_edit_ftp_server_title_add">Tambahkan server FTP</string>
-    <string name="storage_edit_ftp_server_host">Nama hos</string>
-    <string name="storage_edit_ftp_server_host_error_empty">Masukkan nama hos</string>
-    <string name="storage_edit_ftp_server_host_error_invalid">Nama hos tidak valid</string>
-    <string name="storage_edit_ftp_server_port">Port</string>
-    <string name="storage_edit_ftp_server_port_error_invalid">Port tidak valid</string>
-    <string name="storage_edit_ftp_server_path">Jalur</string>
-    <string name="storage_edit_ftp_server_path_placeholder">Boleh dikosongkan</string>
-    <string name="storage_edit_ftp_server_name">Nama</string>
-    <string name="storage_edit_ftp_server_name_placeholder">Gunakan nama hos</string>
-    <string name="storage_edit_ftp_server_protocol">Protokol</string>
-    <string name="storage_edit_ftp_server_authentication_type">Otentikasi</string>
-    <string-array name="storage_edit_ftp_server_authentication_type_entries">
-        <item>Sandi</item>
-        <item>Anonim</item>
-    </string-array>
-    <string name="storage_edit_ftp_server_username">Nama pengguna</string>
-    <string name="storage_edit_ftp_server_username_error_empty">Masukkan nama pengguna</string>
-    <string name="storage_edit_ftp_server_password">Sandi</string>
-    <string name="storage_edit_ftp_server_mode">Mode</string>
-    <string-array name="storage_edit_ftp_server_mode_entries">
-        <item>Aktif</item>
-        <item>Pasif</item>
-    </string-array>
-    <string name="storage_edit_ftp_server_encoding">Enkode</string>
-    <string name="storage_edit_ftp_server_connect_and_add">Sambung dan tambah</string>
-    <string name="storage_edit_ftp_server_add">Tambah</string>
-    <string name="storage_edit_sftp_server_title_edit">Sunting server SFTP</string>
-    <string name="storage_edit_sftp_server_title_add">Tambahkan server SFTP</string>
-    <string name="storage_edit_sftp_server_host">Nama hos</string>
-    <string name="storage_edit_sftp_server_host_error_empty">Masukkan nama hos</string>
-    <string name="storage_edit_sftp_server_host_error_invalid">Nama hos tidak valid</string>
-    <string name="storage_edit_sftp_server_port">Port</string>
-    <string name="storage_edit_sftp_server_port_error_invalid">Port tidak valid</string>
-    <string name="storage_edit_sftp_server_path">Jalur</string>
-    <string name="storage_edit_sftp_server_path_placeholder">Boleh dikosongkan</string>
-    <string name="storage_edit_sftp_server_name">Nama</string>
-    <string name="storage_edit_sftp_server_name_placeholder">Gunakan nama hos</string>
-    <string name="storage_edit_sftp_server_authentication_type">Otentikasi</string>
-    <string-array name="storage_edit_sftp_server_authentication_type_entries">
-        <item>Sandi</item>
-        <item>Kunci publik</item>
-    </string-array>
-    <string name="storage_edit_sftp_server_username">Nama pengguna</string>
-    <string name="storage_edit_sftp_server_username_error_empty">Masukkan nama pengguna</string>
-    <string name="storage_edit_sftp_server_password">Sandi</string>
-    <string name="storage_edit_sftp_server_private_key">Kunci privat</string>
-    <string name="storage_edit_sftp_server_private_key_open_file">Buka berkas</string>
-    <string name="storage_edit_sftp_server_private_key_error_empty">Masukkan kunci privat</string>
-    <string name="storage_edit_sftp_server_private_key_error_invalid">Kunci privat tidak valid</string>
-    <string name="storage_edit_sftp_server_private_key_password">Sandi kunci privat</string>
-    <string name="storage_edit_sftp_server_private_key_password_placeholder">Boleh dikosongkan</string>
-    <string name="storage_edit_sftp_server_private_key_password_error_invalid">Sandi kunci privat tidak valid</string>
-    <string name="storage_edit_sftp_server_connect_and_add">Sambung dan tambah</string>
-    <string name="storage_edit_sftp_server_add">Tambah</string>
-    <string name="storage_add_lan_smb_server_loading">Mencari server SMB…</string>
-    <string name="storage_add_lan_smb_server_add">Tambah secara manual</string>
-    <string name="storage_edit_smb_server_title_edit">Sunting server SMB</string>
-    <string name="storage_edit_smb_server_title_add">Tambah server SMB</string>
-    <string name="storage_edit_smb_server_host">Nama hos</string>
-    <string name="storage_edit_smb_server_host_error_empty">Masukkan nama hos</string>
-    <string name="storage_edit_smb_server_host_error_invalid">Nama hos tidak valid</string>
-    <string name="storage_edit_smb_server_port">Port</string>
-    <string name="storage_edit_smb_server_port_error_invalid">Port tidak valid</string>
-    <string name="storage_edit_smb_server_path">Jalur</string>
-    <string name="storage_edit_smb_server_path_placeholder">Boleh dikosongkan</string>
-    <string name="storage_edit_smb_server_name">Nama</string>
-    <string name="storage_edit_smb_server_name_placeholder">Gunakan nama hos</string>
-    <string name="storage_edit_smb_server_authentication_type">Otentikasi</string>
-    <string-array name="storage_edit_smb_server_authentication_type_entries">
-        <item>Sandi</item>
-        <item>Tamu</item>
-        <item>Anonim</item>
-    </string-array>
-    <string name="storage_edit_smb_server_username">Nama pengguna</string>
-    <string name="storage_edit_smb_server_username_error_empty">Masukkan nama pengguna</string>
-    <string name="storage_edit_smb_server_password">Sandi</string>
-    <string name="storage_edit_smb_server_domain">Domain</string>
-    <string name="storage_edit_smb_server_connect_and_add">Sambung dan tambah</string>
-    <string name="storage_edit_smb_server_add">Tambah</string>
-    <string name="storage_edit_webdav_server_title_edit">Sunting peladen WebDAV</string>
-    <string name="storage_edit_webdav_server_title_add">Tambahkan peladen WebDAV</string>
-    <string name="storage_edit_webdav_server_host">Nama hos</string>
-    <string name="storage_edit_webdav_server_host_error_empty">Masukkan nama hos</string>
-    <string name="storage_edit_webdav_server_host_error_invalid">Nama hos tidak valid</string>
-    <string name="storage_edit_webdav_server_port">Porta</string>
-    <string name="storage_edit_webdav_server_port_error_invalid">Porta tidak valid</string>
-    <string name="storage_edit_webdav_server_path">Jalur</string>
-    <string name="storage_edit_webdav_server_path_placeholder">Boleh dikosongkan</string>
-    <string name="storage_edit_webdav_server_name">Nama</string>
-    <string name="storage_edit_webdav_server_name_placeholder">Gunakan nama hos</string>
-    <string name="storage_edit_webdav_server_protocol">Protokol</string>
-    <string name="storage_edit_webdav_server_authentication_type">Otentikasi</string>
-    <string-array name="storage_edit_webdav_server_authentication_type_entries">
-        <item>Sandi</item>
-        <item>Token akses</item>
-        <item>Tidak ada</item>
-    </string-array>
-    <string name="storage_edit_webdav_server_username">Nama pengguna</string>
-    <string name="storage_edit_webdav_server_username_error_empty">Masukkan nama pengguna</string>
-    <string name="storage_edit_webdav_server_password">Sandi</string>
-    <string name="storage_edit_webdav_server_access_token">Token akses</string>
-    <string name="storage_edit_webdav_server_access_token_error_empty">Masukkan token akses</string>
-    <string name="storage_edit_webdav_server_connect_and_add">Sambung dan tambahkan</string>
-    <string name="storage_edit_webdav_server_add">Tambahkan</string>
 
-    <string name="navigation_storage_subtitle_format">%1$s kosong dari %2$s</string>
     <string name="navigation_add_storage">Tambah penyimpanan…</string>
     <string name="navigation_standard_directory_alarms">Alarm</string>
     <string name="navigation_standard_directory_dcim">DCIM</string>
@@ -560,33 +435,9 @@
     <string name="text_editor_encoding">Enkode</string>
     <string name="text_editor_close_message">Apakah Anda yakin ingin menghapus perubahan yang belum disimpan pada dokumen ini?</string>
 
-    <string name="ftp_server_title">Server FTP</string>
-    <string name="ftp_server_state_title">Status</string>
-    <string name="ftp_server_state_summary_starting">Memulai…</string>
-    <string name="ftp_server_state_summary_running">Berjalan</string>
-    <string name="ftp_server_state_summary_stopping">Menghentikan…</string>
-    <string name="ftp_server_state_summary_stopped">Tidak berjalan</string>
-    <string name="ftp_server_url_title">URL</string>
-    <string name="ftp_server_url_summary_no_local_inet_address">Alamat IP lokal tidak diketahui</string>
-    <string name="ftp_server_url_menu_copy_url">Salin URL</string>
-    <string name="ftp_server_url_menu_copy_password">Salin sandi</string>
-    <string name="ftp_server_add_tile_title">Tambahkan ke Pengaturan Cepat</string>
-    <string name="ftp_server_add_tile_result_added">“Server FTP” telah ditambahkan ke Pengaturan Cepat</string>
-    <string name="ftp_server_add_tile_result_already_added">“Server FTP” sudah ditambahkan ke Pengaturan Cepat</string>
-    <string name="ftp_server_add_tile_result_error">Terjadi kesalahan saat menambahkan “server FTP” ke Pengaturan Cepat</string>
-    <string name="ftp_server_configuration_title">Konfigurasi</string>
-    <string name="ftp_server_anonymous_login_title">Masuk secara anonim</string>
-    <string name="ftp_server_username_title">Nama pengguna</string>
-    <string name="ftp_server_password_title">Sandi</string>
-    <string name="ftp_server_port_title">Port</string>
-    <string name="ftp_server_home_directory_title">Folder root</string>
-    <string name="ftp_server_writable_title">Izinkan menyimpan</string>
     <string name="settings_title">Pengaturan</string>
     <string name="settings_interface_title">Antarmuka</string>
     <string name="settings_locale_title">Bahasa</string>
-    <string name="settings_theme_color_title">Warna tema</string>
-    <string name="settings_theme_color_summary">Warna yang muncul paling sering di dalam apl</string>
-    <string name="settings_material_design_3_title">Material Design 3</string>
     <string name="settings_night_mode_title">Mode malam</string>
     <string-array name="settings_night_mode_entries">
         <item>Ikuti sistem</item>
@@ -629,7 +480,6 @@
     </string-array>
     <string name="settings_show_pdf_thumbnail_pre_28_title">Tampilkan thumbnail untuk dokumen PDF</string>
     <string name="settings_show_pdf_thumbnail_pre_28_summary">Mungkin membuat apl tidak stabil pada versi Android lama</string>
-    <string name="settings_read_remote_files_for_thumbnail_title">Baca berkas remote untuk thumbnail</string>
 
     <string name="about_title">Tentang</string>
     <string name="about_version_title">Versi</string>

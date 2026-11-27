@@ -12,7 +12,6 @@
     <string name="close">Đóng</string>
     <string name="copy">Sao chép</string>
     <string name="cut">Cắt</string>
-    <string name="default_">Mặc định</string>
     <string name="delete">Xoá</string>
     <string name="discard">Bỏ</string>
     <string name="edit">Chỉnh sửa</string>
@@ -42,7 +41,6 @@
     <string name="share">Chia sẻ</string>
     <string name="show">Hiển thị</string>
     <string name="skip">Bỏ qua</string>
-    <string name="stop">Dừng</string>
     <string name="system_default">Mặc định hệ thống</string>
     <string name="unknown">Không rõ</string>
     <string name="view">Xem</string>
@@ -68,8 +66,6 @@
     <string name="notification_channel_background_activity_start_description">Thực hiện các hành động khi ứng dụng chạy nền</string>
     <string name="notification_channel_file_job_name">Thao tác với tệp</string>
     <string name="notification_channel_file_job_description">Hiển thị và điều khiển các thao tác với tệp</string>
-    <string name="notification_channel_ftp_server_name">Máy chủ FTP</string>
-    <string name="notification_channel_ftp_server_description">Hiển thị và điều khiển máy chủ FTP</string>
 
     <string name="file_action_archive_password_title">Yêu cầu mật khẩu</string>
     <string name="file_action_archive_password_message_format">“%1$s” được bảo vệ bằng mật khẩu.</string>
@@ -195,7 +191,6 @@
     <string name="file_job_restore_selinux_context_error_message_format">Xảy ra lỗi khi khôi phục hoàn cảnh SELinux của “%1$s”.\n%2$s</string>
     <string name="file_job_write_error_title">Lỗi khi ghi</string>
     <string name="file_job_write_error_message_format">Đã có lỗi khi ghi “%1$s”.\n%2$s</string>
-    <string name="file_job_get_information_error_message_format">Đã có lỗi khi lấy thông tin về “%1$s”.</string>
     <string name="file_job_remount_format">Đã mount lại “%1$s” thành thiết bị đọc-ghi</string>
     <string name="file_job_remount_loading_format">Đang mount lại “%1$s” thành thiết bị đọc-ghi…</string>
     <string name="file_job_remount_success_format">“%1$s” đã được mount lại thành thiết bị đọc-ghi</string>
@@ -237,13 +232,6 @@
     <string name="file_create_directory_title">Thư mục mới</string>
 
     <string name="file_list_title">Tệp</string>
-    <plurals name="file_list_subtitle_directory_count_format">
-        <item quantity="other">%1$,d thư mục</item>
-    </plurals>
-    <plurals name="file_list_subtitle_file_count_format">
-        <item quantity="other">%1$,d tệp</item>
-    </plurals>
-    <string name="file_list_subtitle_separator">,\u0020</string>
     <string name="file_list_path_error_empty">Đường dẫn không thể trống</string>
     <string name="file_list_path_error_invalid">Đường dẫn không hợp lệ</string>
     <string name="file_list_action_sort_by_name">Tên</string>
@@ -292,14 +280,12 @@
     <string name="file_properties_basic_parent_directory">Thư mục mẹ</string>
     <string name="file_properties_basic_archive_file">Tệp nén</string>
     <string name="file_properties_basic_archive_entry">Mục lưu trữ nén</string>
-    <string name="file_properties_basic_free_space">Không gian trống</string>
     <string name="file_properties_image">Hình ảnh</string>
     <string name="file_properties_media_dimensions">Kích thước</string>
     <string name="file_properties_media_dimensions_format">%1$d \u00d7 %2$d</string>
     <string name="file_properties_media_date_time">Chụp vào</string>
     <string name="file_properties_media_coordinates">Toạ độ</string>
     <string name="file_properties_media_coordinates_format">%1$.3f, %2$.3f</string>
-    <string name="file_properties_media_address">Vị trí</string>
     <string name="file_properties_image_gps_altitude">Độ cao</string>
     <string name="file_properties_image_gps_altitude_format">%1$,.3f m</string>
     <string name="file_properties_image_equipment">Máy ảnh</string>
@@ -351,9 +337,6 @@
     <string name="storage_list_empty">Không có kho lưu trữ</string>
     <string name="storage_add_storage_title">Thêm kho lưu trữ</string>
     <string name="storage_add_storage_document_tree">Bộ nhớ ngoài</string>
-    <string name="storage_add_storage_ftp_server">Máy chủ FTP</string>
-    <string name="storage_add_storage_sftp_server">Máy chủ SFTP</string>
-    <string name="storage_add_storage_smb_server">Máy chủ SMB</string>
     <string name="storage_edit_device_storage_title">Chỉnh sửa kho lưu trữ thiết bị</string>
     <string name="storage_edit_device_storage_name">Tên</string>
     <string name="storage_edit_device_storage_path">Đường dẫn</string>
@@ -362,88 +345,6 @@
     <string name="storage_edit_document_tree_name">Tên</string>
     <string name="storage_edit_document_tree_uri">URI</string>
     <string name="storage_edit_document_tree_path">Đường dẫn</string>
-    <string name="storage_edit_ftp_server_title_edit">Chỉnh sửa máy chủ FTP</string>
-    <string name="storage_edit_ftp_server_title_add">Thêm máy chủ FTP</string>
-    <string name="storage_edit_ftp_server_host">Tên miền</string>
-    <string name="storage_edit_ftp_server_host_error_empty">Nhập tên miền</string>
-    <string name="storage_edit_ftp_server_host_error_invalid">Tên miền không hợp lệ</string>
-    <string name="storage_edit_ftp_server_port">Cổng</string>
-    <string name="storage_edit_ftp_server_port_error_invalid">Cổng không hợp lệ</string>
-    <string name="storage_edit_ftp_server_path">Đường dẫn</string>
-    <string name="storage_edit_ftp_server_path_placeholder">Có thể để trống</string>
-    <string name="storage_edit_ftp_server_name">Tên</string>
-    <string name="storage_edit_ftp_server_name_placeholder">Dùng tên miền</string>
-    <string name="storage_edit_ftp_server_protocol">Giao thức</string>
-    <string name="storage_edit_ftp_server_authentication_type">Xác thực</string>
-    <string-array name="storage_edit_ftp_server_authentication_type_entries">
-        <item>Mật khẩu</item>
-        <item>Ẩn danh</item>
-    </string-array>
-    <string name="storage_edit_ftp_server_username">Tên người dùng</string>
-    <string name="storage_edit_ftp_server_username_error_empty">Nhập tên người dùng</string>
-    <string name="storage_edit_ftp_server_password">Mật khẩu</string>
-    <string name="storage_edit_ftp_server_mode">Chế độ</string>
-    <string-array name="storage_edit_ftp_server_mode_entries">
-        <item>Hoạt động</item>
-        <item>Bị động</item>
-    </string-array>
-    <string name="storage_edit_ftp_server_encoding">Mã hoá</string>
-    <string name="storage_edit_ftp_server_connect_and_add">Kết nối và thêm</string>
-    <string name="storage_edit_ftp_server_add">Thêm</string>
-    <string name="storage_edit_sftp_server_title_edit">Chỉnh sửa máy chủ SFTP</string>
-    <string name="storage_edit_sftp_server_title_add">Thêm máy chủ SFTP</string>
-    <string name="storage_edit_sftp_server_host">Tên máy chủ</string>
-    <string name="storage_edit_sftp_server_host_error_empty">Nhập tên máy chủ</string>
-    <string name="storage_edit_sftp_server_host_error_invalid">Tên miền không hợp lệ</string>
-    <string name="storage_edit_sftp_server_port">Cổng</string>
-    <string name="storage_edit_sftp_server_port_error_invalid">Cổng không hợp lệ</string>
-    <string name="storage_edit_sftp_server_path">Đường dẫn</string>
-    <string name="storage_edit_sftp_server_path_placeholder">Có thể để trống</string>
-    <string name="storage_edit_sftp_server_name">Tên</string>
-    <string name="storage_edit_sftp_server_name_placeholder">Sử dụng tên máy chủ</string>
-    <string name="storage_edit_sftp_server_authentication_type">Xác thực</string>
-    <string-array name="storage_edit_sftp_server_authentication_type_entries">
-        <item>Mật khẩu</item>
-        <item>Mã khóa công khai</item>
-    </string-array>
-    <string name="storage_edit_sftp_server_username">Tên người dùng</string>
-    <string name="storage_edit_sftp_server_username_error_empty">Nhập tên người dùng</string>
-    <string name="storage_edit_sftp_server_password">Mật khẩu</string>
-    <string name="storage_edit_sftp_server_private_key">Mã khóa riêng</string>
-    <string name="storage_edit_sftp_server_private_key_open_file">Mở tệp</string>
-    <string name="storage_edit_sftp_server_private_key_error_empty">Nhập mã khóa riêng</string>
-    <string name="storage_edit_sftp_server_private_key_error_invalid">Mã khóa riêng không hợp lệ</string>
-    <string name="storage_edit_sftp_server_private_key_password">Mật khẩu mã riêng tư</string>
-    <string name="storage_edit_sftp_server_private_key_password_placeholder">Có thể để trống</string>
-    <string name="storage_edit_sftp_server_private_key_password_error_invalid">Mật khẩu mã riêng tư không hợp lệ</string>
-    <string name="storage_edit_sftp_server_connect_and_add">Kết nối và thêm</string>
-    <string name="storage_edit_sftp_server_add">Thêm</string>
-    <string name="storage_add_lan_smb_server_loading">Đang tìm kiếm máy chủ SMB…</string>
-    <string name="storage_add_lan_smb_server_add">Thêm thủ công</string>
-    <string name="storage_edit_smb_server_title_edit">Chỉnh sửa máy chủ SMB</string>
-    <string name="storage_edit_smb_server_title_add">Thêm máy chủ SMB</string>
-    <string name="storage_edit_smb_server_host">Tên máy chủ</string>
-    <string name="storage_edit_smb_server_host_error_empty">Nhập tên máy chủ</string>
-    <string name="storage_edit_smb_server_host_error_invalid">Tên miền không hợp lệ</string>
-    <string name="storage_edit_smb_server_port">Cổng</string>
-    <string name="storage_edit_smb_server_port_error_invalid">Cổng không hợp lệ</string>
-    <string name="storage_edit_smb_server_path">Đường dẫn</string>
-    <string name="storage_edit_smb_server_path_placeholder">Có thể để trống</string>
-    <string name="storage_edit_smb_server_name">Tên</string>
-    <string name="storage_edit_smb_server_name_placeholder">Sử dụng tên máy chủ</string>
-    <string name="storage_edit_smb_server_authentication_type">Xác thực</string>
-    <string-array name="storage_edit_smb_server_authentication_type_entries">
-        <item>Mật khẩu</item>
-        <item>Khách</item>
-        <item>Nặc danh</item>
-    </string-array>
-    <string name="storage_edit_smb_server_username">Tên người dùng</string>
-    <string name="storage_edit_smb_server_username_error_empty">Nhập tên người dùng</string>
-    <string name="storage_edit_smb_server_password">Mật khẩu</string>
-    <string name="storage_edit_smb_server_domain">Miền</string>
-    <string name="storage_edit_smb_server_connect_and_add">Kết nối và thêm</string>
-    <string name="storage_edit_smb_server_add">Thêm</string>
-    <string name="navigation_storage_subtitle_format">%1$s trống trong số %2$s</string>
     <string name="navigation_add_storage">Thêm kho lưu trữ…</string>
     <string name="navigation_standard_directory_alarms">Báo thức</string>
     <string name="navigation_standard_directory_dcim">Máy ảnh</string>
@@ -472,27 +373,8 @@
     <string name="text_editor_encoding">Bảng mã kí tự</string>
     <string name="text_editor_close_message">Bạn có chắc chắn muốn huỷ bỏ những thay đổi chưa lưu đối với tài liệu này?</string>
 
-    <string name="ftp_server_title">Máy chủ FTP</string>
-    <string name="ftp_server_state_title">Trạng thái</string>
-    <string name="ftp_server_state_summary_starting">Đang khởi động…</string>
-    <string name="ftp_server_state_summary_running">Đang chạy</string>
-    <string name="ftp_server_state_summary_stopping">Đang dừng…</string>
-    <string name="ftp_server_state_summary_stopped">Chưa khởi động</string>
-    <string name="ftp_server_url_title">URL</string>
-    <string name="ftp_server_url_menu_copy_url">Sao chép URL</string>
-    <string name="ftp_server_url_menu_copy_password">Sao chép mật khẩu</string>
-    <string name="ftp_server_configuration_title">Thiết lập</string>
-    <string name="ftp_server_anonymous_login_title">Đăng nhập nặc danh</string>
-    <string name="ftp_server_username_title">Tên đăng nhập</string>
-    <string name="ftp_server_password_title">Mật khẩu</string>
-    <string name="ftp_server_port_title">Cổng</string>
-    <string name="ftp_server_home_directory_title">Thư mục gốc</string>
-    <string name="ftp_server_writable_title">Cho phép ghi</string>
     <string name="settings_title">Cài đặt</string>
     <string name="settings_interface_title">Giao diện</string>
-    <string name="settings_theme_color_title">Màu chủ đề</string>
-    <string name="settings_theme_color_summary">Màu thường xuyên xuất hiện nhất trong ứng dụng</string>
-    <string name="settings_material_design_3_title">Thiết kế Material 3</string>
     <string name="settings_night_mode_title">Chế độ ban đêm</string>
     <string-array name="settings_night_mode_entries">
         <item>Theo hệ thống</item>
@@ -534,7 +416,6 @@
         <item>Hỏi xem sẽ làm gì</item>
     </string-array>
     <string name="settings_show_pdf_thumbnail_pre_28_summary">Có thể làm ứng dụng không ổn định trên các phiên bản Android thấp hơn</string>
-    <string name="settings_read_remote_files_for_thumbnail_title">Đọc tệp từ xa để lấy ảnh xem trước</string>
 
     <string name="about_title">Giới thiệu</string>
     <string name="about_version_title">Phiên bản</string>

@@ -12,7 +12,6 @@
     <string name="close">Itxi</string>
     <string name="copy">Kopiatu</string>
     <string name="cut">Moztu</string>
-    <string name="default_">Lehenetsia</string>
     <string name="delete">Ezabatu</string>
     <string name="discard">Baztertu</string>
     <string name="empty">Hustu</string>
@@ -38,7 +37,6 @@
     <string name="select_all">Hautatu guztiak</string>
     <string name="share">Partekatu</string>
     <string name="skip">Saltatu</string>
-    <string name="stop">Gelditu</string>
     <string name="unknown">Ezezaguna</string>
     <string name="view">Ikusi</string>
 
@@ -59,8 +57,6 @@
     <string name="notification_channel_background_activity_start_description">Egin gauzak aplikazioa bigarren planoan dagoenean</string>
     <string name="notification_channel_file_job_name">Fitxategi-eragiketak</string>
     <string name="notification_channel_file_job_description">Erakutsi eta kontrolatu fitxategi-eragiketak</string>
-    <string name="notification_channel_ftp_server_name">FTP zerbitzaria</string>
-    <string name="notification_channel_ftp_server_description">Erakutsi eta kontrolatu FTP zerbitzaria</string>
 
     <plurals name="file_job_archive_scan_notification_title_format">
         <item quantity="one">Fitxategi %1$,d konprimitzeko prestatzen (%2$s)</item>
@@ -200,7 +196,6 @@
     <string name="file_job_restore_selinux_context_error_message_format">Errorea gertatu da “%1$s”-ren SELinux testuingurua berrezartzean.\n%2$s</string>
     <string name="file_job_write_error_title">Errorea idaztean</string>
     <string name="file_job_write_error_message_format">Errorea gertatu da “%1$s” idaztean.\n%2$s</string>
-    <string name="file_job_get_information_error_message_format">Errorea gertatu da “%1$s”-ren informazioa jasotzean.</string>
     <string name="file_job_remount_format">Birmuntatu \"%1$s\" irakurri-idatzi moduan </string>
     <string name="file_job_remount_loading_format">\"%1$s\" irakurri-idatzi moduan birmuntatzen…</string>
     <string name="file_job_remount_success_format">\"%1$s\" irakurri-idatzi moduan birmuntatu da</string>
@@ -233,15 +228,6 @@
     <string name="file_create_directory_title">Karpeta berria</string>
 
     <string name="file_list_title">Fitxategiak</string>
-    <plurals name="file_list_subtitle_directory_count_format">
-        <item quantity="one">Karpeta %1$,d</item>
-        <item quantity="other">%1$,d karpeta</item>
-    </plurals>
-    <plurals name="file_list_subtitle_file_count_format">
-        <item quantity="one">Fitxategi %1$,d</item>
-        <item quantity="other">%1$,d fitxategi</item>
-    </plurals>
-    <string name="file_list_subtitle_separator">,\u0020</string>
     <string name="file_list_action_sort_by_name">Izena</string>
     <string name="file_list_action_sort_by_type">Mota</string>
     <string name="file_list_action_sort_by_size">Tamaina</string>
@@ -284,9 +270,7 @@
     <string name="file_properties_basic_parent_directory">Karpeta gurasoa</string>
     <string name="file_properties_basic_archive_file">Artxibo fitxategia</string>
     <string name="file_properties_basic_archive_entry">Artxibo sarrera</string>
-    <string name="file_properties_basic_free_space">Espazio librea</string>
     <string name="storage_file_system_root_title">Erroa</string>
-    <string name="navigation_storage_subtitle_format">%1$s libre %2$s guztira</string>
     <string name="navigation_add_storage">Gehitu biltegia…</string>
     <string name="navigation_standard_directory_alarms">Alarmak</string>
     <string name="navigation_standard_directory_dcim">DCIM</string>
@@ -313,22 +297,6 @@
     <string name="text_editor_reload_message">Ziur birkargatu nahi duzula? Dokumentu honi egindako gorde gabeko aldaketak galduko dira.</string>
     <string name="text_editor_close_message">Ziur dokumentu honi egindako gorde gabeko aldaketak baztertu nahi dituzula?</string>
 
-    <string name="ftp_server_title">FTP zerbitzaria</string>
-    <string name="ftp_server_state_title">Egoera</string>
-    <string name="ftp_server_state_summary_starting">Hasten…</string>
-    <string name="ftp_server_state_summary_running">Abian</string>
-    <string name="ftp_server_state_summary_stopping">Gelditzen…</string>
-    <string name="ftp_server_state_summary_stopped">Hasi gabe</string>
-    <string name="ftp_server_url_title">URLa</string>
-    <string name="ftp_server_url_menu_copy_url">Kopiatu URLa</string>
-    <string name="ftp_server_url_menu_copy_password">Kopiatu pasahitza</string>
-    <string name="ftp_server_configuration_title">Konfigurazioa</string>
-    <string name="ftp_server_anonymous_login_title">Saio anonimoa</string>
-    <string name="ftp_server_username_title">Erabiltzaile-izena</string>
-    <string name="ftp_server_password_title">Pasahitza</string>
-    <string name="ftp_server_port_title">Ataka</string>
-    <string name="ftp_server_home_directory_title">Erro karpeta</string>
-    <string name="ftp_server_writable_title">Baimendu idaztea</string>
     <string name="settings_title">Ezarpenak</string>
     <string name="settings_interface_title">Interfazea</string>
     <string name="settings_night_mode_title">Gauerako modua</string>
@@ -364,7 +332,6 @@
         <item>Ikusi edukiak</item>
         <item>Galdetu zer egin</item>
     </string-array>
-    <string name="settings_read_remote_files_for_thumbnail_title">Irakurri iruditxoen urruneko fitxategiak</string>
 
     <string name="about_title">Honi buruz</string>
     <string name="about_version_title">Bertsioa</string>

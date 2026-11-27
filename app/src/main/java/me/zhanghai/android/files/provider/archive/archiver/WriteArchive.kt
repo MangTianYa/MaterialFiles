@@ -139,6 +139,7 @@ class WriteArchive @Throws(ArchiveException::class) constructor(
         override fun write(b: Int) {
             oneByteBuffer.clear()
             oneByteBuffer.put(b.toByte())
+            oneByteBuffer.flip()
             Archive.writeData(archive, oneByteBuffer)
         }
 

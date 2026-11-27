@@ -55,7 +55,8 @@ internal class LocalLinuxFileStore : PosixFileStore, Parcelable {
         // The last mount entry for the same path will win because we are putting them into a Map,
         // so no need to traverse in reverse order like other implementations.
         for (mntent in getMountEntries()) {
-            val entryPath = path.fileSystem.getPath(mntent.mnt_dir)
+            val unescapedDir = unescapeMountPath(mntent.mnt_dir)
+            val entryPath = path.fileSystem.getPath(unescapedDir)
             entries[entryPath] = mntent
         }
         var path = path
@@ -67,6 +68,33 @@ internal class LocalLinuxFileStore : PosixFileStore, Parcelable {
             path = path.parent ?: break
         }
         return null
+    }
+
+    private fun unescapeMountPath(rawDir: ByteString): ByteString {
+        val bytes = rawDir.borrowBytes()
+        if (!bytes.contains('\\'.code.toByte())) {
+            return rawDir
+        }
+        val builder = ByteStringBuilder(bytes.size)
+        var i = 0
+        while (i < bytes.size) {
+            val b = bytes[i]
+            if (b == '\\'.code.toByte() && i + 3 < bytes.size &&
+                bytes[i + 1] in '0'.code.toByte()..'7'.code.toByte() &&
+                bytes[i + 2] in '0'.code.toByte()..'7'.code.toByte() &&
+                bytes[i + 3] in '0'.code.toByte()..'7'.code.toByte()
+            ) {
+                val decoded = ((bytes[i + 1] - '0'.code.toByte()) shl 6) or
+                    ((bytes[i + 2] - '0'.code.toByte()) shl 3) or
+                    (bytes[i + 3] - '0'.code.toByte())
+                builder.append(decoded.toByte())
+                i += 4
+            } else {
+                builder.append(b)
+                i++
+            }
+        }
+        return builder.toByteString()
     }
 
     override fun name(): String = mntent.mnt_dir.toString()
@@ -149,20 +177,24 @@ internal class LocalLinuxFileStore : PosixFileStore, Parcelable {
     @Throws(IOException::class)
     override fun getTotalSpace(): Long {
         val statVfs = getStatVfs()
-        return statVfs.f_blocks * statVfs.f_bsize
+        return statVfs.f_blocks * getStatVfsBlockSize(statVfs)
     }
 
     @Throws(IOException::class)
     override fun getUsableSpace(): Long {
         val statVfs = getStatVfs()
-        return statVfs.f_bavail * statVfs.f_bsize
+        return statVfs.f_bavail * getStatVfsBlockSize(statVfs)
     }
 
     @Throws(IOException::class)
     override fun getUnallocatedSpace(): Long {
         val statVfs = getStatVfs()
-        return statVfs.f_bfree * statVfs.f_bsize
+        return statVfs.f_bfree * getStatVfsBlockSize(statVfs)
     }
+
+    // POSIX statvfs counts f_blocks/f_bfree/f_bavail in units of f_frsize (falling back to f_bsize).
+    private fun getStatVfsBlockSize(statVfs: StructStatVfs): Long =
+        if (statVfs.f_frsize > 0L) statVfs.f_frsize else statVfs.f_bsize
 
     @Throws(IOException::class)
     private fun getStatVfs(): StructStatVfs =

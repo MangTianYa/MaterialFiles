@@ -216,7 +216,7 @@ internal object LinuxCopyMove {
                 if (!(copyOptions.copyAttributes || xattrName.startsWith(XATTR_NAME_PREFIX_USER))) {
                     continue
                 }
-                val xattrValue = Syscall.lgetxattr(target, xattrName)
+                val xattrValue = Syscall.lgetxattr(source, xattrName)
                 Syscall.lsetxattr(target, xattrName, xattrValue, 0)
             }
         } catch (e: SyscallException) {

@@ -12,7 +12,6 @@
     <string name="close">Kapat</string>
     <string name="copy">Kopyala</string>
     <string name="cut">Kes</string>
-    <string name="default_">Varsayılan</string>
     <string name="delete">Sil</string>
     <string name="discard">Geri al</string>
     <string name="edit">Düzenle</string>
@@ -41,7 +40,6 @@
     <string name="share">Paylaş</string>
     <string name="show">Göster</string>
     <string name="skip">Atla</string>
-    <string name="stop">Durdur</string>
     <string name="unknown">Bilinmiyor</string>
     <string name="view">Görüntüle</string>
 
@@ -63,8 +61,6 @@
     <string name="notification_channel_background_activity_start_description">Uygulama arka plandayken işlem yapın</string>
     <string name="notification_channel_file_job_name">Dosya işlemleri</string>
     <string name="notification_channel_file_job_description">Dosya işlemlerini görüntüle ve yönet</string>
-    <string name="notification_channel_ftp_server_name">FTP sunucusu</string>
-    <string name="notification_channel_ftp_server_description">FTP sunucusunu görüntüle ve yönet</string>
 
     <plurals name="file_job_archive_scan_notification_title_format">
         <item quantity="one">%1$,d dosya sıkıştırılmaya hazırlanıyor (%2$s)</item>
@@ -206,7 +202,6 @@
     <string name="file_job_restore_selinux_context_error_message_format">“%1$s” için SELinux durumu geri yüklenirken bir hata oluştu.\n %2$s</string>
     <string name="file_job_write_error_title">Yazılırken hata oluştu</string>
     <string name="file_job_write_error_message_format">“%1$s” yazılırken bir hata oluştu.\n%2$s</string>
-    <string name="file_job_get_information_error_message_format">“%1$s” ile ilgili bilgi alınırken hata oluştu.</string>
     <string name="file_job_remount_format">“%1$s”`i okuma ve yazma modunda tekrar bağla</string>
     <string name="file_job_remount_loading_format">“%1$s” okuma ve yazma modunda tekrar bağlanıyor…</string>
     <string name="file_job_remount_success_format">“%1$s” okuma ve yazma modunda tekrar bağlandı</string>
@@ -239,15 +234,6 @@
     <string name="file_create_directory_title">Yeni klasör</string>
 
     <string name="file_list_title">Dosyalar</string>
-    <plurals name="file_list_subtitle_directory_count_format">
-        <item quantity="one">%1$,d klasör</item>
-        <item quantity="other">%1$,d klasör</item>
-    </plurals>
-    <plurals name="file_list_subtitle_file_count_format">
-        <item quantity="one">%1$,d dosya</item>
-        <item quantity="other">%1$,d dosya</item>
-    </plurals>
-    <string name="file_list_subtitle_separator">,\u0020</string>
     <string name="file_list_action_sort_by_name">İsim</string>
     <string name="file_list_action_sort_by_type">Tür</string>
     <string name="file_list_action_sort_by_size">Boyut</string>
@@ -294,14 +280,12 @@
     <string name="file_properties_basic_parent_directory">Ana Klasör</string>
     <string name="file_properties_basic_archive_file">Arşiv dosyası</string>
     <string name="file_properties_basic_archive_entry">Arşiv Girdisi</string>
-    <string name="file_properties_basic_free_space">Boş alan</string>
     <string name="file_properties_image">Görüntü</string>
     <string name="file_properties_media_dimensions">Boyutlar</string>
     <string name="file_properties_media_dimensions_format">%1$d \u00d7 %2$d</string>
     <string name="file_properties_media_date_time">Tarih</string>
     <string name="file_properties_media_coordinates">Koordinatlar</string>
     <string name="file_properties_media_coordinates_format">%1$.3f, %2$.3f</string>
-    <string name="file_properties_media_address">Konum</string>
     <string name="file_properties_image_gps_altitude">Rakım</string>
     <string name="file_properties_image_gps_altitude_format">%1$,.3f m</string>
     <string name="file_properties_image_equipment">Kamera</string>
@@ -354,9 +338,6 @@
     <string name="storage_list_empty">Depolama yok</string>
     <string name="storage_add_storage_title">Depolama ekle</string>
     <string name="storage_add_storage_document_tree">Harici depolama</string>
-    <string name="storage_add_storage_ftp_server">FTP sunucu</string>
-    <string name="storage_add_storage_sftp_server">SFTP sunucusu</string>
-    <string name="storage_add_storage_smb_server">SMB sunucusu</string>
     <string name="storage_edit_device_storage_title">Aygıt depolamasını düzenle</string>
     <string name="storage_edit_device_storage_name">İsim</string>
     <string name="storage_edit_device_storage_path">Yol</string>
@@ -365,85 +346,6 @@
     <string name="storage_edit_document_tree_name">İsim</string>
     <string name="storage_edit_document_tree_uri">URI</string>
     <string name="storage_edit_document_tree_path">Yol</string>
-    <string name="storage_edit_ftp_server_title_edit">FTP sunucuyu düzenle</string>
-    <string name="storage_edit_ftp_server_title_add">FTP sunucu ekle</string>
-    <string name="storage_edit_ftp_server_host">Cihaz adı</string>
-    <string name="storage_edit_ftp_server_host_error_empty">Cihaz adı gir</string>
-    <string name="storage_edit_ftp_server_host_error_invalid">Geçersiz cihaz adı</string>
-    <string name="storage_edit_ftp_server_port">Bağlantı noktası</string>
-    <string name="storage_edit_ftp_server_port_error_invalid">Geçersiz bağlantı noktası</string>
-    <string name="storage_edit_ftp_server_path">Yol</string>
-    <string name="storage_edit_ftp_server_path_placeholder">Boş bırakılabilir</string>
-    <string name="storage_edit_ftp_server_name">İsim</string>
-    <string name="storage_edit_ftp_server_name_placeholder">Cihaz adını kullan</string>
-    <string name="storage_edit_ftp_server_protocol">Protokol</string>
-    <string name="storage_edit_ftp_server_authentication_type">Doğrulama</string>
-    <string-array name="storage_edit_ftp_server_authentication_type_entries">
-        <item>Parola</item>
-        <item>Anonim</item>
-    </string-array>
-    <string name="storage_edit_ftp_server_username">Kullanıcı adı</string>
-    <string name="storage_edit_ftp_server_username_error_empty">Bir kullanıcı adı gir</string>
-    <string name="storage_edit_ftp_server_password">Parola</string>
-    <string name="storage_edit_ftp_server_mode">Mod</string>
-    <string-array name="storage_edit_ftp_server_mode_entries">
-        <item>Aktif</item>
-        <item>Pasif</item>
-    </string-array>
-    <string name="storage_edit_ftp_server_encoding">Kodlama</string>
-    <string name="storage_edit_ftp_server_connect_and_add">Bağlan ve ekle</string>
-    <string name="storage_edit_ftp_server_add">Ekle</string>
-    <string name="storage_edit_sftp_server_title_edit">SFTP sunucusunu düzenle</string>
-    <string name="storage_edit_sftp_server_title_add">SFTP sunucusu ekle</string>
-    <string name="storage_edit_sftp_server_host">Hostname</string>
-    <string name="storage_edit_sftp_server_host_error_empty">Hostname gir</string>
-    <string name="storage_edit_sftp_server_host_error_invalid">Geçersiz cihaz adı</string>
-    <string name="storage_edit_sftp_server_port">Port</string>
-    <string name="storage_edit_sftp_server_port_error_invalid">Geçersiz port</string>
-    <string name="storage_edit_sftp_server_path">Yol</string>
-    <string name="storage_edit_sftp_server_path_placeholder">Boş bırakılabilir</string>
-    <string name="storage_edit_sftp_server_name">Ad</string>
-    <string name="storage_edit_sftp_server_name_placeholder">Hostname`i kullan</string>
-    <string name="storage_edit_sftp_server_authentication_type">Doğrulama</string>
-    <string-array name="storage_edit_sftp_server_authentication_type_entries">
-        <item>Şifre</item>
-        <item>Genel anahtar</item>
-    </string-array>
-    <string name="storage_edit_sftp_server_username">Kullanıcı adı</string>
-    <string name="storage_edit_sftp_server_username_error_empty">Bir kullanıcı adı gir</string>
-    <string name="storage_edit_sftp_server_password">Şifre</string>
-    <string name="storage_edit_sftp_server_private_key">Özel anahtar</string>
-    <string name="storage_edit_sftp_server_private_key_open_file">Dosya aç</string>
-    <string name="storage_edit_sftp_server_private_key_error_empty">Bir özel anahtar gir</string>
-    <string name="storage_edit_sftp_server_private_key_error_invalid">Geçersiz özel anahtar</string>
-    <string name="storage_edit_sftp_server_connect_and_add">Bağlan ve ekle</string>
-    <string name="storage_edit_sftp_server_add">Ekle</string>
-    <string name="storage_add_lan_smb_server_loading">SMB sunucuları aranıyor…</string>
-    <string name="storage_add_lan_smb_server_add">Elle ekle</string>
-    <string name="storage_edit_smb_server_title_edit">SMB sunucusunu düzenle</string>
-    <string name="storage_edit_smb_server_title_add">SMB sunucusu ekle</string>
-    <string name="storage_edit_smb_server_host">Hostname</string>
-    <string name="storage_edit_smb_server_host_error_empty">Hostname gir</string>
-    <string name="storage_edit_smb_server_host_error_invalid">Geçersiz cihaz adı</string>
-    <string name="storage_edit_smb_server_port">Port</string>
-    <string name="storage_edit_smb_server_port_error_invalid">Geçersiz port</string>
-    <string name="storage_edit_smb_server_path">Yol</string>
-    <string name="storage_edit_smb_server_path_placeholder">Boş bırakılabilir</string>
-    <string name="storage_edit_smb_server_name">İsim</string>
-    <string name="storage_edit_smb_server_name_placeholder">Hostname kullan</string>
-    <string name="storage_edit_smb_server_authentication_type">Yetkilendirme</string>
-    <string-array name="storage_edit_smb_server_authentication_type_entries">
-        <item>Şifre</item>
-        <item>Misafir</item>
-        <item>Anonim</item>
-    </string-array>
-    <string name="storage_edit_smb_server_username">Kullanıcı adı</string>
-    <string name="storage_edit_smb_server_username_error_empty">Bir kullanıcı adı gir</string>
-    <string name="storage_edit_smb_server_password">Şifre</string>
-    <string name="storage_edit_smb_server_domain">Alan adı</string>
-    <string name="storage_edit_smb_server_connect_and_add">Bağlan ve ekle</string>
-    <string name="storage_edit_smb_server_add">Ekle</string>
-    <string name="navigation_storage_subtitle_format">%2$s alandan %1$s boş</string>
     <string name="navigation_add_storage">Depolama ekle…</string>
     <string name="navigation_standard_directory_alarms">Alarmlar</string>
     <string name="navigation_standard_directory_dcim">DCIM</string>
@@ -472,27 +374,8 @@
     <string name="text_editor_encoding">Kodlama</string>
     <string name="text_editor_close_message">Bu belgedeki kaydedilmemiş değişiklikleri atmak istediğinizden emin misiniz?</string>
 
-    <string name="ftp_server_title">FTP sunucusu</string>
-    <string name="ftp_server_state_title">Durum</string>
-    <string name="ftp_server_state_summary_starting">Başlatılıyor…</string>
-    <string name="ftp_server_state_summary_running">Çalışıyor</string>
-    <string name="ftp_server_state_summary_stopping">Durduruluyor…</string>
-    <string name="ftp_server_state_summary_stopped">Başlatılmadı</string>
-    <string name="ftp_server_url_title">URL</string>
-    <string name="ftp_server_url_menu_copy_url">URL\'yi kopyala</string>
-    <string name="ftp_server_url_menu_copy_password">Şifreyi kopyala</string>
-    <string name="ftp_server_configuration_title">Yapılandırma</string>
-    <string name="ftp_server_anonymous_login_title">Anonim oturum açma</string>
-    <string name="ftp_server_username_title">Kullanıcı adı</string>
-    <string name="ftp_server_password_title">Şifre</string>
-    <string name="ftp_server_port_title">Port</string>
-    <string name="ftp_server_home_directory_title">Kök klasör</string>
-    <string name="ftp_server_writable_title">Yazmaya izin ver</string>
     <string name="settings_title">Ayarlar</string>
     <string name="settings_interface_title">Arayüz</string>
-    <string name="settings_theme_color_title">Tema rengi</string>
-    <string name="settings_theme_color_summary">Uygulamada en sık görünen renk</string>
-    <string name="settings_material_design_3_title">Materyal Tasarım 3</string>
     <string name="settings_night_mode_title">Gece modu</string>
     <string-array name="settings_night_mode_entries">
         <item>Sistemi takip et</item>
@@ -535,7 +418,6 @@
         <item>Ne yapılacağını sor</item>
     </string-array>
     <string name="settings_show_pdf_thumbnail_pre_28_summary">Uygulamayı Android\'in eski versiyonlarında kararsız yapabilir</string>
-    <string name="settings_read_remote_files_for_thumbnail_title">Küçük resim için uzak dosyaları okuyun</string>
 
     <string name="about_title">Hakkında</string>
     <string name="about_version_title">Sürüm</string>

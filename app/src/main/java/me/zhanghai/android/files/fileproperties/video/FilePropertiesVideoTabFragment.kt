@@ -6,12 +6,7 @@
 package me.zhanghai.android.files.fileproperties.video
 
 import android.content.Intent
-import android.location.Geocoder
-import androidx.lifecycle.lifecycleScope
 import java8.nio.file.Path
-import kotlinx.coroutines.Job
-import kotlinx.coroutines.isActive
-import kotlinx.coroutines.launch
 import kotlinx.parcelize.Parcelize
 import kotlinx.parcelize.WriteWith
 import me.zhanghai.android.files.R
@@ -25,20 +20,15 @@ import me.zhanghai.android.files.util.ParcelableArgs
 import me.zhanghai.android.files.util.ParcelableParceler
 import me.zhanghai.android.files.util.Stateful
 import me.zhanghai.android.files.util.args
-import me.zhanghai.android.files.util.awaitGetFromLocation
 import me.zhanghai.android.files.util.createViewLocation
-import me.zhanghai.android.files.util.isGeocoderPresent
 import me.zhanghai.android.files.util.isMediaMetadataRetrieverCompatible
 import me.zhanghai.android.files.util.startActivitySafe
-import me.zhanghai.android.files.util.userFriendlyString
 import me.zhanghai.android.files.util.viewModels
 
 class FilePropertiesVideoTabFragment : FilePropertiesTabFragment() {
     private val args by args<Args>()
 
     private val viewModel by viewModels { { FilePropertiesVideoTabViewModel(args.path) } }
-
-    private var addressJob: Job? = null
 
     override fun onResume() {
         super.onResume()
@@ -51,8 +41,6 @@ class FilePropertiesVideoTabFragment : FilePropertiesTabFragment() {
     }
 
     private fun onVideoInfoChanged(stateful: Stateful<VideoInfo>) {
-        addressJob?.cancel()
-        addressJob = null
         bindView(stateful) { videoInfo ->
             if (videoInfo.title != null) {
                 addItemView(R.string.file_properties_media_title, videoInfo.title)
@@ -83,26 +71,6 @@ class FilePropertiesVideoTabFragment : FilePropertiesTabFragment() {
                             videoInfo.location.first, videoInfo.location.second, args.path.name
                         )
                     )
-                }
-                if (isGeocoderPresent) {
-                    val textView = addItemView(
-                        R.string.file_properties_media_address, getString(R.string.loading)
-                    )
-                    val geocoder = Geocoder(requireContext())
-                    addressJob = viewLifecycleOwner.lifecycleScope.launch {
-                        val address = try {
-                            geocoder.awaitGetFromLocation(
-                                videoInfo.location.first.toDouble(),
-                                videoInfo.location.second.toDouble(), 1
-                            ).first()
-                        } catch (e: Exception) {
-                            null
-                        }
-                        if (isActive) {
-                            textView.text = address?.userFriendlyString
-                                ?: getString(R.string.unknown)
-                        }
-                    }
                 }
             }
             if (videoInfo.bitRate != null) {

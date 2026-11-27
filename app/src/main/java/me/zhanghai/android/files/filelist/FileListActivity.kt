@@ -11,6 +11,7 @@ import android.os.Bundle
 import android.view.KeyEvent
 import android.view.View
 import androidx.activity.result.contract.ActivityResultContract
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.commit
 import java8.nio.file.Path
 import me.zhanghai.android.files.app.AppActivity
@@ -20,7 +21,16 @@ import me.zhanghai.android.files.util.extraPath
 import me.zhanghai.android.files.util.putArgs
 
 class FileListActivity : AppActivity() {
-    private lateinit var fragment: FileListFragment
+    private lateinit var fragment: Fragment
+
+    private val isPickerIntent: Boolean
+        get() = when (intent.action) {
+            Intent.ACTION_GET_CONTENT,
+            Intent.ACTION_OPEN_DOCUMENT,
+            Intent.ACTION_CREATE_DOCUMENT,
+            Intent.ACTION_OPEN_DOCUMENT_TREE -> true
+            else -> false
+        }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,19 +38,27 @@ class FileListActivity : AppActivity() {
         // Calls ensureSubDecor().
         findViewById<View>(android.R.id.content)
         if (savedInstanceState == null) {
-            fragment = FileListFragment().putArgs(FileListFragment.Args(intent))
+            fragment = if (isPickerIntent) {
+                FileListFragment().putArgs(FileListFragment.Args(intent))
+            } else {
+                DualPaneFileListFragment().putArgs(DualPaneFileListFragment.Args(intent))
+            }
             supportFragmentManager.commit { add(android.R.id.content, fragment) }
         } else {
-            fragment = supportFragmentManager.findFragmentById(android.R.id.content)
-                as FileListFragment
+            fragment = supportFragmentManager.findFragmentById(android.R.id.content)!!
         }
     }
 
     override fun onKeyShortcut(keyCode: Int, event: KeyEvent): Boolean {
-        if (fragment.onKeyShortcut(keyCode, event)) {
+        val handled = when (val currentFragment = fragment) {
+            is DualPaneFileListFragment -> currentFragment.onKeyShortcut(keyCode, event)
+            is FileListFragment -> currentFragment.onKeyShortcut(keyCode, event)
+            else -> false
+        }
+        if (handled) {
             return true
         }
-        return super.onKeyUp(keyCode, event)
+        return super.onKeyShortcut(keyCode, event)
     }
 
     companion object {

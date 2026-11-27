@@ -14,7 +14,6 @@
     <string name="close">بستن</string>
     <string name="copy">رونوشت</string>
     <string name="cut">برش</string>
-    <string name="default_">پیش‌گزیده</string>
     <string name="delete">حذف</string>
     <string name="discard">دورانداختن</string>
     <string name="edit">ویرایش</string>
@@ -44,7 +43,6 @@
     <string name="share">هم‌رسانی</string>
     <string name="show">نمایش</string>
     <string name="skip">پرش</string>
-    <string name="stop">توقّف</string>
     <string name="unknown">ناشناس</string>
     <string name="view">دیدن</string>
 
@@ -66,8 +64,6 @@
     <string name="notification_channel_background_activity_start_description">هنگامی که برنامه در پس‌زمینه است، کنش‌ها را انجام دهید</string>
     <string name="notification_channel_file_job_name">عملیات‌های پرونده</string>
     <string name="notification_channel_file_job_description">نمایش و کنترل عملیات‌های پرونده</string>
-    <string name="notification_channel_ftp_server_name">کارساز اف‌تی‌پی</string>
-    <string name="notification_channel_ftp_server_description">نمایش و مهار کارساز اف‌تی‌پی</string>
 
     <plurals name="file_job_archive_scan_notification_title_format">
         <item quantity="one">در حال آماده‌سازی برای فشرده کردن %1$,d پرونده (⁨%2$s⁩)</item>
@@ -209,7 +205,6 @@
     <string name="file_job_restore_selinux_context_error_message_format">هنگام بازگردانی مفاد اس‌ای‌لینوکس برای «⁨%1$s⁩» خطایی رخ داد.\n%2$s</string>
     <string name="file_job_write_error_title">خطا هنگام نوشتن</string>
     <string name="file_job_write_error_message_format">هنگام نوشتن «⁨%1$s⁩» خطایی رخ داد.\n%2$s</string>
-    <string name="file_job_get_information_error_message_format">هنگام دریافت اطّلاعات دربارهٔ «⁨%1$s⁩» خطایی رخ داد.</string>
     <string name="file_job_remount_format">سوار کردن دوبارهٔ «⁨%1$s⁩» به عنوان خواندن-نوشتن</string>
     <string name="file_job_remount_loading_format">در حال سوار کردن دوبارهٔ «⁨%1$s⁩» به عنوان خواندن-نوشتن…</string>
     <string name="file_job_remount_success_format">«⁨%1$s⁩» به عنوان خواندن-نوشتن دوباره سوار شد</string>
@@ -254,15 +249,6 @@
     <string name="file_create_directory_title">شاخهٔ جدید</string>
 
     <string name="file_list_title">پرونده‌ها</string>
-    <plurals name="file_list_subtitle_directory_count_format">
-        <item quantity="one">%1$,d شاخه</item>
-        <item quantity="other">%1$,d شاخه</item>
-    </plurals>
-    <plurals name="file_list_subtitle_file_count_format">
-        <item quantity="one">%1$,d پرونده</item>
-        <item quantity="other">%1$,d پرونده</item>
-    </plurals>
-    <string name="file_list_subtitle_separator">،\u0020</string>
     <string name="file_list_path_error_empty">مسیر نمی‌تواند خالی باشد</string>
     <string name="file_list_path_error_invalid">مسیر نامعتبر است</string>
     <string name="file_list_action_sort_by_name">نام</string>
@@ -312,14 +298,12 @@
     <string name="file_properties_basic_parent_directory">شاخهٔ والد</string>
     <string name="file_properties_basic_archive_file">پروندهٔ بایگانی</string>
     <string name="file_properties_basic_archive_entry">ورودی بایگانی</string>
-    <string name="file_properties_basic_free_space">فضای خالی</string>
     <string name="file_properties_image">تصویر</string>
     <string name="file_properties_media_dimensions">ابعاد</string>
     <string name="file_properties_media_dimensions_format">⁦%1$d \u00d7 %2$d⁩</string>
     <string name="file_properties_media_date_time">گرفته‌شده در</string>
     <string name="file_properties_media_coordinates">مختصات</string>
     <string name="file_properties_media_coordinates_format">⁦%1$.3f، %2$.3f⁩</string>
-    <string name="file_properties_media_address">مکان</string>
     <string name="file_properties_image_gps_altitude">ارتفاع</string>
     <string name="file_properties_image_gps_altitude_format">%1$,.3f متر</string>
     <string name="file_properties_image_equipment">دوربین</string>
@@ -372,9 +356,6 @@
     <string name="storage_list_empty">بدون ذخیره‌ساز</string>
     <string name="storage_add_storage_title">افزودن ذخیره‌ساز</string>
     <string name="storage_add_storage_document_tree">ذخیره‌ساز خارجی</string>
-    <string name="storage_add_storage_ftp_server">کارساز اف‌تی‌پی</string>
-    <string name="storage_add_storage_sftp_server">کارساز اس‌اف‌تی‌پی</string>
-    <string name="storage_add_storage_smb_server">کارساز اس‌ام‌بی</string>
     <string name="storage_edit_device_storage_title">ویرایش ذخیره‌ساز افزاره</string>
     <string name="storage_edit_device_storage_name">نام</string>
     <string name="storage_edit_device_storage_path">مسیر</string>
@@ -383,88 +364,6 @@
     <string name="storage_edit_document_tree_name">نام</string>
     <string name="storage_edit_document_tree_uri">نشانی</string>
     <string name="storage_edit_document_tree_path">مسیر</string>
-    <string name="storage_edit_ftp_server_title_edit">ویرایش کارساز اف‌تی‌پی</string>
-    <string name="storage_edit_ftp_server_title_add">افزودن کارساز اف‌تی‌پی</string>
-    <string name="storage_edit_ftp_server_host">نام میزبان</string>
-    <string name="storage_edit_ftp_server_host_error_empty">نام میزبان را وارد کنید</string>
-    <string name="storage_edit_ftp_server_host_error_invalid">نام میزبان نامعتبر است</string>
-    <string name="storage_edit_ftp_server_port">درگاه</string>
-    <string name="storage_edit_ftp_server_port_error_invalid">درگاه نامعتبر است</string>
-    <string name="storage_edit_ftp_server_path">مسیر</string>
-    <string name="storage_edit_ftp_server_path_placeholder">می‌تواند خالی بماند</string>
-    <string name="storage_edit_ftp_server_name">نام</string>
-    <string name="storage_edit_ftp_server_name_placeholder">استفاده از نام میزبان</string>
-    <string name="storage_edit_ftp_server_protocol">شیوه‌نامه</string>
-    <string name="storage_edit_ftp_server_authentication_type">احراز هویت</string>
-    <string-array name="storage_edit_ftp_server_authentication_type_entries">
-        <item>گذرواژه</item>
-        <item>ناشناس</item>
-    </string-array>
-    <string name="storage_edit_ftp_server_username">نام کاربری</string>
-    <string name="storage_edit_ftp_server_username_error_empty">نام کاربری را وارد کنید</string>
-    <string name="storage_edit_ftp_server_password">گذرواژه</string>
-    <string name="storage_edit_ftp_server_mode">حالت</string>
-    <string-array name="storage_edit_ftp_server_mode_entries">
-        <item>فعّال</item>
-        <item>منفعل</item>
-    </string-array>
-    <string name="storage_edit_ftp_server_encoding">رمزگذاری</string>
-    <string name="storage_edit_ftp_server_connect_and_add">اتّصال و افزودن</string>
-    <string name="storage_edit_ftp_server_add">افزودن</string>
-    <string name="storage_edit_sftp_server_title_edit">ویرایش کارساز اس‌اف‌تی‌پی</string>
-    <string name="storage_edit_sftp_server_title_add">افزودن کارساز اس‌اف‌تی‌پی</string>
-    <string name="storage_edit_sftp_server_host">نام میزبان</string>
-    <string name="storage_edit_sftp_server_host_error_empty">یک نام میزبان وارد کنید</string>
-    <string name="storage_edit_sftp_server_host_error_invalid">نام میزبان نامعتبر است</string>
-    <string name="storage_edit_sftp_server_port">درگاه</string>
-    <string name="storage_edit_sftp_server_port_error_invalid">درگاه نامعتبر</string>
-    <string name="storage_edit_sftp_server_path">مسیر</string>
-    <string name="storage_edit_sftp_server_path_placeholder">می‌تواند خالی بماند</string>
-    <string name="storage_edit_sftp_server_name">نام</string>
-    <string name="storage_edit_sftp_server_name_placeholder">استفاده از نام میزبان</string>
-    <string name="storage_edit_sftp_server_authentication_type">احراز هویت</string>
-    <string-array name="storage_edit_sftp_server_authentication_type_entries">
-        <item>گذرواژه</item>
-        <item>کلید عمومی</item>
-    </string-array>
-    <string name="storage_edit_sftp_server_username">نام کاربری</string>
-    <string name="storage_edit_sftp_server_username_error_empty">یک نام کاربری وارد کنید</string>
-    <string name="storage_edit_sftp_server_password">گذرواژه</string>
-    <string name="storage_edit_sftp_server_private_key">کلید خصوصی</string>
-    <string name="storage_edit_sftp_server_private_key_open_file">گشودن پرونده</string>
-    <string name="storage_edit_sftp_server_private_key_error_empty">یک کلید خصوصی وارد کنید</string>
-    <string name="storage_edit_sftp_server_private_key_error_invalid">کلید خصوصی نامعتبر</string>
-    <string name="storage_edit_sftp_server_private_key_password">گذرواژهٔ کلید خصوصی</string>
-    <string name="storage_edit_sftp_server_private_key_password_placeholder">می‌تواند خالی بماند</string>
-    <string name="storage_edit_sftp_server_private_key_password_error_invalid">گذرواژهٔ کلید خصوصی نامعتبر است</string>
-    <string name="storage_edit_sftp_server_connect_and_add">اتّصال و افزودن</string>
-    <string name="storage_edit_sftp_server_add">افزودن</string>
-    <string name="storage_add_lan_smb_server_loading">در حال جست‌وجو برای کارسازهای اس‌ام‌بی…</string>
-    <string name="storage_add_lan_smb_server_add">افزودن دستی</string>
-    <string name="storage_edit_smb_server_title_edit">ویرایش کارساز اس‌ام‌بی</string>
-    <string name="storage_edit_smb_server_title_add">افزودن کارساز اس‌ام‌بی</string>
-    <string name="storage_edit_smb_server_host">نام میزبان</string>
-    <string name="storage_edit_smb_server_host_error_empty">یک نام میزبان وارد کنید</string>
-    <string name="storage_edit_smb_server_host_error_invalid">نام میزبان نامعتبر است</string>
-    <string name="storage_edit_smb_server_port">درگاه</string>
-    <string name="storage_edit_smb_server_port_error_invalid">درگاه نامعتیر</string>
-    <string name="storage_edit_smb_server_path">مسیر</string>
-    <string name="storage_edit_smb_server_path_placeholder">می‌تواند خالی بماند</string>
-    <string name="storage_edit_smb_server_name">نام</string>
-    <string name="storage_edit_smb_server_name_placeholder">استفاده از نام میزبان</string>
-    <string name="storage_edit_smb_server_authentication_type">احراز هویت</string>
-    <string-array name="storage_edit_smb_server_authentication_type_entries">
-        <item>گذرواژه</item>
-        <item>مهمان</item>
-        <item>ناشناس</item>
-    </string-array>
-    <string name="storage_edit_smb_server_username">نام کاربری</string>
-    <string name="storage_edit_smb_server_username_error_empty">یک نام کاربری وارد کنید</string>
-    <string name="storage_edit_smb_server_password">گذرواژه</string>
-    <string name="storage_edit_smb_server_domain">دامنه</string>
-    <string name="storage_edit_smb_server_connect_and_add">اتّصال و افزودن</string>
-    <string name="storage_edit_smb_server_add">افزودن</string>
-    <string name="navigation_storage_subtitle_format">%1$s آزاد از %2$s</string>
     <string name="navigation_add_storage">افزودن ذخیره‌ساز…</string>
     <string name="navigation_standard_directory_alarms">زنگ‌ها</string>
     <string name="navigation_standard_directory_dcim">DCIM</string>
@@ -493,27 +392,8 @@
     <string name="text_editor_encoding">رمزگذاری</string>
     <string name="text_editor_close_message">آیا مطمئن هستید که می‌خواهید تغییرات ذخیره نشده در این سند را دور بریزید؟</string>
 
-    <string name="ftp_server_title">کارساز اف‌تی‌پی</string>
-    <string name="ftp_server_state_title">وضعیت</string>
-    <string name="ftp_server_state_summary_starting">در حال شروع…</string>
-    <string name="ftp_server_state_summary_running">در حال اجرا</string>
-    <string name="ftp_server_state_summary_stopping">در حال توقّف…</string>
-    <string name="ftp_server_state_summary_stopped">شروع نشد</string>
-    <string name="ftp_server_url_title">نشانی</string>
-    <string name="ftp_server_url_menu_copy_url">رونوشت نشانی</string>
-    <string name="ftp_server_url_menu_copy_password">رونوشت گذرواژه</string>
-    <string name="ftp_server_configuration_title">پیکربندی</string>
-    <string name="ftp_server_anonymous_login_title">ورود ناشناس</string>
-    <string name="ftp_server_username_title">نام کاربری</string>
-    <string name="ftp_server_password_title">گذرواژه</string>
-    <string name="ftp_server_port_title">درگاه</string>
-    <string name="ftp_server_home_directory_title">شاخهٔ ریشه</string>
-    <string name="ftp_server_writable_title">اجازهٔ نوشتن</string>
     <string name="settings_title">تنظیمات</string>
     <string name="settings_interface_title">رابط</string>
-    <string name="settings_theme_color_title">رنگ زمینه</string>
-    <string name="settings_theme_color_summary">رنگی که بیشتر در برنامه ظاهر می‌شود</string>
-    <string name="settings_material_design_3_title">طراحی متریال ۳</string>
     <string name="settings_night_mode_title">حالت شب</string>
     <string-array name="settings_night_mode_entries">
         <item>پی‌روی از سامانه</item>
@@ -556,7 +436,6 @@
         <item>بپرس چه باید کرد</item>
     </string-array>
     <string name="settings_show_pdf_thumbnail_pre_28_summary">ممکن است برنامه را در نگارش‌های قدیمی‌تر اندروید ناپایدار کند</string>
-    <string name="settings_read_remote_files_for_thumbnail_title">پرونده‌های دوردست را برای بندانگشتی بخوان</string>
 
     <string name="about_title">درباره</string>
     <string name="about_version_title">نگارش</string>

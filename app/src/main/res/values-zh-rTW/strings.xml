@@ -9,10 +9,11 @@
 
     <string name="app_name">質感檔案</string>
 
+    <string name="back">返回</string>
+    <string name="clear">清除</string>
     <string name="close">關閉</string>
     <string name="copy">複製</string>
     <string name="cut">剪下</string>
-    <string name="default_">預設</string>
     <string name="delete">刪除</string>
     <string name="discard">捨棄</string>
     <string name="edit">編輯</string>
@@ -42,7 +43,6 @@
     <string name="share">分享</string>
     <string name="show">顯示</string>
     <string name="skip">跳過</string>
-    <string name="stop">停止</string>
     <string name="system_default">系統預設</string>
     <string name="unknown">不明</string>
     <string name="view">查看</string>
@@ -66,8 +66,6 @@
     <string name="notification_channel_background_activity_start_description">在應用程式處於背景期間採取動作</string>
     <string name="notification_channel_file_job_name">檔案作業</string>
     <string name="notification_channel_file_job_description">顯示和控制檔案作業</string>
-    <string name="notification_channel_ftp_server_name">FTP 伺服器</string>
-    <string name="notification_channel_ftp_server_description">顯示和控制 FTP 伺服器</string>
 
     <string name="file_action_archive_password_title">需要密碼</string>
     <string name="file_action_archive_password_message_format">“%1$s”受密碼保護。</string>
@@ -193,7 +191,6 @@
     <string name="file_job_restore_selinux_context_error_message_format">在還原「%1$s」的 SELinux 上下文時發生錯誤。\n%2$s</string>
     <string name="file_job_write_error_title">寫入時發生錯誤</string>
     <string name="file_job_write_error_message_format">在寫入「%1$s」時發生錯誤。\n%2$s</string>
-    <string name="file_job_get_information_error_message_format">在取得「%1$s」的資訊時發生錯誤。</string>
     <string name="file_job_remount_format">重新掛接「%1$s」為讀寫模式</string>
     <string name="file_job_remount_loading_format">正在重新掛接「%1$s」為讀寫模式…</string>
     <string name="file_job_remount_success_format">「%1$s」已被重新掛接為讀寫模式</string>
@@ -244,13 +241,12 @@
     <plurals name="file_list_title_open_directory">
         <item quantity="other">選取資料夾</item>
     </plurals>
-    <plurals name="file_list_subtitle_directory_count_format">
-        <item quantity="other">%1$,d 個資料夾</item>
-    </plurals>
-    <plurals name="file_list_subtitle_file_count_format">
-        <item quantity="other">%1$,d 個檔案</item>
-    </plurals>
-    <string name="file_list_subtitle_separator">，</string>
+    <string name="file_list_subtitle_mt_format">資料夾:%1$d 檔案:%2$d 儲存:%3$s %4$s</string>
+    <string name="file_list_subtitle_mt_no_storage_format">資料夾:%1$d 檔案:%2$d %3$s</string>
+    <string name="file_list_mount_read_write">讀寫</string>
+    <string name="file_list_mount_read_only">唯讀</string>
+    <string name="dual_pane_path_dialog_title">路徑操作</string>
+    <string name="dual_pane_path_jump">跳轉</string>
     <string name="file_list_path_error_empty">路徑不能為空</string>
     <string name="file_list_path_error_invalid">無效的路徑</string>
     <string name="file_list_action_view_sort">檢視和排序</string>
@@ -306,7 +302,6 @@
     <string name="file_properties_basic_parent_directory">父資料夾</string>
     <string name="file_properties_basic_archive_file">封存檔</string>
     <string name="file_properties_basic_archive_entry">封存條目</string>
-    <string name="file_properties_basic_free_space">可用空間</string>
     <string name="file_properties_permission">權限</string>
     <string name="file_properties_permission_owner">擁有者</string>
     <string name="file_properties_permission_group">群組</string>
@@ -346,7 +341,6 @@
     <string name="file_properties_media_date_time">拍攝時間</string>
     <string name="file_properties_media_coordinates">座標</string>
     <string name="file_properties_media_coordinates_format">%1$.3f，%2$.3f</string>
-    <string name="file_properties_media_address">位置</string>
     <string name="file_properties_image_gps_altitude">高度</string>
     <string name="file_properties_image_gps_altitude_format">%1$,.3f 公尺</string>
     <string name="file_properties_image_equipment">相機</string>
@@ -405,10 +399,6 @@
     <string name="storage_list_empty">無儲存空間</string>
     <string name="storage_add_storage_title">新增儲存空間</string>
     <string name="storage_add_storage_document_tree">外部儲存空間</string>
-    <string name="storage_add_storage_ftp_server">FTP 伺服器</string>
-    <string name="storage_add_storage_sftp_server">SFTP 伺服器</string>
-    <string name="storage_add_storage_smb_server">SMB 伺服器</string>
-    <string name="storage_add_storage_webdav_server">WebDAV 伺服器</string>
     <string name="storage_edit_device_storage_title">編輯裝置儲存空間</string>
     <string name="storage_edit_device_storage_name">名稱</string>
     <string name="storage_edit_device_storage_path">路徑</string>
@@ -422,114 +412,7 @@
     <string name="storage_edit_document_tree_name">名稱</string>
     <string name="storage_edit_document_tree_uri">URI</string>
     <string name="storage_edit_document_tree_path">路徑</string>
-    <string name="storage_edit_ftp_server_title_edit">編輯 FTP 伺服器</string>
-    <string name="storage_edit_ftp_server_title_add">新增 FTP 伺服器</string>
-    <string name="storage_edit_ftp_server_host">主機名稱</string>
-    <string name="storage_edit_ftp_server_host_error_empty">輸入主機名稱</string>
-    <string name="storage_edit_ftp_server_host_error_invalid">無效的主機名稱</string>
-    <string name="storage_edit_ftp_server_port">連接埠</string>
-    <string name="storage_edit_ftp_server_port_error_invalid">無效的連接埠</string>
-    <string name="storage_edit_ftp_server_path">路徑</string>
-    <string name="storage_edit_ftp_server_path_placeholder">可留空</string>
-    <string name="storage_edit_ftp_server_name">名稱</string>
-    <string name="storage_edit_ftp_server_name_placeholder">使用主機名稱</string>
-    <string name="storage_edit_ftp_server_protocol">通訊協定</string>
-    <string name="storage_edit_ftp_server_authentication_type">驗證</string>
-    <string-array name="storage_edit_ftp_server_authentication_type_entries">
-        <item>密碼</item>
-        <item>匿名</item>
-    </string-array>
-    <string name="storage_edit_ftp_server_username">使用者名稱</string>
-    <string name="storage_edit_ftp_server_username_error_empty">輸入使用者名稱</string>
-    <string name="storage_edit_ftp_server_password">密碼</string>
-    <string name="storage_edit_ftp_server_mode">模式</string>
-    <string-array name="storage_edit_ftp_server_mode_entries">
-        <item>主動</item>
-        <item>被動</item>
-    </string-array>
-    <string name="storage_edit_ftp_server_encoding">編碼</string>
-    <string name="storage_edit_ftp_server_connect_and_add">連線並新增</string>
-    <string name="storage_edit_ftp_server_add">新增</string>
-    <string name="storage_edit_sftp_server_title_edit">編輯 SFTP 伺服器</string>
-    <string name="storage_edit_sftp_server_title_add">新增 SFTP 伺服器</string>
-    <string name="storage_edit_sftp_server_host">主機名稱</string>
-    <string name="storage_edit_sftp_server_host_error_empty">輸入主機名稱</string>
-    <string name="storage_edit_sftp_server_host_error_invalid">無效的主機名稱</string>
-    <string name="storage_edit_sftp_server_port">連接埠</string>
-    <string name="storage_edit_sftp_server_port_error_invalid">無效的連接埠</string>
-    <string name="storage_edit_sftp_server_path">路徑</string>
-    <string name="storage_edit_sftp_server_path_placeholder">可留空</string>
-    <string name="storage_edit_sftp_server_name">名稱</string>
-    <string name="storage_edit_sftp_server_name_placeholder">使用主機名稱</string>
-    <string name="storage_edit_sftp_server_authentication_type">驗證</string>
-    <string-array name="storage_edit_sftp_server_authentication_type_entries">
-        <item>密碼</item>
-        <item>公開金鑰</item>
-    </string-array>
-    <string name="storage_edit_sftp_server_username">使用者名稱</string>
-    <string name="storage_edit_sftp_server_username_error_empty">輸入使用者名稱</string>
-    <string name="storage_edit_sftp_server_password">密碼</string>
-    <string name="storage_edit_sftp_server_private_key">私密金鑰</string>
-    <string name="storage_edit_sftp_server_private_key_open_file">開啟檔案</string>
-    <string name="storage_edit_sftp_server_private_key_error_empty">輸入私密金鑰</string>
-    <string name="storage_edit_sftp_server_private_key_error_invalid">無效的私密金鑰</string>
-    <string name="storage_edit_sftp_server_private_key_password">私密金鑰密碼</string>
-    <string name="storage_edit_sftp_server_private_key_password_placeholder">可留空</string>
-    <string name="storage_edit_sftp_server_private_key_password_error_invalid">無效的私密金鑰密碼</string>
-    <string name="storage_edit_sftp_server_connect_and_add">連線並新增</string>
-    <string name="storage_edit_sftp_server_add">新增</string>
-    <string name="storage_add_lan_smb_server_loading">正在搜尋 SMB 伺服器…</string>
-    <string name="storage_add_lan_smb_server_add">手動新增</string>
-    <string name="storage_edit_smb_server_title_edit">編輯 SMB 伺服器</string>
-    <string name="storage_edit_smb_server_title_add">新增 SMB 伺服器</string>
-    <string name="storage_edit_smb_server_host">主機名稱</string>
-    <string name="storage_edit_smb_server_host_error_empty">輸入主機名稱</string>
-    <string name="storage_edit_smb_server_host_error_invalid">無效的主機名稱</string>
-    <string name="storage_edit_smb_server_port">連接埠</string>
-    <string name="storage_edit_smb_server_port_error_invalid">無效的連接埠</string>
-    <string name="storage_edit_smb_server_path">路徑</string>
-    <string name="storage_edit_smb_server_path_placeholder">可留空</string>
-    <string name="storage_edit_smb_server_name">名稱</string>
-    <string name="storage_edit_smb_server_name_placeholder">使用主機名稱</string>
-    <string name="storage_edit_smb_server_authentication_type">驗證</string>
-    <string-array name="storage_edit_smb_server_authentication_type_entries">
-        <item>密碼</item>
-        <item>來賓</item>
-        <item>匿名</item>
-    </string-array>
-    <string name="storage_edit_smb_server_username">使用者名稱</string>
-    <string name="storage_edit_smb_server_username_error_empty">輸入使用者名稱</string>
-    <string name="storage_edit_smb_server_password">密碼</string>
-    <string name="storage_edit_smb_server_domain">網域</string>
-    <string name="storage_edit_smb_server_connect_and_add">連線並新增</string>
-    <string name="storage_edit_smb_server_add">新增</string>
-    <string name="storage_edit_webdav_server_title_edit">編輯 WebDAV 伺服器</string>
-    <string name="storage_edit_webdav_server_title_add">新增 WebDAV 伺服器</string>
-    <string name="storage_edit_webdav_server_host">主機名稱</string>
-    <string name="storage_edit_webdav_server_host_error_empty">輸入主機名稱</string>
-    <string name="storage_edit_webdav_server_host_error_invalid">無效的主機名稱</string>
-    <string name="storage_edit_webdav_server_port">連接埠</string>
-    <string name="storage_edit_webdav_server_port_error_invalid">無效的連接埠</string>
-    <string name="storage_edit_webdav_server_path">路徑</string>
-    <string name="storage_edit_webdav_server_path_placeholder">可留空</string>
-    <string name="storage_edit_webdav_server_name">名稱</string>
-    <string name="storage_edit_webdav_server_name_placeholder">使用主機名稱</string>
-    <string name="storage_edit_webdav_server_protocol">通訊協定</string>
-    <string name="storage_edit_webdav_server_authentication_type">驗證</string>
-    <string-array name="storage_edit_webdav_server_authentication_type_entries">
-        <item>密碼</item>
-        <item>存取權杖</item>
-        <item>無</item>
-    </string-array>
-    <string name="storage_edit_webdav_server_username">使用者名稱</string>
-    <string name="storage_edit_webdav_server_username_error_empty">輸入使用者名稱</string>
-    <string name="storage_edit_webdav_server_password">密碼</string>
-    <string name="storage_edit_webdav_server_access_token">存取權杖</string>
-    <string name="storage_edit_webdav_server_access_token_error_empty">輸入存取權杖</string>
-    <string name="storage_edit_webdav_server_connect_and_add">連線並新增</string>
-    <string name="storage_edit_webdav_server_add">新增</string>
 
-    <string name="navigation_storage_subtitle_format">共 %2$s，剩餘 %1$s</string>
     <string name="navigation_add_storage">新增儲存空間…</string>
     <string name="navigation_standard_directory_alarms">鬧鐘</string>
     <string name="navigation_standard_directory_dcim">相片</string>
@@ -557,39 +440,24 @@
     <string name="text_editor_title">文字編輯器</string>
     <string name="text_editor_title_format">%1$s</string>
     <string name="text_editor_title_changed_format">*%1$s</string>
+    <string name="text_editor_subtitle_format">第 %1$,d 行 · 共 %2$,d 行</string>
     <string name="text_editor_save_success">已儲存</string>
+    <string name="text_editor_save_before_encoding_change">存在未儲存的變更，切換編碼前請先儲存或重新載入</string>
     <string name="text_editor_reload_message">您確定要重新載入嗎？對此文件未儲存的變更將丟失。</string>
+    <string name="text_editor_show_line_numbers">顯示行號</string>
     <string name="text_editor_encoding">編碼</string>
+    <string name="text_editor_format">格式化</string>
+    <string name="text_editor_format_json">格式化 JSON</string>
+    <string name="text_editor_format_yaml">格式化 YAML</string>
+    <string name="text_editor_format_json_success">已格式化 JSON</string>
+    <string name="text_editor_format_yaml_success">已格式化 YAML</string>
+    <string name="text_editor_format_already">已處於標準格式</string>
+    <string name="text_editor_format_error_format">格式化失敗：%1$s</string>
     <string name="text_editor_close_message">您確定要捨棄對此文件未儲存的變更嗎？</string>
-
-    <string name="ftp_server_title">FTP 伺服器</string>
-    <string name="ftp_server_state_title">狀態</string>
-    <string name="ftp_server_state_summary_starting">正在啓動…</string>
-    <string name="ftp_server_state_summary_running">正在執行</string>
-    <string name="ftp_server_state_summary_stopping">正在停止…</string>
-    <string name="ftp_server_state_summary_stopped">未啓動</string>
-    <string name="ftp_server_url_title">網址</string>
-    <string name="ftp_server_url_summary_no_local_inet_address">本機 IP 位址不明</string>
-    <string name="ftp_server_url_menu_copy_url">複製網址</string>
-    <string name="ftp_server_url_menu_copy_password">複製密碼</string>
-    <string name="ftp_server_add_tile_title">加入「快速設定」選單</string>
-    <string name="ftp_server_add_tile_result_added">已將「FTP 伺服器」加入「快速設定」選單</string>
-    <string name="ftp_server_add_tile_result_already_added">「FTP 伺服器」已被加入「快速設定」選單</string>
-    <string name="ftp_server_add_tile_result_error">將「FTP 伺服器」加入「快速設定」選單時發生錯誤</string>
-    <string name="ftp_server_configuration_title">配置</string>
-    <string name="ftp_server_anonymous_login_title">匿名登入</string>
-    <string name="ftp_server_username_title">使用者名稱</string>
-    <string name="ftp_server_password_title">密碼</string>
-    <string name="ftp_server_port_title">連接埠</string>
-    <string name="ftp_server_home_directory_title">根資料夾</string>
-    <string name="ftp_server_writable_title">允許寫入</string>
 
     <string name="settings_title">設定</string>
     <string name="settings_interface_title">介面</string>
     <string name="settings_locale_title">語言</string>
-    <string name="settings_theme_color_title">主題色</string>
-    <string name="settings_theme_color_summary">應用程式中最常見的色彩</string>
-    <string name="settings_material_design_3_title">質感設計 3</string>
     <string name="settings_night_mode_title">夜間模式</string>
     <string-array name="settings_night_mode_entries">
         <item>跟隨系統</item>
@@ -632,7 +500,6 @@
     </string-array>
     <string name="settings_show_pdf_thumbnail_pre_28_title">顯示 PDF 文件縮圖</string>
     <string name="settings_show_pdf_thumbnail_pre_28_summary">可能導致應用程式在舊版 Android 上不穩定</string>
-    <string name="settings_read_remote_files_for_thumbnail_title">讀取遠端檔案以顯示縮圖</string>
 
     <string name="about_title">關於</string>
     <string name="about_version_title">版本</string>
@@ -643,4 +510,74 @@
     <string name="about_author_name_title">張海</string>
     <string name="about_author_github_title">在 GitHub 上關注</string>
     <string name="about_author_twitter_title">在 Twitter 上關注</string>
+
+    <string name="dual_pane_copy_to">複製 →</string>
+    <string name="dual_pane_move_to">移動 →</string>
+    <string name="dual_pane_copy_to_left">← 複製</string>
+    <string name="dual_pane_move_to_left">← 移動</string>
+    <string name="dual_pane_link_to">連結 →</string>
+    <string name="dual_pane_link_to_left">← 連結</string>
+    <string name="dual_pane_open_with_ellipsis">開啟方式…</string>
+    <string name="dual_pane_confirm_copy_message_format">確定將選取的 %1$d 項複製到「%2$s」嗎？</string>
+    <string name="dual_pane_confirm_move_message_format">確定將選取的 %1$d 項移動到「%2$s」嗎？</string>
+    <string name="dual_pane_confirm_link_message_format">確定將選取的 %1$d 項在「%2$s」建立軟連結嗎？</string>
+    <string name="dual_pane_link_started_format">正在向 %1$s 建立連結</string>
+    <string name="dual_pane_confirm_share_message_format">確定要分享選取的 %1$d 個檔案嗎？</string>
+    <string name="dual_pane_confirm_open_with_message_format">確定使用其他應用程式開啟「%1$s」嗎？</string>
+    <string name="dual_pane_confirm_add_bookmark_message_format">確定將「%1$s」加入書籤嗎？</string>
+    <string name="recent_history_title">最近存取</string>
+    <string name="recent_history_clear">清空</string>
+    <string name="recent_history_filter_all">全部</string>
+    <string name="recent_history_filter_files">檔案</string>
+    <string name="recent_history_filter_folders">資料夾</string>
+    <string name="recent_history_empty">暫無最近存取的檔案或資料夾</string>
+    <string name="recent_history_badge_edit">編輯</string>
+    <string name="recent_history_badge_open_dir">進入</string>
+    <string name="recent_history_time_just_now">剛剛</string>
+    <string name="recent_history_missing_directory">該資料夾已不存在</string>
+    <string name="recent_history_missing_file">該檔案已不存在</string>
+    <string name="selection_actions_pill_format">已選 %1$d 項 · 點擊操作</string>
+    <string name="dual_pane_move_clipboard">移動</string>
+    <string name="multi_properties_title_format">%1$d 項屬性</string>
+    <string name="multi_properties_selected_label">已選項目</string>
+    <string name="multi_properties_selected_value_format">%1$d 個資料夾，%2$d 個檔案</string>
+    <string name="multi_properties_location_label">所在位置</string>
+    <string name="multi_properties_contents_label">包含內容</string>
+    <string name="multi_properties_contents_calculating">正在統計…</string>
+    <string name="multi_properties_contents_format">共 %1$d 個資料夾，%2$d 個檔案</string>
+    <string name="multi_properties_total_size_label">總大小</string>
+    <string name="multi_properties_modified_label">修改時間</string>
+    <string name="batch_rename_title">批次重新命名</string>
+    <string name="batch_rename_summary_format">已選 %1$d 項，修改規則可即時預覽</string>
+    <string name="batch_rename_mode_number">統一編號</string>
+    <string name="batch_rename_mode_replace">尋找取代</string>
+    <string name="batch_rename_mode_affix">新增前後綴</string>
+    <string name="batch_rename_template_hint">名稱或範本（支援 {name}、{num}）</string>
+    <string name="batch_rename_start_index_hint">起始序號</string>
+    <string name="batch_rename_digits_hint">位數</string>
+    <string name="batch_rename_find_hint">尋找內容</string>
+    <string name="batch_rename_replace_hint">取代為</string>
+    <string name="batch_rename_prefix_hint">新增前綴</string>
+    <string name="batch_rename_suffix_hint">新增後綴</string>
+    <string name="batch_rename_keep_extension">保留原檔案副檔名</string>
+    <string name="batch_rename_case_sensitive">區分大小寫</string>
+    <string name="batch_rename_preview_title">即時預覽</string>
+    <string name="batch_rename_status_ready_format">將重新命名 %1$d 個項目</string>
+    <string name="batch_rename_status_no_change">檔案名稱均未變更</string>
+    <string name="batch_rename_status_invalid_name_format">無效檔案名稱：%1$s</string>
+    <string name="batch_rename_status_duplicate_format">存在重複名稱衝突：%1$s</string>
+    <string name="batch_rename_status_exists_format">目錄中已存在：%1$s</string>
+    <string name="dual_pane_action_confirm">確認</string>
+
+    <string name="audio_player_title">音樂播放器</string>
+    <string name="audio_player_unknown_artist">未知演出者</string>
+    <string name="audio_player_previous">上一首</string>
+    <string name="audio_player_play_pause">播放 / 暫停</string>
+    <string name="audio_player_next">下一首</string>
+    <string name="audio_player_repeat_mode">循環模式</string>
+    <string name="audio_player_playlist">播放清單</string>
+    <string name="audio_player_open_with">用其他應用程式開啟</string>
+    <string name="audio_player_error_load">無法播放此音訊檔案</string>
+    <string name="audio_player_repeat_all">清單循環</string>
+    <string name="audio_player_repeat_one">單曲循環</string>
 </resources>

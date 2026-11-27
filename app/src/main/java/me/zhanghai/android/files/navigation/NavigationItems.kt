@@ -22,13 +22,13 @@ import me.zhanghai.android.files.compat.isPrimaryCompat
 import me.zhanghai.android.files.compat.pathCompat
 import me.zhanghai.android.files.file.JavaFile
 import me.zhanghai.android.files.file.asFileSize
-import me.zhanghai.android.files.ftpserver.FtpServerActivity
+import me.zhanghai.android.files.filelist.toUserFriendlyString
 import me.zhanghai.android.files.settings.Settings
 import me.zhanghai.android.files.settings.SettingsActivity
 import me.zhanghai.android.files.settings.StandardDirectoryListActivity
 import me.zhanghai.android.files.storage.AddStorageDialogActivity
-import me.zhanghai.android.files.storage.FileSystemRoot
 import me.zhanghai.android.files.storage.Storage
+import me.zhanghai.android.files.storage.StorageSpaceResolver
 import me.zhanghai.android.files.storage.StorageVolumeListLiveData
 import me.zhanghai.android.files.util.createIntent
 import me.zhanghai.android.files.util.isMounted
@@ -36,9 +36,34 @@ import me.zhanghai.android.files.util.putArgs
 import me.zhanghai.android.files.util.supportsExternalStorageManager
 import me.zhanghai.android.files.util.valueCompat
 
-val navigationItems: List<NavigationItem?>
-    get() =
-        mutableListOf<NavigationItem?>().apply {
+enum class NavigationSection(val titleRes: Int) {
+    STORAGE(R.string.navigation_section_storage),
+    BOOKMARKS(R.string.navigation_section_bookmarks),
+    STANDARD_DIRECTORIES(R.string.navigation_section_directories),
+    TOOLS(R.string.navigation_section_tools)
+}
+
+class NavigationSectionItem(
+    val section: NavigationSection,
+    val expanded: Boolean
+) : NavigationItem() {
+    override val id: Long = 100_000L + section.ordinal
+
+    override val iconRes: Int? = null
+
+    override fun getTitle(context: Context): String = context.getString(section.titleRes)
+
+    override fun onClick(listener: Listener) {}
+}
+
+val navigationItems: List<NavigationItem>
+    get() = buildNavigationItems(emptySet())
+
+fun buildNavigationItems(collapsedSections: Set<NavigationSection>): List<NavigationItem> =
+    mutableListOf<NavigationItem>().apply {
+        val storageExpanded = NavigationSection.STORAGE !in collapsedSections
+        add(NavigationSectionItem(NavigationSection.STORAGE, storageExpanded))
+        if (storageExpanded) {
             addAll(storageItems)
             if (Environment::class.supportsExternalStorageManager()) {
                 // Starting with R, we can get read/write access to non-primary storage volumes with
@@ -48,19 +73,32 @@ val navigationItems: List<NavigationItem?>
                 addAll(storageVolumeItems)
             }
             add(AddStorageItem())
-            val standardDirectoryItems = standardDirectoryItems
-            if (standardDirectoryItems.isNotEmpty()) {
-                add(null)
-                addAll(standardDirectoryItems)
+        }
+
+        val bookmarkItems = bookmarkDirectoryItems
+        if (bookmarkItems.isNotEmpty()) {
+            val bookmarksExpanded = NavigationSection.BOOKMARKS !in collapsedSections
+            add(NavigationSectionItem(NavigationSection.BOOKMARKS, bookmarksExpanded))
+            if (bookmarksExpanded) {
+                addAll(bookmarkItems)
             }
-            val bookmarkDirectoryItems = bookmarkDirectoryItems
-            if (bookmarkDirectoryItems.isNotEmpty()) {
-                add(null)
-                addAll(bookmarkDirectoryItems)
+        }
+
+        val standardItems = standardDirectoryItems
+        if (standardItems.isNotEmpty()) {
+            val directoriesExpanded = NavigationSection.STANDARD_DIRECTORIES !in collapsedSections
+            add(NavigationSectionItem(NavigationSection.STANDARD_DIRECTORIES, directoriesExpanded))
+            if (directoriesExpanded) {
+                addAll(standardItems)
             }
-            add(null)
+        }
+
+        val toolsExpanded = NavigationSection.TOOLS !in collapsedSections
+        add(NavigationSectionItem(NavigationSection.TOOLS, toolsExpanded))
+        if (toolsExpanded) {
             addAll(menuItems)
         }
+    }
 
 private val storageItems: List<NavigationItem>
     @Size(min = 0)
@@ -70,7 +108,7 @@ private val storageItems: List<NavigationItem>
         }
 
 private abstract class PathItem(val path: Path) : NavigationItem() {
-    override fun isChecked(listener: Listener): Boolean = listener.currentPath == path
+    override fun isChecked(listener: Listener): Boolean = listener.currentPathOrNull == path
 
     override fun onClick(listener: Listener) {
         if (this is NavigationRoot) {
@@ -96,10 +134,16 @@ private class PathStorageItem(
         @DrawableRes
         get() = storage.iconRes
 
+    override val isStorageCard: Boolean
+        get() = storage.linuxPath != null
+
     override fun getTitle(context: Context): String = storage.getName(context)
 
     override fun getSubtitle(context: Context): String? =
         storage.linuxPath?.let { getStorageSubtitle(it, context) }
+
+    override fun getStorageUsagePercent(context: Context): Int? =
+        storage.linuxPath?.let { getStoragePercent(it) }
 
     override fun onLongClick(listener: Listener): Boolean {
         listener.launchIntent(storage.createEditIntent())
@@ -152,37 +196,29 @@ private class StorageVolumeItem(
         @DrawableRes
         get() = R.drawable.sd_card_icon_white_24dp
 
+    override val isStorageCard: Boolean
+        get() = true
+
     override fun getTitle(context: Context): String = storageVolume.getDescriptionCompat(context)
 
     override fun getSubtitle(context: Context): String? =
         getStorageSubtitle(storageVolume.pathCompat, context)
 
+    override fun getStorageUsagePercent(context: Context): Int? =
+        getStoragePercent(storageVolume.pathCompat)
+
     override fun getName(context: Context): String = getTitle(context)
 }
 
+private fun getStoragePercent(linuxPath: String): Int? =
+    StorageSpaceResolver.resolveDrawerStorageSpace(linuxPath)?.usagePercent
+
 private fun getStorageSubtitle(linuxPath: String, context: Context): String? {
-    var totalSpace = JavaFile.getTotalSpace(linuxPath)
-    val freeSpace: Long
-    when {
-        totalSpace != 0L -> freeSpace = JavaFile.getFreeSpace(linuxPath)
-        linuxPath == FileSystemRoot.LINUX_PATH -> {
-            // Root directory may not be an actual partition on legacy Android versions (can be
-            // a ramdisk instead). On modern Android the system partition will be mounted as
-            // root instead so let's try with the system partition again.
-            // @see https://source.android.com/devices/bootloader/system-as-root
-            val systemPath = Environment.getRootDirectory().path
-            totalSpace = JavaFile.getTotalSpace(systemPath)
-            freeSpace = JavaFile.getFreeSpace(systemPath)
-        }
-        else -> freeSpace = 0
-    }
-    if (totalSpace == 0L) {
-        return null
-    }
-    val freeSpaceString = freeSpace.asFileSize().formatHumanReadable(context)
-    val totalSpaceString = totalSpace.asFileSize().formatHumanReadable(context)
+    val spaceInfo = StorageSpaceResolver.resolveDrawerStorageSpace(linuxPath) ?: return null
+    val usedSpaceString = spaceInfo.usedBytes.asFileSize().formatHumanReadable(context)
+    val freeSpaceString = spaceInfo.freeBytes.asFileSize().formatHumanReadable(context)
     return context.getString(
-        R.string.navigation_storage_subtitle_format, freeSpaceString, totalSpaceString
+        R.string.navigation_storage_used_free_format, usedSpaceString, freeSpaceString
     )
 }
 
@@ -222,6 +258,8 @@ private class StandardDirectoryItem(
         get() = standardDirectory.iconRes
 
     override fun getTitle(context: Context): String = standardDirectory.getTitle(context)
+
+    override fun getSubtitle(context: Context): String = path.toUserFriendlyString()
 
     override fun onLongClick(listener: Listener): Boolean {
         listener.launchIntent(StandardDirectoryListActivity::class.createIntent())
@@ -344,6 +382,8 @@ private class BookmarkDirectoryItem(
 
     override fun getTitle(context: Context): String = bookmarkDirectory.name
 
+    override fun getSubtitle(context: Context): String = bookmarkDirectory.path.toUserFriendlyString()
+
     override fun onLongClick(listener: Listener): Boolean {
         listener.launchIntent(
             EditBookmarkDirectoryDialogActivity::class.createIntent()
@@ -357,8 +397,8 @@ private val menuItems: List<NavigationItem>
     @Size(3)
     get() = listOf(
         IntentMenuItem(
-            R.drawable.shared_directory_icon_white_24dp, R.string.navigation_ftp_server,
-            FtpServerActivity::class.createIntent()
+            R.drawable.directory_icon_white_24dp, R.string.navigation_standard_directories_manage,
+            StandardDirectoryListActivity::class.createIntent()
         ),
         IntentMenuItem(
             R.drawable.settings_icon_white_24dp, R.string.navigation_settings,
