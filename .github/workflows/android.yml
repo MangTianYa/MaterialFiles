@@ -25,6 +25,9 @@ jobs:
   build:
     name: Build, Lint & Release APK
     runs-on: ubuntu-latest
+    env:
+      ANDROID_HOME: /usr/local/lib/android/sdk
+      ANDROID_SDK_ROOT: /usr/local/lib/android/sdk
 
     steps:
       - name: Check out repository
@@ -36,23 +39,22 @@ jobs:
           distribution: 'temurin'
           java-version: '21'
 
-      - name: Set up Android SDK
-        uses: android-actions/setup-android@v3
-
       - name: Cache Android SDK extras
         uses: actions/cache@v4
         with:
           path: |
-            ${{ env.ANDROID_HOME }}/platforms/android-37.2
-            ${{ env.ANDROID_HOME }}/build-tools/37.0.0
-            ${{ env.ANDROID_HOME }}/ndk/30.0.16248370
-            ${{ env.ANDROID_HOME }}/cmake/3.22.1
+            /usr/local/lib/android/sdk/platforms/android-37.2
+            /usr/local/lib/android/sdk/build-tools/37.0.0
+            /usr/local/lib/android/sdk/ndk/30.0.16248370
+            /usr/local/lib/android/sdk/cmake/3.22.1
           key: android-sdk-37.2-ndk30-cmake3.22.1
 
       - name: Install Android SDK / NDK / CMake packages
         run: |
-          yes | sdkmanager --licenses > /dev/null || true
-          sdkmanager --install \
+          SDKMANAGER=$(find "$ANDROID_HOME/cmdline-tools" -name sdkmanager -type f | sort -V | tail -n1)
+          echo "Using sdkmanager: $SDKMANAGER"
+          yes | "$SDKMANAGER" --licenses > /dev/null || true
+          "$SDKMANAGER" --install \
             "platforms;android-37.2" \
             "build-tools;37.0.0" \
             "ndk;30.0.16248370" \
